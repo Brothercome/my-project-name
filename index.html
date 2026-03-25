@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Team DOR — Careers</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Home-only styles */
+    .advantage-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    .advantage-card {
+      background: rgba(20,20,20,0.55);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 12px;
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      transition: border-color 0.2s ease, background 0.2s ease;
+    }
+    .advantage-card:hover {
+      border-color: var(--primary-border);
+      background: rgba(30,20,40,0.65);
+    }
+    .advantage-icon {
+      font-size: 22px;
+      line-height: 1;
+    }
+    .advantage-title {
+      font-size: 17px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+    }
+    .advantage-desc {
+      font-size: 14px;
+      color: var(--gray-400);
+      line-height: 1.7;
+    }
+    .advantage-highlight {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .trust-bar {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+    .trust-bar-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gray-500);
+      white-space: nowrap;
+    }
+    .trust-bar-items {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px 20px;
+      color: var(--gray-400);
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+    }
+
+    @media (max-width: 900px) {
+      .advantage-grid { grid-template-columns: 1fr 1fr; }
+      .process-grid { grid-template-columns: repeat(2,1fr); }
+    }
+    @media (max-width: 600px) {
+      .advantage-grid { grid-template-columns: 1fr; }
+      .process-grid { grid-template-columns: 1fr; }
+      .process-grid .step { border-top:none; border-left:2px solid var(--gray-700); padding:0 0 24px 20px; }
+      .process-grid .step:nth-child(1),.process-grid .step:nth-child(2){ border-bottom:none; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <a href="index.html" class="nav-logo"><img src="logo.svg" alt="DOR" class="nav-logo-img" /></a>
+    <div class="nav-links">
+      <a href="index.html" class="nav-link active">Home</a>
+      <a href="positions.html" class="nav-link">Positions</a>
+      <a href="values.html" class="nav-link">Core Values</a>
+      <a href="referral.html" class="nav-link">채용보상금</a>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLScKZ21MPBl-ivpCAmXY3Bc3D_D5NXNafn5xNkx-ww_hJQ7gUA/viewform" target="_blank" class="btn-coffechat">커피챗 신청</a>
+    </div>
+    <button class="nav-hamburger" id="hamburger" aria-label="메뉴 열기">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html" class="mobile-link active">Home</a>
+    <a href="positions.html" class="mobile-link">Positions</a>
+    <a href="values.html" class="mobile-link">Core Values</a>
+    <a href="referral.html" class="mobile-link">채용보상금</a>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLScKZ21MPBl-ivpCAmXY3Bc3D_D5NXNafn5xNkx-ww_hJQ7gUA/viewform" target="_blank" class="mobile-link highlight">커피챗 신청</a>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-badge">We're hiring</div>
+    <h1 class="hero-title">
+      Build the social media<br />
+      for <span class="hero-accent">3 billion gamers</span>
+    </h1>
+    <p class="hero-desc">
+      광고 한 번 없이, 2년 만에 200만 유저.<br class="hide-mobile" />
+      이 팀의 다음 장에 당신 이름이 있어야 합니다.
+    </p>
+    <div class="hero-cta">
+      <a href="positions.html" class="btn-primary">포지션 보기</a>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLScKZ21MPBl-ivpCAmXY3Bc3D_D5NXNafn5xNkx-ww_hJQ7gUA/viewform" target="_blank" class="btn-secondary">커피챗 신청</a>
+    </div>
+    <div class="stats-grid">
+      <div class="stat-card">
+        <span class="stat-number">2M</span>
+        <span class="stat-label">Monthly Active Users</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number">200M+</span>
+        <span class="stat-label">Monthly Clips</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number">$0</span>
+        <span class="stat-label">Paid Marketing</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST BAR -->
+  <div style="border-top:1px solid var(--gray-800);border-bottom:1px solid var(--gray-800);padding:28px 40px;">
+    <div style="max-width:var(--max);margin:0 auto;" class="trust-bar">
+      <span class="trust-bar-label">Backed by</span>
+      <div class="trust-bar-items">
+        <span>Base Ventures</span>
+        <span>Primer</span>
+        <span>The Ventures</span>
+        <span>Goodwater Capital</span>
+        <span>NVIDIA Inception</span>
+        <span>D.CAMP</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- WHY DOR — ADVANTAGES -->
+  <div class="section">
+    <div class="section-header">
+      <h2 class="section-title">왜 DOR인가요?</h2>
+      <p class="section-sub">도르팀과 함께해야 하는 이유</p>
+    </div>
+    <div class="advantage-grid">
+
+      <div class="advantage-card">
+        <div class="advantage-icon">📈</div>
+        <div class="advantage-title">검증된 Product-Market Fit</div>
+        <div class="advantage-desc">광고 없이 유기적으로 성장한 200만 유저. 제품이 만들어내는 성장의 순간을 함께 만들어갑니다.</div>
+        <div class="advantage-highlight">MAU 2M · 월간 클립 200M+</div>
+      </div>
+
+      <div class="advantage-card">
+        <div class="advantage-icon">💰</div>
+        <div class="advantage-title">경력 대비 파격적인 처우</div>
+        <div class="advantage-desc">경력직 합류 시 현재 연봉 최소 20% 인상을 제안합니다. 스타트업이라고 급여를 타협하지 않습니다.</div>
+        <div class="advantage-highlight">현재 연봉 +20% 이상 보장</div>
+      </div>
+
+      <div class="advantage-card">
+        <div class="advantage-icon">📊</div>
+        <div class="advantage-title">전원 스톡옵션</div>
+        <div class="advantage-desc">정규직 전환 시 모든 팀원에게 스톡옵션을 부여합니다. 팀의 성공이 곧 개인의 성공입니다.</div>
+        <div class="advantage-highlight">정규직 전원 스톡옵션</div>
+      </div>
+
+      <div class="advantage-card">
+        <div class="advantage-icon">🏆</div>
+        <div class="advantage-title">Top-tier VC 백업</div>
+        <div class="advantage-desc">Base Ventures, Primer, Goodwater Capital, NVIDIA Inception Program. 검증된 투자자들이 함께합니다.</div>
+        <div class="advantage-highlight">글로벌 VC 5곳 투자</div>
+      </div>
+
+      <div class="advantage-card">
+        <div class="advantage-icon">🚀</div>
+        <div class="advantage-title">작고 강한 팀</div>
+        <div class="advantage-desc">적은 인원으로 글로벌 임팩트를 만듭니다. 모든 팀원이 핵심 결정에 직접 기여하고, 그 결과가 즉시 제품에 반영됩니다.</div>
+        <div class="advantage-highlight">의사결정 레이어 최소화</div>
+      </div>
+
+      <div class="advantage-card">
+        <div class="advantage-icon">⚡</div>
+        <div class="advantage-title">AI 퍼스트 워크플로우</div>
+        <div class="advantage-desc">AI와 기술로 게이머들의 영상 제작 시간을 90% 이상 단축. 최첨단 기술 스택과 AI 중심의 제품 개발 환경.</div>
+        <div class="advantage-highlight">AI로 제작 시간 90% 단축</div>
+      </div>
+
+      <div class="advantage-card">
+        <div class="advantage-icon">🌏</div>
+        <div class="advantage-title">글로벌 기회</div>
+        <div class="advantage-desc">서울과 San Francisco 양쪽에 거점을 두고 글로벌 게이밍 시장을 공략합니다. 한국을 넘어 세계 30억 게이머가 타겟입니다.</div>
+        <div class="advantage-highlight">Seoul · San Francisco</div>
+      </div>
+
+      <div class="advantage-card">
+        <div class="advantage-icon">🛡</div>
+        <div class="advantage-title">리스크 없는 합류</div>
+        <div class="advantage-desc">3개월 수습기간 동안 월급 100%를 보장합니다. 팀과 맞는지 충분히 확인하고 결정할 수 있습니다.</div>
+        <div class="advantage-highlight">수습 3개월 급여 100% 보장</div>
+      </div>
+
+      <div class="advantage-card">
+        <div class="advantage-icon">✦</div>
+        <div class="advantage-title">자율과 신뢰의 문화</div>
+        <div class="advantage-desc">정해진 출퇴근 시간이 없습니다. 오후 2시 스크럼 외에는 자신이 가장 잘 일할 수 있는 시간과 방식을 스스로 정합니다.</div>
+        <div class="advantage-highlight">완전 자율 출퇴근</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- PROCESS -->
+  <div class="section-bg">
+    <div class="section">
+      <div class="section-header">
+        <h2 class="section-title">Hiring Process</h2>
+        <p class="section-sub">빠르고 투명한 4단계 채용</p>
+      </div>
+      <div class="process-grid">
+        <div class="step">
+          <div class="step-num">01</div>
+          <div class="step-title">서류 지원</div>
+          <div class="step-desc">career@dor.gg 또는 커피챗 폼으로 지원</div>
+        </div>
+        <div class="step">
+          <div class="step-num">02</div>
+          <div class="step-title">컬처핏 인터뷰</div>
+          <div class="step-desc">팀과의 가치관 및 업무 방식 확인</div>
+        </div>
+        <div class="step">
+          <div class="step-num">03</div>
+          <div class="step-title">레퍼런스 체크</div>
+          <div class="step-desc">이전 동료 피드백을 통한 검증</div>
+        </div>
+        <div class="step">
+          <div class="step-num">04</div>
+          <div class="step-title">처우 협의</div>
+          <div class="step-desc">연봉 및 옵션 조건 협의 후 최종 합류</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="section">
+    <div class="cta-section">
+      <h2 class="cta-title">지금 바로 합류하세요</h2>
+      <p class="cta-desc">포지션을 확인하거나, 먼저 커피챗으로 팀을 만나보세요.</p>
+      <div class="cta-buttons">
+        <a href="positions.html" class="btn-primary">포지션 보기</a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLScKZ21MPBl-ivpCAmXY3Bc3D_D5NXNafn5xNkx-ww_hJQ7gUA/viewform" target="_blank" class="btn-secondary">커피챗 신청</a>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <img src="logo.svg" alt="DOR" class="footer-logo-img" />
+    <span class="footer-copy">© 2024 Team DOR. All rights reserved.</span>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
