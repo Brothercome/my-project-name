@@ -9,86 +9,447 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
   <style>
-    /* Home-only styles */
-    .advantage-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-    }
-    .advantage-card {
-      background: rgba(20,20,20,0.55);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border: 1px solid rgba(255,255,255,0.07);
-      border-radius: 12px;
-      padding: 28px;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      transition: border-color 0.2s ease, background 0.2s ease;
-    }
-    .advantage-card:hover {
-      border-color: var(--primary-border);
-      background: rgba(30,20,40,0.65);
-    }
-    .advantage-icon {
-      font-size: 22px;
-      line-height: 1;
-    }
-    .advantage-title {
-      font-size: 17px;
-      font-weight: 700;
-      letter-spacing: -0.01em;
-    }
-    .advantage-desc {
-      font-size: 14px;
-      color: var(--gray-400);
-      line-height: 1.7;
-    }
-    .advantage-highlight {
-      font-size: 13px;
-      font-weight: 700;
-      color: var(--primary);
-    }
+    /* ===== Home-only styles ===== */
 
-    .trust-bar {
+    .hero-meta {
       display: flex;
-      align-items: center;
-      gap: 32px;
+      gap: 8px;
+      justify-content: center;
       flex-wrap: wrap;
+      margin-top: 20px;
+      margin-bottom: 64px;
     }
-    .trust-bar-label {
+    .hero-meta-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      color: var(--gray-400);
+      background: var(--glass-bg);
+      border: 1px solid rgba(255,255,255,0.07);
+      padding: 6px 14px;
+      border-radius: 100px;
+    }
+    .hero-meta-item svg { opacity: 0.45; flex-shrink: 0; }
+
+    /* Why DOR */
+    .why-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: start;
+    }
+    .why-eyebrow {
       font-size: 11px;
       font-weight: 700;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: var(--gray-500);
-      white-space: nowrap;
+      color: var(--gray-400);
+      margin-bottom: 20px;
     }
-    .trust-bar-items {
+    .why-lead {
+      font-size: clamp(22px, 3vw, 30px);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1.3;
+      margin-bottom: 24px;
+    }
+    .why-body {
+      font-size: 15px;
+      color: var(--gray-300);
+      line-height: 1.85;
+    }
+    .why-callout {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-top: 40px;
+    }
+    .why-callout-card {
+      padding: 22px 26px;
+      background: var(--glass-bg);
+      backdrop-filter: var(--glass-blur);
+      -webkit-backdrop-filter: var(--glass-blur);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-md);
+      box-shadow: var(--glass-shadow);
+    }
+    .why-callout-label {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--gray-300);
+      margin-bottom: 8px;
+    }
+    .why-callout-text {
+      font-size: 14px;
+      color: var(--gray-200);
+      line-height: 1.7;
+    }
+
+    /* What we build */
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    .pillar-card {
+      background: var(--glass-bg);
+      backdrop-filter: var(--glass-blur);
+      -webkit-backdrop-filter: var(--glass-blur);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-md);
+      box-shadow: var(--glass-shadow);
+      padding: 36px 32px;
+      transition: background var(--t), border-color var(--t), box-shadow var(--t);
+    }
+    .pillar-card:hover {
+      background: var(--glass-bg-hover);
+      border-color: var(--glass-border-hover);
+      box-shadow: var(--glass-shadow-hover);
+    }
+    .pillar-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gray-400);
+      margin-bottom: 18px;
+    }
+    .pillar-title {
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      line-height: 1.3;
+      margin-bottom: 14px;
+    }
+    .pillar-desc {
+      font-size: 14px;
+      color: var(--gray-400);
+      line-height: 1.75;
+      margin-bottom: 20px;
+    }
+    .pillar-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+    .pillar-tag {
+      font-size: 12px;
+      color: var(--gray-400);
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      padding: 3px 10px;
+      border-radius: 6px;
+    }
+
+    /* How we work */
+    .how-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: start;
+    }
+    .how-body {
+      font-size: 15px;
+      color: var(--gray-300);
+      line-height: 1.85;
+    }
+    .how-keywords {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .how-keyword {
       display: flex;
       align-items: center;
-      flex-wrap: wrap;
-      gap: 8px 20px;
-      color: var(--gray-400);
-      font-size: 14px;
-      font-weight: 500;
+      gap: 16px;
+      padding: 15px 20px;
+      background: var(--glass-bg);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-sm);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.06);
     }
+    .how-keyword-dot {
+      width: 6px; height: 6px;
+      background: var(--gray-400);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .how-keyword-text { font-size: 14px; font-weight: 600; color: var(--gray-200); }
 
-    .process-grid {
+    /* Squad overview */
+    .squad-grid {
       display: grid;
-      grid-template-columns: repeat(4,1fr);
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    .squad-card {
+      background: var(--glass-bg);
+      backdrop-filter: var(--glass-blur);
+      -webkit-backdrop-filter: var(--glass-blur);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-md);
+      box-shadow: var(--glass-shadow);
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      transition: background var(--t), border-color var(--t), box-shadow var(--t);
+    }
+    .squad-card:hover {
+      background: var(--glass-bg-hover);
+      border-color: var(--glass-border-hover);
+      box-shadow: var(--glass-shadow-hover);
+    }
+    .squad-badge {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 100px;
+      margin-bottom: 20px;
+      align-self: flex-start;
+    }
+    .squad-badge--creator {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.16);
+      color: var(--white);
+    }
+    .squad-badge--community {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.13);
+      color: var(--gray-200);
+    }
+    .squad-badge--growth {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.09);
+      color: var(--gray-300);
+    }
+    .squad-title { font-size: 19px; font-weight: 800; letter-spacing: -0.01em; margin-bottom: 12px; }
+    .squad-mission { font-size: 14px; color: var(--gray-400); line-height: 1.72; margin-bottom: 18px; }
+    .squad-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+    .squad-tag {
+      font-size: 12px;
+      color: var(--gray-500);
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.07);
+      padding: 3px 9px;
+      border-radius: 6px;
+    }
+    .squad-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--gray-400);
+      text-decoration: none;
+      margin-top: auto;
+      padding-top: 20px;
+      transition: color var(--t);
+    }
+    .squad-link:hover { color: var(--white); }
+
+    /* Who fits */
+    .fit-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .fit-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 20px 24px;
+      background: var(--glass-bg);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-sm);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.06);
+    }
+    .fit-num {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--gray-400);
+      flex-shrink: 0;
+      padding-top: 2px;
+      min-width: 20px;
+    }
+    .fit-text { font-size: 14px; color: var(--gray-200); line-height: 1.65; }
+    .fit-text strong { color: var(--white); font-weight: 700; }
+
+    /* Process */
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+    .process-note {
+      margin-top: 28px;
+      font-size: 13px;
+      color: var(--gray-500);
     }
 
+    /* Founder */
+    .founder-card {
+      background: var(--glass-bg);
+      backdrop-filter: var(--glass-blur);
+      -webkit-backdrop-filter: var(--glass-blur);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--glass-shadow);
+      padding: 56px 64px;
+      position: relative;
+      overflow: hidden;
+    }
+    .founder-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+    }
+    .founder-quote-mark {
+      font-size: 96px;
+      line-height: 1;
+      color: var(--white);
+      opacity: 0.08;
+      font-family: Georgia, serif;
+      position: absolute;
+      top: 28px;
+      left: 52px;
+      pointer-events: none;
+    }
+    .founder-text {
+      font-size: clamp(17px, 2.2vw, 22px);
+      font-weight: 600;
+      line-height: 1.7;
+      letter-spacing: -0.01em;
+      color: var(--gray-100);
+      margin-bottom: 28px;
+      position: relative;
+    }
+    .founder-text em { font-style: normal; color: var(--white); }
+    .founder-sub {
+      font-size: 15px;
+      color: var(--gray-400);
+      line-height: 1.82;
+    }
+    .founder-sig {
+      margin-top: 40px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding-top: 32px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+    .founder-sig-avatar {
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--white);
+      flex-shrink: 0;
+    }
+    .founder-sig-name { font-size: 14px; font-weight: 700; }
+    .founder-sig-role { font-size: 12px; color: var(--gray-400); margin-top: 2px; }
+
+    /* FAQ */
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+    }
+    .faq-item { border-bottom: 1px solid rgba(255,255,255,0.05); }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-q {
+      width: 100%;
+      background: var(--glass-bg);
+      border: none;
+      text-align: left;
+      cursor: pointer;
+      padding: 22px 28px;
+      font-family: var(--font);
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--white);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      transition: background var(--t), color var(--t);
+    }
+    .faq-q:hover { background: var(--glass-bg-hover); }
+    .faq-q.open { color: var(--white); background: var(--glass-bg-hover); }
+    .faq-chevron {
+      flex-shrink: 0;
+      width: 18px; height: 18px;
+      color: var(--gray-500);
+      transition: transform var(--t), color var(--t);
+    }
+    .faq-q.open .faq-chevron { transform: rotate(180deg); color: var(--white); }
+    .faq-a {
+      display: none;
+      padding: 0 28px 22px;
+      font-size: 14px;
+      color: var(--gray-400);
+      line-height: 1.82;
+      background: var(--glass-bg-hover);
+    }
+    .faq-a.open { display: block; }
+
+    /* Final CTA */
+    .final-cta { text-align: center; }
+    .final-cta-title {
+      font-size: clamp(24px, 4vw, 42px);
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+    .final-cta-desc { font-size: 16px; color: var(--gray-400); margin-bottom: 36px; }
+    .final-cta-buttons {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 32px;
+    }
+    .final-cta-links {
+      display: flex;
+      gap: 24px;
+      justify-content: center;
+      flex-wrap: wrap;
+      font-size: 14px;
+    }
+    .final-cta-links a {
+      color: var(--gray-400);
+      text-decoration: none;
+      transition: color var(--t);
+    }
+    .final-cta-links a:hover { color: var(--white); }
+
+    /* Responsive */
     @media (max-width: 900px) {
-      .advantage-grid { grid-template-columns: 1fr 1fr; }
-      .process-grid { grid-template-columns: repeat(2,1fr); }
+      .why-grid  { grid-template-columns: 1fr; gap: 40px; }
+      .pillars-grid { grid-template-columns: 1fr; }
+      .how-grid  { grid-template-columns: 1fr; gap: 40px; }
+      .squad-grid { grid-template-columns: 1fr; }
+      .fit-grid  { grid-template-columns: 1fr; }
+      .process-steps { grid-template-columns: repeat(2, 1fr); }
+      .founder-card  { padding: 40px 36px; }
+      .founder-quote-mark { font-size: 72px; top: 20px; left: 28px; }
     }
     @media (max-width: 600px) {
-      .advantage-grid { grid-template-columns: 1fr; }
-      .process-grid { grid-template-columns: 1fr; }
-      .process-grid .step { border-top:none; border-left:2px solid var(--gray-700); padding:0 0 24px 20px; }
-      .process-grid .step:nth-child(1),.process-grid .step:nth-child(2){ border-bottom:none; }
+      .process-steps { grid-template-columns: 1fr; }
+      .process-steps .step { border-top: none; border-left: 2px solid rgba(255,255,255,0.08); padding: 0 0 24px 20px; }
+      .final-cta-links { gap: 16px; }
     }
   </style>
 </head>
@@ -116,20 +477,40 @@
     <a href="https://docs.google.com/forms/d/e/1FAIpQLScKZ21MPBl-ivpCAmXY3Bc3D_D5NXNafn5xNkx-ww_hJQ7gUA/viewform" target="_blank" class="mobile-link highlight">커피챗 신청</a>
   </div>
 
-  <!-- HERO -->
+  <!-- ① HERO -->
   <section class="hero">
-    <div class="hero-badge">We're hiring</div>
+    <div class="hero-badge">집중 채용 중</div>
     <h1 class="hero-title">
-      Build the social media<br />
-      for <span class="hero-accent">3 billion gamers</span>
+      전 세계 게이머가<br />
+      더 쉽게 <span class="hero-accent">기록하고, 만들고,</span><br />
+      공유하게 만듭니다
     </h1>
     <p class="hero-desc">
-      광고 한 번 없이, 2년 만에 200만 유저.<br class="hide-mobile" />
-      이 팀의 다음 장에 당신 이름이 있어야 합니다.
+      도르는 게임 플레이 자동 녹화부터 영상 생성, 커뮤니티까지 연결하는 제품을 만들고 있습니다.
+      지금 우리는 작은 팀으로 큰 문제를 풀고 있고,
+      각 역할이 제품과 성장에 직접 영향을 주는 초기 멤버를 찾고 있습니다.
     </p>
     <div class="hero-cta">
-      <a href="positions.html" class="btn-primary">포지션 보기</a>
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLScKZ21MPBl-ivpCAmXY3Bc3D_D5NXNafn5xNkx-ww_hJQ7gUA/viewform" target="_blank" class="btn-secondary">커피챗 신청</a>
+      <a href="positions.html" class="btn-primary">오픈 포지션 보기</a>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLScKZ21MPBl-ivpCAmXY3Bc3D_D5NXNafn5xNkx-ww_hJQ7gUA/viewform" target="_blank" class="btn-secondary">커피챗 신청하기</a>
+    </div>
+    <div class="hero-meta">
+      <span class="hero-meta-item">
+        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        집중 채용기간 · 빠른 프로세스
+      </span>
+      <span class="hero-meta-item">
+        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        San Francisco · 서울
+      </span>
+      <span class="hero-meta-item">
+        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+        연봉 협의 · 스톡옵션
+      </span>
+      <span class="hero-meta-item">
+        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        대표 직접 채용
+      </span>
     </div>
     <div class="stats-grid">
       <div class="stat-card">
@@ -147,135 +528,371 @@
     </div>
   </section>
 
-  <!-- TRUST BAR -->
-  <div style="border-top:1px solid var(--gray-800);border-bottom:1px solid var(--gray-800);padding:28px 40px;">
-    <div style="max-width:var(--max);margin:0 auto;" class="trust-bar">
-      <span class="trust-bar-label">Backed by</span>
-      <div class="trust-bar-items">
-        <span>Base Ventures</span>
-        <span>Primer</span>
-        <span>The Ventures</span>
-        <span>Goodwater Capital</span>
-        <span>NVIDIA Inception</span>
-        <span>D.CAMP</span>
+  <!-- INVESTORS -->
+  <div class="investors">
+    <div class="investors-label">Backed by</div>
+    <div class="investors-list">
+      <span>Base Ventures</span><span class="dot">·</span>
+      <span>Primer</span><span class="dot">·</span>
+      <span>The Ventures</span><span class="dot">·</span>
+      <span>Goodwater Capital</span><span class="dot">·</span>
+      <span>NVIDIA Inception</span><span class="dot">·</span>
+      <span>D.CAMP</span>
+    </div>
+  </div>
+
+  <!-- ② WHY DOR / WHY NOW -->
+  <div class="section-bg">
+    <div class="section">
+      <div class="why-grid">
+        <div>
+          <div class="why-eyebrow">Why DOR · Why Now</div>
+          <div class="why-lead">이미 만들어진 조직에<br />들어가는 일이 아닙니다</div>
+          <p class="why-body">
+            지금 도르에 합류하는 건, 앞으로의 제품과 팀을 함께 만드는 일에 가깝습니다.
+            어떤 제품을 만들고, 어떤 방식으로 성장하고, 어떤 문화를 가질지 —
+            그 구조를 함께 설계하는 사람을 찾고 있습니다.
+          </p>
+          <p class="why-body" style="margin-top:16px;">
+            도르는 아직 작은 팀입니다.
+            그래서 한 명의 좋은 동료가 제품의 방향, 팀의 속도, 회사의 밀도를 바꿉니다.
+          </p>
+        </div>
+        <div>
+          <div class="why-callout">
+            <div class="why-callout-card">
+              <div class="why-callout-label">지금 합류한다면</div>
+              <div class="why-callout-text">문제 정의부터 출시, 측정, 개선까지 직접 관여하는 사람이 됩니다.</div>
+            </div>
+            <div class="why-callout-card">
+              <div class="why-callout-label">아직 팀이 작기 때문에</div>
+              <div class="why-callout-text">한 명이 미치는 영향이 크고, 그 결과가 제품에 즉시 반영됩니다.</div>
+            </div>
+            <div class="why-callout-card">
+              <div class="why-callout-label">구조를 만드는 사람</div>
+              <div class="why-callout-text">이미 정해진 방식을 따르는 자리가 아니라, 함께 만들어가는 자리입니다.</div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 
-  <!-- WHY DOR — ADVANTAGES -->
+  <!-- ③ WHAT WE BUILD -->
   <div class="section">
     <div class="section-header">
-      <h2 class="section-title">왜 DOR인가요?</h2>
-      <p class="section-sub">도르팀과 함께해야 하는 이유</p>
+      <h2 class="section-title">What We Build</h2>
+      <p class="section-sub">도르는 Record, Create, Community를 하나로 연결합니다</p>
     </div>
-    <div class="advantage-grid">
+    <div class="pillars-grid">
 
-      <div class="advantage-card">
-        <div class="advantage-icon">📈</div>
-        <div class="advantage-title">검증된 Product-Market Fit</div>
-        <div class="advantage-desc">광고 없이 유기적으로 성장한 200만 유저. 제품이 만들어내는 성장의 순간을 함께 만들어갑니다.</div>
-        <div class="advantage-highlight">MAU 2M · 월간 클립 200M+</div>
+      <div class="pillar-card">
+        <div class="pillar-label">01 · Record</div>
+        <div class="pillar-title">중요한 순간을<br />자동으로 기록합니다</div>
+        <div class="pillar-desc">게이머가 놓친 명장면을 AI가 찾아냅니다. 따로 녹화 버튼을 누를 필요 없이, 플레이 중 의미 있는 순간이 자동으로 저장됩니다.</div>
+        <div class="pillar-tags">
+          <span class="pillar-tag">자동 녹화</span>
+          <span class="pillar-tag">AI 하이라이트</span>
+          <span class="pillar-tag">순간 포착</span>
+        </div>
       </div>
 
-      <div class="advantage-card">
-        <div class="advantage-icon">💰</div>
-        <div class="advantage-title">경력 대비 파격적인 처우</div>
-        <div class="advantage-desc">경력직 합류 시 현재 연봉 최소 20% 인상을 제안합니다. 스타트업이라고 급여를 타협하지 않습니다.</div>
-        <div class="advantage-highlight">현재 연봉 +20% 이상 보장</div>
+      <div class="pillar-card">
+        <div class="pillar-label">02 · Create</div>
+        <div class="pillar-title">누구나 쉽게<br />볼만한 영상을 만듭니다</div>
+        <div class="pillar-desc">편집 경험 없이도 완성도 높은 게임 영상을 만들 수 있습니다. AI가 제작 시간의 90% 이상을 단축합니다.</div>
+        <div class="pillar-tags">
+          <span class="pillar-tag">영상 생성</span>
+          <span class="pillar-tag">AI 편집</span>
+          <span class="pillar-tag">템플릿</span>
+        </div>
       </div>
 
-      <div class="advantage-card">
-        <div class="advantage-icon">📊</div>
-        <div class="advantage-title">전원 스톡옵션</div>
-        <div class="advantage-desc">정규직 전환 시 모든 팀원에게 스톡옵션을 부여합니다. 팀의 성공이 곧 개인의 성공입니다.</div>
-        <div class="advantage-highlight">정규직 전원 스톡옵션</div>
-      </div>
-
-      <div class="advantage-card">
-        <div class="advantage-icon">🏆</div>
-        <div class="advantage-title">Top-tier VC 백업</div>
-        <div class="advantage-desc">Base Ventures, Primer, Goodwater Capital, NVIDIA Inception Program. 검증된 투자자들이 함께합니다.</div>
-        <div class="advantage-highlight">글로벌 VC 5곳 투자</div>
-      </div>
-
-      <div class="advantage-card">
-        <div class="advantage-icon">🚀</div>
-        <div class="advantage-title">작고 강한 팀</div>
-        <div class="advantage-desc">적은 인원으로 글로벌 임팩트를 만듭니다. 모든 팀원이 핵심 결정에 직접 기여하고, 그 결과가 즉시 제품에 반영됩니다.</div>
-        <div class="advantage-highlight">의사결정 레이어 최소화</div>
-      </div>
-
-      <div class="advantage-card">
-        <div class="advantage-icon">⚡</div>
-        <div class="advantage-title">AI 퍼스트 워크플로우</div>
-        <div class="advantage-desc">AI와 기술로 게이머들의 영상 제작 시간을 90% 이상 단축. 최첨단 기술 스택과 AI 중심의 제품 개발 환경.</div>
-        <div class="advantage-highlight">AI로 제작 시간 90% 단축</div>
-      </div>
-
-      <div class="advantage-card">
-        <div class="advantage-icon">🌏</div>
-        <div class="advantage-title">글로벌 기회</div>
-        <div class="advantage-desc">서울과 San Francisco 양쪽에 거점을 두고 글로벌 게이밍 시장을 공략합니다. 한국을 넘어 세계 30억 게이머가 타겟입니다.</div>
-        <div class="advantage-highlight">Seoul · San Francisco</div>
-      </div>
-
-      <div class="advantage-card">
-        <div class="advantage-icon">🛡</div>
-        <div class="advantage-title">리스크 없는 합류</div>
-        <div class="advantage-desc">3개월 수습기간 동안 월급 100%를 보장합니다. 팀과 맞는지 충분히 확인하고 결정할 수 있습니다.</div>
-        <div class="advantage-highlight">수습 3개월 급여 100% 보장</div>
-      </div>
-
-      <div class="advantage-card">
-        <div class="advantage-icon">✦</div>
-        <div class="advantage-title">자율과 신뢰의 문화</div>
-        <div class="advantage-desc">정해진 출퇴근 시간이 없습니다. 오후 2시 스크럼 외에는 자신이 가장 잘 일할 수 있는 시간과 방식을 스스로 정합니다.</div>
-        <div class="advantage-highlight">완전 자율 출퇴근</div>
+      <div class="pillar-card">
+        <div class="pillar-label">03 · Community</div>
+        <div class="pillar-title">영상이 관계로<br />이어지게 합니다</div>
+        <div class="pillar-desc">만들어진 영상이 공유되고, 반응을 얻고, 새로운 관계로 이어집니다. 게이머들의 소셜 그래프가 도르 안에서 형성됩니다.</div>
+        <div class="pillar-tags">
+          <span class="pillar-tag">피드</span>
+          <span class="pillar-tag">반응</span>
+          <span class="pillar-tag">소셜 그래프</span>
+        </div>
       </div>
 
     </div>
   </div>
 
-  <!-- PROCESS -->
+  <!-- ④ HOW WE WORK -->
   <div class="section-bg">
     <div class="section">
       <div class="section-header">
-        <h2 class="section-title">Hiring Process</h2>
-        <p class="section-sub">빠르고 투명한 4단계 채용</p>
+        <h2 class="section-title">How We Work</h2>
+        <p class="section-sub">일하는 방식이 제품을 만드는 방식과 같습니다</p>
       </div>
-      <div class="process-grid">
-        <div class="step">
-          <div class="step-num">01</div>
-          <div class="step-title">서류 지원</div>
-          <div class="step-desc">career@dor.gg 또는 커피챗 폼으로 지원</div>
+      <div class="how-grid">
+        <div>
+          <p class="how-body">우리는 대표가 원하는 제품이 아니라, <strong>고객이 원하는 제품</strong>을 만듭니다.</p>
+          <p class="how-body" style="margin-top:16px;">도르팀은 1–2주 단위로 가설을 세우고, 만들고, 측정하고, 학습하고, 다시 반복합니다.</p>
+          <p class="how-body" style="margin-top:16px;">여기서는 역할보다 문제 해결이 중요합니다. 좋은 아이디어를 내는 것보다, 실제로 만들고 검증해서 결과를 내는 사람이 더 중요합니다.</p>
         </div>
-        <div class="step">
-          <div class="step-num">02</div>
-          <div class="step-title">컬처핏 인터뷰</div>
-          <div class="step-desc">팀과의 가치관 및 업무 방식 확인</div>
-        </div>
-        <div class="step">
-          <div class="step-num">03</div>
-          <div class="step-title">레퍼런스 체크</div>
-          <div class="step-desc">이전 동료 피드백을 통한 검증</div>
-        </div>
-        <div class="step">
-          <div class="step-num">04</div>
-          <div class="step-title">처우 협의</div>
-          <div class="step-desc">연봉 및 옵션 조건 협의 후 최종 합류</div>
+        <div class="how-keywords">
+          <div class="how-keyword">
+            <div class="how-keyword-dot"></div>
+            <div class="how-keyword-text">Customer first — 고객이 기준</div>
+          </div>
+          <div class="how-keyword">
+            <div class="how-keyword-dot"></div>
+            <div class="how-keyword-text">Fast iteration — 1–2주 사이클</div>
+          </div>
+          <div class="how-keyword">
+            <div class="how-keyword-dot"></div>
+            <div class="how-keyword-text">Data + VOC — 숫자와 유저 맥락</div>
+          </div>
+          <div class="how-keyword">
+            <div class="how-keyword-dot"></div>
+            <div class="how-keyword-text">High ownership — 스스로 정의하고 실행</div>
+          </div>
+          <div class="how-keyword">
+            <div class="how-keyword-dot"></div>
+            <div class="how-keyword-text">Small team, big impact — 작고 강하게</div>
+          </div>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- CTA -->
+  <!-- ⑤ SQUAD OVERVIEW -->
   <div class="section">
-    <div class="cta-section">
-      <h2 class="cta-title">지금 바로 합류하세요</h2>
-      <p class="cta-desc">포지션을 확인하거나, 먼저 커피챗으로 팀을 만나보세요.</p>
-      <div class="cta-buttons">
-        <a href="positions.html" class="btn-primary">포지션 보기</a>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLScKZ21MPBl-ivpCAmXY3Bc3D_D5NXNafn5xNkx-ww_hJQ7gUA/viewform" target="_blank" class="btn-secondary">커피챗 신청</a>
+    <div class="section-header">
+      <h2 class="section-title">Squad Overview</h2>
+      <p class="section-sub">도르는 기능이 아니라 문제 중심으로 팀을 나눕니다</p>
+    </div>
+    <div class="squad-grid">
+
+      <div class="squad-card">
+        <div class="squad-badge squad-badge--creator">Creator Squad</div>
+        <div class="squad-title">더 쉽게 만들게 하는 팀</div>
+        <div class="squad-mission">게이머가 더 쉽게 영상을 만들도록 돕습니다. 자동 녹화부터 편집, 공유까지 경험 전체를 책임집니다.</div>
+        <div class="squad-tags">
+          <span class="squad-tag">자동 녹화</span>
+          <span class="squad-tag">영상 생성</span>
+          <span class="squad-tag">편집 경험</span>
+          <span class="squad-tag">공유</span>
+        </div>
+        <a href="positions.html" class="squad-link">포지션 보기 →</a>
+      </div>
+
+      <div class="squad-card">
+        <div class="squad-badge squad-badge--community">Community Squad</div>
+        <div class="squad-title">더 자주 돌아오게 하는 팀</div>
+        <div class="squad-mission">유저가 더 많이 보고, 반응하고, 다시 돌아오게 만듭니다. 피드부터 소셜 그래프 형성까지를 담당합니다.</div>
+        <div class="squad-tags">
+          <span class="squad-tag">피드</span>
+          <span class="squad-tag">프로필</span>
+          <span class="squad-tag">알림</span>
+          <span class="squad-tag">관계 형성</span>
+        </div>
+        <a href="positions.html" class="squad-link">포지션 보기 →</a>
+      </div>
+
+      <div class="squad-card">
+        <div class="squad-badge squad-badge--growth">Growth Squad</div>
+        <div class="squad-title">더 많이 들어오고 남게 하는 팀</div>
+        <div class="squad-mission">더 많은 유저가 도르를 처음 알게 되고, 실제로 들어오고, 남게 만듭니다. 신규 유입부터 온보딩, 초기 리텐션까지 담당합니다.</div>
+        <div class="squad-tags">
+          <span class="squad-tag">신규 유입</span>
+          <span class="squad-tag">온보딩</span>
+          <span class="squad-tag">리텐션</span>
+          <span class="squad-tag">파트너십</span>
+        </div>
+        <a href="positions.html" class="squad-link">포지션 보기 →</a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ⑥ WHO FITS HERE -->
+  <div class="section-bg">
+    <div class="section">
+      <div class="section-header">
+        <h2 class="section-title">Who Fits Here</h2>
+        <p class="section-sub">도르에는 이런 사람이 잘 맞습니다</p>
+      </div>
+      <div class="fit-grid">
+        <div class="fit-item">
+          <div class="fit-num">01</div>
+          <div class="fit-text">정해진 일을 처리하는 사람보다 <strong>문제를 먼저 발견하는 사람</strong></div>
+        </div>
+        <div class="fit-item">
+          <div class="fit-num">02</div>
+          <div class="fit-text">문서를 정리하는 사람보다 <strong>결과를 만드는 사람</strong></div>
+        </div>
+        <div class="fit-item">
+          <div class="fit-num">03</div>
+          <div class="fit-text">완벽한 계획보다 <strong>빠른 실행과 학습을 선호하는 사람</strong></div>
+        </div>
+        <div class="fit-item">
+          <div class="fit-num">04</div>
+          <div class="fit-text">숫자 뒤에 있는 <strong>유저의 감정과 맥락을 보려는 사람</strong></div>
+        </div>
+        <div class="fit-item">
+          <div class="fit-num">05</div>
+          <div class="fit-text">기능 구현보다 <strong>제품과 성장 문제를 함께 고민하는 사람</strong></div>
+        </div>
+        <div class="fit-item">
+          <div class="fit-num">06</div>
+          <div class="fit-text">초기팀에서 <strong>높은 오너십으로 일하고 싶은 사람</strong></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ⑦ HIRING PROCESS -->
+  <div class="section">
+    <div class="section-header">
+      <h2 class="section-title">Hiring Process</h2>
+      <p class="section-sub">빠르고 명확하게 진행합니다</p>
+    </div>
+    <div class="process-steps">
+      <div class="step">
+        <div class="step-num">01</div>
+        <div class="step-title">지원서 접수</div>
+        <div class="step-desc">career@dor.gg 또는 커피챗 폼으로 지원</div>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <div class="step-title">직무 / 컬처핏 인터뷰</div>
+        <div class="step-desc">팀과의 가치관 및 업무 방식 확인</div>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <div class="step-title">과제 또는 직무 인터뷰</div>
+        <div class="step-desc">필요 시 진행 · 레퍼런스 체크 포함</div>
+      </div>
+      <div class="step">
+        <div class="step-num">04</div>
+        <div class="step-title">처우 협의</div>
+        <div class="step-desc">연봉 및 스톡옵션 조건 협의 후 최종 합류</div>
+      </div>
+    </div>
+    <p class="process-note">집중 채용기간에는 가능한 빠르게 결과를 안내드립니다.</p>
+  </div>
+
+  <!-- ⑧ FOUNDER MESSAGE -->
+  <div class="section-bg">
+    <div class="section">
+      <div class="section-header">
+        <h2 class="section-title">A Message from Our Founder</h2>
+      </div>
+      <div class="founder-card">
+        <div class="founder-quote-mark">"</div>
+        <p class="founder-text">
+          지금 도르의 채용은 <em>대표가 직접 리드합니다.</em><br /><br />
+          우리는 단순히 빈 자리를 채우는 것이 아니라,<br />
+          <em>앞으로의 제품과 팀을 함께 만들 사람</em>을 찾고 있습니다.
+        </p>
+        <p class="founder-sub">
+          좋은 이력보다 더 중요하게 보는 것은 어떤 문제를 풀고 싶은지,
+          어떻게 실행하는지, 어떤 밀도로 일하는지입니다.<br /><br />
+          우리가 같은 문제를 풀고 싶다는 생각이 든다면, 먼저 커피챗으로 만나보세요.
+        </p>
+        <div class="founder-sig">
+          <div class="founder-sig-avatar">D</div>
+          <div>
+            <div class="founder-sig-name">Team DOR CEO</div>
+            <div class="founder-sig-role">Founder &amp; CEO · Team DOR</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ⑨ FAQ -->
+  <div class="section">
+    <div class="section-header">
+      <h2 class="section-title">FAQ</h2>
+      <p class="section-sub">자주 묻는 질문</p>
+    </div>
+    <div class="faq-list" id="faqList">
+
+      <div class="faq-item">
+        <button class="faq-q">
+          근무지는 어디인가요?
+          <svg class="faq-chevron" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-a">서울 강남과 San Francisco 양쪽에 거점이 있습니다. 포지션에 따라 근무지가 다를 수 있으며, 상세 포지션 페이지에서 확인할 수 있습니다.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">
+          미국 근무가 꼭 필요한가요?
+          <svg class="faq-chevron" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-a">포지션에 따라 다릅니다. 일부 포지션은 San Francisco 근무를 기본으로 하지만, 서울 기반으로 합류 가능한 포지션도 있습니다. 채용 과정에서 충분히 협의할 수 있습니다.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">
+          연봉과 스톡옵션은 어떻게 되나요?
+          <svg class="faq-chevron" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-a">경력직 합류 시 현재 연봉 최소 20% 인상을 제안합니다. 정규직 전환 시 모든 팀원에게 스톡옵션을 부여하며, 수습 3개월 동안 급여 100%를 보장합니다.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">
+          포트폴리오가 필요한가요?
+          <svg class="faq-chevron" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-a">디자인, 모션 등 직군은 포트폴리오가 있으면 도움이 됩니다. 필수는 아니며, 직접 참여한 프로젝트나 만든 결과물을 자유롭게 공유해 주시면 됩니다.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">
+          영어가 꼭 필요한가요?
+          <svg class="faq-chevron" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-a">포지션에 따라 다릅니다. 기본 커뮤니케이션 수준의 영어는 도움이 되지만, 팀 내부 커뮤니케이션은 대부분 한국어로 이루어집니다.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">
+          인턴 / 계약직 / 정규직은 어떻게 다른가요?
+          <svg class="faq-chevron" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-a">정규직은 3개월 수습 후 스톡옵션 등 전체 처우가 적용됩니다. 일부 포지션은 인턴 또는 계약직으로 시작하며, 성과에 따라 정규직 전환 기회가 있습니다. 각 포지션 상세 페이지에서 고용 형태를 확인하세요.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">
+          커피챗만 먼저 신청할 수 있나요?
+          <svg class="faq-chevron" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-a">네, 물론입니다. 지원 여부를 결정하기 전에 먼저 팀을 만나보고 싶다면 커피챗을 신청해 주세요. 부담 없이 이야기 나눌 수 있습니다.</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ⑩ FINAL CTA -->
+  <div class="section-bg">
+    <div class="section">
+      <div class="final-cta">
+        <h2 class="final-cta-title">
+          전 세계 게이머가 더 쉽게<br />
+          기록하고, 만들고, 공유하게 만들고 싶다면
+        </h2>
+        <p class="final-cta-desc">지금이 도르의 초기 멤버로 합류할 타이밍입니다.</p>
+        <div class="final-cta-buttons">
+          <a href="positions.html" class="btn-primary">오픈 포지션 보기</a>
+          <a href="mailto:career@dor.gg" class="btn-secondary">바로 지원하기</a>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLScKZ21MPBl-ivpCAmXY3Bc3D_D5NXNafn5xNkx-ww_hJQ7gUA/viewform" target="_blank" class="btn-secondary">커피챗 신청하기</a>
+        </div>
+        <div class="final-cta-links">
+          <a href="mailto:career@dor.gg">career@dor.gg</a>
+          <a href="https://www.linkedin.com/company/team-dor" target="_blank">LinkedIn</a>
+          <a href="https://dor.gg" target="_blank">dor.gg</a>
+        </div>
       </div>
     </div>
   </div>
@@ -286,5 +903,24 @@
   </footer>
 
   <script src="main.js"></script>
+  <script>
+    // FAQ accordion
+    document.querySelectorAll('.faq-q').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const answer = btn.nextElementSibling;
+        const isOpen = btn.classList.contains('open');
+        // Close all
+        document.querySelectorAll('.faq-q').forEach(b => {
+          b.classList.remove('open');
+          b.nextElementSibling.classList.remove('open');
+        });
+        // Toggle clicked
+        if (!isOpen) {
+          btn.classList.add('open');
+          answer.classList.add('open');
+        }
+      });
+    });
+  </script>
 </body>
 </html>
