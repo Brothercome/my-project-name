@@ -14,11 +14,12 @@
   <nav class="nav">
     <a href="index.html" class="nav-logo"><img src="logo.svg" alt="DOR" class="nav-logo-img" /></a>
     <div class="nav-links">
-      <a href="index.html" class="nav-link">Home</a>
-      <a href="positions.html" class="nav-link active">Positions</a>
-      <a href="values.html" class="nav-link">Core Values</a>
+      <a href="index.html" class="nav-link">홈</a>
+      <a href="positions.html" class="nav-link active">채용 포지션</a>
+      <a href="values.html" class="nav-link">핵심 가치</a>
       <a href="referral.html" class="nav-link">채용보상금</a>
       <a href="https://docs.google.com/forms/d/e/1FAIpQLScKZ21MPBl-ivpCAmXY3Bc3D_D5NXNafn5xNkx-ww_hJQ7gUA/viewform" target="_blank" class="btn-coffechat">커피챗 신청</a>
+      <a href="index-en.html" class="btn-lang">ENG</a>
     </div>
     <button class="nav-hamburger" id="hamburger" aria-label="메뉴 열기">
       <span></span><span></span><span></span>
@@ -26,26 +27,29 @@
   </nav>
 
   <div class="mobile-menu" id="mobileMenu">
-    <a href="index.html" class="mobile-link">Home</a>
-    <a href="positions.html" class="mobile-link active">Positions</a>
-    <a href="values.html" class="mobile-link">Core Values</a>
+    <a href="index.html" class="mobile-link">홈</a>
+    <a href="positions.html" class="mobile-link active">채용 포지션</a>
+    <a href="values.html" class="mobile-link">핵심 가치</a>
     <a href="referral.html" class="mobile-link">채용보상금</a>
     <a href="https://docs.google.com/forms/d/e/1FAIpQLScKZ21MPBl-ivpCAmXY3Bc3D_D5NXNafn5xNkx-ww_hJQ7gUA/viewform" target="_blank" class="mobile-link highlight">커피챗 신청</a>
+    <a href="index-en.html" class="mobile-link">ENG</a>
   </div>
 
   <div class="page-hero">
-    <h1 class="page-hero-title">Open Positions</h1>
-    <p class="page-hero-sub">서울 · San Francisco · Remote</p>
+    <h1 class="page-hero-title">채용 포지션</h1>
+    <p class="page-hero-sub">서울 · San Francisco</p>
   </div>
 
   <div class="section" style="padding-top: 0;">
 
-    <!-- DUAL FILTER -->
+    <!-- SQUAD FILTER -->
     <div style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 48px;">
       <div class="filter-bar" id="squadFilter">
         <button class="filter-btn active" data-squad="all">전체 스쿼드</button>
         <button class="filter-btn" data-squad="creator">Creator Squad</button>
         <button class="filter-btn" data-squad="community">Community Squad</button>
+        <button class="filter-btn" data-squad="growth">Growth Squad</button>
+        <button class="filter-btn" data-squad="internship">인턴십</button>
       </div>
       <div class="filter-bar" id="typeFilter">
         <button class="filter-btn active" data-type="all">전체 직군</button>
@@ -53,6 +57,7 @@
         <button class="filter-btn" data-type="design">Design</button>
         <button class="filter-btn" data-type="product">Product</button>
         <button class="filter-btn" data-type="operations">Operations</button>
+        <button class="filter-btn" data-type="internship">Internship</button>
       </div>
     </div>
 
@@ -63,6 +68,30 @@
         <span class="squad-section-count">게임 녹화 · 클립 생성 · 편집 · 공유 경험</span>
       </div>
       <div class="jobs-grid">
+
+        <div class="job-card" data-squad="creator" data-type="product">
+          <div class="job-card-top">
+            <div>
+              <span class="squad-badge squad-badge--creator">Creator Squad</span>
+              <span class="job-type">Full-time</span>
+              <h3 class="job-title">PO — Creator</h3>
+            </div>
+            <span class="job-exp">3y+</span>
+          </div>
+          <div class="job-tags">
+            <span class="tag">Product Planning</span>
+            <span class="tag">Gaming UX</span>
+            <span class="tag">Analytics</span>
+          </div>
+          <div class="job-locations">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            San Francisco · Seoul
+          </div>
+          <div class="job-card-cta">
+            <a href="https://slashpage.com/team-dor/7916x82rqjqgnm4kpyg3" target="_blank" class="btn-detail">자세히 보기 →</a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfD_9UczvFlanzBvd6n0eYbbHTZd8p0CTKkskGZT2F0on6kfw/viewform?pli=1" target="_blank" class="btn-chat-sm">지원하기</a>
+          </div>
+        </div>
 
         <div class="job-card" data-squad="creator" data-type="design">
           <div class="job-card-top">
@@ -83,32 +112,83 @@
             San Francisco · Seoul
           </div>
           <div class="job-card-cta">
-            <a href="job-designer.html" class="btn-detail">자세히 보기 →</a>
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLScKZ21MPBl-ivpCAmXY3Bc3D_D5NXNafn5xNkx-ww_hJQ7gUA/viewform" target="_blank" class="btn-chat-sm">커피챗</a>
+            <a href="https://slashpage.com/team-dor/y9e1xp2xxwxj627k35vz" target="_blank" class="btn-detail">자세히 보기 →</a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfD_9UczvFlanzBvd6n0eYbbHTZd8p0CTKkskGZT2F0on6kfw/viewform?pli=1" target="_blank" class="btn-chat-sm">지원하기</a>
           </div>
         </div>
 
-        <div class="job-card" data-squad="creator" data-type="product">
+        <div class="job-card" data-squad="creator" data-type="engineering">
           <div class="job-card-top">
             <div>
               <span class="squad-badge squad-badge--creator">Creator Squad</span>
               <span class="job-type">Full-time</span>
-              <h3 class="job-title">Product Owner</h3>
+              <h3 class="job-title">Frontend Engineer</h3>
             </div>
-            <span class="job-exp">2y+</span>
+            <span class="job-exp">3y+</span>
           </div>
           <div class="job-tags">
-            <span class="tag">Product Planning</span>
-            <span class="tag">Growth Hacking</span>
-            <span class="tag">Analytics</span>
+            <span class="tag">React</span>
+            <span class="tag">TypeScript</span>
+            <span class="tag">Electron</span>
+            <span class="tag">Next.js</span>
           </div>
           <div class="job-locations">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
             San Francisco · Seoul
           </div>
           <div class="job-card-cta">
-            <a href="job-po.html" class="btn-detail">자세히 보기 →</a>
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLScKZ21MPBl-ivpCAmXY3Bc3D_D5NXNafn5xNkx-ww_hJQ7gUA/viewform" target="_blank" class="btn-chat-sm">커피챗</a>
+            <a href="https://slashpage.com/team-dor/ndvwx728n6nj923z6jpg" target="_blank" class="btn-detail">자세히 보기 →</a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfD_9UczvFlanzBvd6n0eYbbHTZd8p0CTKkskGZT2F0on6kfw/viewform?pli=1" target="_blank" class="btn-chat-sm">지원하기</a>
+          </div>
+        </div>
+
+        <div class="job-card" data-squad="creator" data-type="engineering">
+          <div class="job-card-top">
+            <div>
+              <span class="squad-badge squad-badge--creator">Creator Squad</span>
+              <span class="job-type">Full-time</span>
+              <h3 class="job-title">Software Engineer</h3>
+            </div>
+            <span class="job-exp">2y+</span>
+          </div>
+          <div class="job-tags">
+            <span class="tag">Python</span>
+            <span class="tag">TypeScript</span>
+            <span class="tag">Windows App</span>
+            <span class="tag">Computer Vision</span>
+          </div>
+          <div class="job-locations">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            San Francisco · Seoul
+          </div>
+          <div class="job-card-cta">
+            <a href="https://slashpage.com/team-dor/3p4kj92y535rz257q1x8" target="_blank" class="btn-detail">자세히 보기 →</a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfD_9UczvFlanzBvd6n0eYbbHTZd8p0CTKkskGZT2F0on6kfw/viewform?pli=1" target="_blank" class="btn-chat-sm">지원하기</a>
+          </div>
+        </div>
+
+        <div class="job-card" data-squad="creator" data-type="engineering">
+          <div class="job-card-top">
+            <div>
+              <span class="squad-badge squad-badge--creator">Creator Squad</span>
+              <span class="job-type">Full-time</span>
+              <h3 class="job-title">AI/ML Engineer</h3>
+            </div>
+            <span class="job-exp">3y+</span>
+          </div>
+          <div class="job-tags">
+            <span class="tag">Python</span>
+            <span class="tag">PyTorch</span>
+            <span class="tag">Computer Vision</span>
+            <span class="tag">LLM</span>
+          </div>
+          <div class="job-locations">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            San Francisco · Seoul
+          </div>
+          <div class="job-card-cta">
+            <a href="https://slashpage.com/team-dor/7916x82rqjqgnm4kpyg3" target="_blank" class="btn-detail">자세히 보기 →</a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfD_9UczvFlanzBvd6n0eYbbHTZd8p0CTKkskGZT2F0on6kfw/viewform?pli=1" target="_blank" class="btn-chat-sm">지원하기</a>
           </div>
         </div>
 
@@ -116,10 +196,10 @@
           <div class="job-card-top">
             <div>
               <span class="squad-badge squad-badge--creator">Creator Squad</span>
-              <span class="job-type">Contract</span>
+              <span class="job-type">계약직</span>
               <h3 class="job-title">Motion Designer</h3>
             </div>
-            <span class="job-exp">All levels</span>
+            <span class="job-exp">무관</span>
           </div>
           <div class="job-tags">
             <span class="tag">After Effects</span>
@@ -128,11 +208,36 @@
           </div>
           <div class="job-locations">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            Remote · Seoul
+            서울
           </div>
           <div class="job-card-cta">
-            <a href="job-motion.html" class="btn-detail">자세히 보기 →</a>
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLScKZ21MPBl-ivpCAmXY3Bc3D_D5NXNafn5xNkx-ww_hJQ7gUA/viewform" target="_blank" class="btn-chat-sm">커피챗</a>
+            <a href="https://slashpage.com/team-dor/7vgjr4m15z58emdwpy86" target="_blank" class="btn-detail">자세히 보기 →</a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfD_9UczvFlanzBvd6n0eYbbHTZd8p0CTKkskGZT2F0on6kfw/viewform?pli=1" target="_blank" class="btn-chat-sm">지원하기</a>
+          </div>
+        </div>
+
+        <div class="job-card" data-squad="creator" data-type="engineering">
+          <div class="job-card-top">
+            <div>
+              <span class="squad-badge squad-badge--creator">Creator Squad</span>
+              <span class="job-type">Full-time</span>
+              <h3 class="job-title">Data Analyst</h3>
+            </div>
+            <span class="job-exp">3y+</span>
+          </div>
+          <div class="job-tags">
+            <span class="tag">SQL</span>
+            <span class="tag">Python</span>
+            <span class="tag">Data Visualization</span>
+            <span class="tag">A/B Testing</span>
+          </div>
+          <div class="job-locations">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            San Francisco · Seoul
+          </div>
+          <div class="job-card-cta">
+            <a href="https://slashpage.com/team-dor/5r398nmng5g362vwje7y" target="_blank" class="btn-detail">자세히 보기 →</a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfD_9UczvFlanzBvd6n0eYbbHTZd8p0CTKkskGZT2F0on6kfw/viewform?pli=1" target="_blank" class="btn-chat-sm">지원하기</a>
           </div>
         </div>
 
@@ -146,6 +251,30 @@
         <span class="squad-section-count">피드 · 프로필 · 반응 · 커뮤니티 경험</span>
       </div>
       <div class="jobs-grid">
+
+        <div class="job-card" data-squad="community" data-type="product">
+          <div class="job-card-top">
+            <div>
+              <span class="squad-badge squad-badge--community">Community Squad</span>
+              <span class="job-type">Full-time</span>
+              <h3 class="job-title">PO — Community</h3>
+            </div>
+            <span class="job-exp">3y+</span>
+          </div>
+          <div class="job-tags">
+            <span class="tag">Product Planning</span>
+            <span class="tag">Social UX</span>
+            <span class="tag">Analytics</span>
+          </div>
+          <div class="job-locations">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            San Francisco · Seoul
+          </div>
+          <div class="job-card-cta">
+            <a href="https://slashpage.com/team-dor/7916x82rqjqgnm4kpyg3" target="_blank" class="btn-detail">자세히 보기 →</a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfD_9UczvFlanzBvd6n0eYbbHTZd8p0CTKkskGZT2F0on6kfw/viewform?pli=1" target="_blank" class="btn-chat-sm">지원하기</a>
+          </div>
+        </div>
 
         <div class="job-card" data-squad="community" data-type="design">
           <div class="job-card-top">
@@ -166,32 +295,83 @@
             San Francisco · Seoul
           </div>
           <div class="job-card-cta">
-            <a href="job-designer-community.html" class="btn-detail">자세히 보기 →</a>
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLScKZ21MPBl-ivpCAmXY3Bc3D_D5NXNafn5xNkx-ww_hJQ7gUA/viewform" target="_blank" class="btn-chat-sm">커피챗</a>
+            <a href="https://slashpage.com/team-dor/y9e1xp2xxwxj627k35vz" target="_blank" class="btn-detail">자세히 보기 →</a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfD_9UczvFlanzBvd6n0eYbbHTZd8p0CTKkskGZT2F0on6kfw/viewform?pli=1" target="_blank" class="btn-chat-sm">지원하기</a>
           </div>
         </div>
 
-        <div class="job-card" data-squad="community" data-type="product">
+        <div class="job-card" data-squad="community" data-type="engineering">
           <div class="job-card-top">
             <div>
               <span class="squad-badge squad-badge--community">Community Squad</span>
               <span class="job-type">Full-time</span>
-              <h3 class="job-title">Product Owner</h3>
+              <h3 class="job-title">Frontend Engineer</h3>
             </div>
-            <span class="job-exp">2y+</span>
+            <span class="job-exp">3y+</span>
           </div>
           <div class="job-tags">
-            <span class="tag">Product Planning</span>
-            <span class="tag">Community Growth</span>
-            <span class="tag">Analytics</span>
+            <span class="tag">React Native</span>
+            <span class="tag">TypeScript</span>
+            <span class="tag">iOS</span>
+            <span class="tag">Android</span>
           </div>
           <div class="job-locations">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
             San Francisco · Seoul
           </div>
           <div class="job-card-cta">
-            <a href="job-po-community.html" class="btn-detail">자세히 보기 →</a>
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLScKZ21MPBl-ivpCAmXY3Bc3D_D5NXNafn5xNkx-ww_hJQ7gUA/viewform" target="_blank" class="btn-chat-sm">커피챗</a>
+            <a href="https://slashpage.com/team-dor/ndvwx728n6nj923z6jpg" target="_blank" class="btn-detail">자세히 보기 →</a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfD_9UczvFlanzBvd6n0eYbbHTZd8p0CTKkskGZT2F0on6kfw/viewform?pli=1" target="_blank" class="btn-chat-sm">지원하기</a>
+          </div>
+        </div>
+
+        <div class="job-card" data-squad="community" data-type="engineering">
+          <div class="job-card-top">
+            <div>
+              <span class="squad-badge squad-badge--community">Community Squad</span>
+              <span class="job-type">Full-time</span>
+              <h3 class="job-title">Backend Engineer</h3>
+            </div>
+            <span class="job-exp">3y+</span>
+          </div>
+          <div class="job-tags">
+            <span class="tag">Node.js</span>
+            <span class="tag">Go</span>
+            <span class="tag">AWS</span>
+            <span class="tag">GraphQL</span>
+          </div>
+          <div class="job-locations">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            San Francisco · Seoul
+          </div>
+          <div class="job-card-cta">
+            <a href="https://slashpage.com/team-dor/7916x82rqjqgnm4kpyg3" target="_blank" class="btn-detail">자세히 보기 →</a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfD_9UczvFlanzBvd6n0eYbbHTZd8p0CTKkskGZT2F0on6kfw/viewform?pli=1" target="_blank" class="btn-chat-sm">지원하기</a>
+          </div>
+        </div>
+
+        <div class="job-card" data-squad="community" data-type="operations">
+          <div class="job-card-top">
+            <div>
+              <span class="squad-badge squad-badge--community">Community Squad</span>
+              <span class="job-type">Full-time</span>
+              <h3 class="job-title">Community Manager</h3>
+            </div>
+            <span class="job-exp">1y+</span>
+          </div>
+          <div class="job-tags">
+            <span class="tag">Discord</span>
+            <span class="tag">커뮤니티</span>
+            <span class="tag">SNS</span>
+            <span class="tag">게임</span>
+          </div>
+          <div class="job-locations">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            서울
+          </div>
+          <div class="job-card-cta">
+            <a href="https://slashpage.com/team-dor/7916x82rqjqgnm4kpyg3" target="_blank" class="btn-detail">자세히 보기 →</a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfD_9UczvFlanzBvd6n0eYbbHTZd8p0CTKkskGZT2F0on6kfw/viewform?pli=1" target="_blank" class="btn-chat-sm">지원하기</a>
           </div>
         </div>
 
@@ -202,7 +382,7 @@
               <span class="job-type">Full-time</span>
               <h3 class="job-title">Data Analyst</h3>
             </div>
-            <span class="job-exp">3y+</span>
+            <span class="job-exp">2y+</span>
           </div>
           <div class="job-tags">
             <span class="tag">SQL</span>
@@ -215,81 +395,50 @@
             San Francisco · Seoul
           </div>
           <div class="job-card-cta">
-            <a href="job-data.html" class="btn-detail">자세히 보기 →</a>
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLScKZ21MPBl-ivpCAmXY3Bc3D_D5NXNafn5xNkx-ww_hJQ7gUA/viewform" target="_blank" class="btn-chat-sm">커피챗</a>
-          </div>
-        </div>
-
-        <div class="job-card" data-squad="community" data-type="operations">
-          <div class="job-card-top">
-            <div>
-              <span class="squad-badge squad-badge--community">Community Squad</span>
-              <span class="job-type">Internship</span>
-              <h3 class="job-title">Growth Operator</h3>
-            </div>
-            <span class="job-exp">All levels</span>
-          </div>
-          <div class="job-tags">
-            <span class="tag">Community</span>
-            <span class="tag">Growth</span>
-            <span class="tag">Discord</span>
-          </div>
-          <div class="job-locations">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            Remote · Seoul
-          </div>
-          <div class="job-card-cta">
-            <a href="job-operator.html" class="btn-detail">자세히 보기 →</a>
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLScKZ21MPBl-ivpCAmXY3Bc3D_D5NXNafn5xNkx-ww_hJQ7gUA/viewform" target="_blank" class="btn-chat-sm">커피챗</a>
+            <a href="https://slashpage.com/team-dor/5r398nmng5g362vwje7y" target="_blank" class="btn-detail">자세히 보기 →</a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfD_9UczvFlanzBvd6n0eYbbHTZd8p0CTKkskGZT2F0on6kfw/viewform?pli=1" target="_blank" class="btn-chat-sm">지원하기</a>
           </div>
         </div>
 
       </div>
     </div>
 
-    <!-- CROSS-SQUAD (両方) -->
-    <div class="squad-section" id="crossSection">
+    <!-- GROWTH SQUAD -->
+    <div class="squad-section" id="growthSection">
       <div class="squad-section-header">
-        <span class="squad-section-title">Creator & Community</span>
-        <span class="squad-section-count">두 스쿼드 공통 채용 — 합류 후 배정</span>
+        <span class="squad-section-title">Growth Squad</span>
+        <span class="squad-section-count">신규 유입 · 온보딩 · 리텐션 · 파트너십</span>
       </div>
       <div class="jobs-grid">
 
-        <div class="job-card" data-squad="both" data-type="engineering">
+        <div class="job-card" data-squad="growth" data-type="product">
           <div class="job-card-top">
             <div>
-              <div style="display: flex; gap: 6px; margin-bottom: 8px;">
-                <span class="squad-badge squad-badge--creator">Creator</span>
-                <span class="squad-badge squad-badge--community">Community</span>
-              </div>
+              <span class="squad-badge squad-badge--growth">Growth Squad</span>
               <span class="job-type">Full-time</span>
-              <h3 class="job-title">Frontend Developer</h3>
+              <h3 class="job-title">PO — Growth</h3>
             </div>
             <span class="job-exp">3y+</span>
           </div>
           <div class="job-tags">
-            <span class="tag">React</span>
-            <span class="tag">TypeScript</span>
-            <span class="tag">Electron</span>
-            <span class="tag">Next.js</span>
+            <span class="tag">Product Planning</span>
+            <span class="tag">Growth Hacking</span>
+            <span class="tag">Analytics</span>
           </div>
           <div class="job-locations">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
             San Francisco · Seoul
           </div>
           <div class="job-card-cta">
-            <a href="job-frontend.html" class="btn-detail">자세히 보기 →</a>
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLScKZ21MPBl-ivpCAmXY3Bc3D_D5NXNafn5xNkx-ww_hJQ7gUA/viewform" target="_blank" class="btn-chat-sm">커피챗</a>
+            <a href="https://slashpage.com/team-dor/7916x82rqjqgnm4kpyg3" target="_blank" class="btn-detail">자세히 보기 →</a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfD_9UczvFlanzBvd6n0eYbbHTZd8p0CTKkskGZT2F0on6kfw/viewform?pli=1" target="_blank" class="btn-chat-sm">지원하기</a>
           </div>
         </div>
 
-        <div class="job-card" data-squad="both" data-type="engineering">
+        <div class="job-card" data-squad="growth" data-type="engineering">
           <div class="job-card-top">
             <div>
-              <div style="display: flex; gap: 6px; margin-bottom: 8px;">
-                <span class="squad-badge squad-badge--creator">Creator</span>
-                <span class="squad-badge squad-badge--community">Community</span>
-              </div>
+              <span class="squad-badge squad-badge--growth">Growth Squad</span>
               <span class="job-type">Full-time</span>
               <h3 class="job-title">Software Engineer</h3>
             </div>
@@ -298,16 +447,127 @@
           <div class="job-tags">
             <span class="tag">Python</span>
             <span class="tag">TypeScript</span>
-            <span class="tag">Windows App</span>
-            <span class="tag">Computer Vision</span>
+            <span class="tag">Automation</span>
+            <span class="tag">Data Pipeline</span>
           </div>
           <div class="job-locations">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
             San Francisco · Seoul
           </div>
           <div class="job-card-cta">
-            <a href="job-engineer.html" class="btn-detail">자세히 보기 →</a>
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLScKZ21MPBl-ivpCAmXY3Bc3D_D5NXNafn5xNkx-ww_hJQ7gUA/viewform" target="_blank" class="btn-chat-sm">커피챗</a>
+            <a href="https://slashpage.com/team-dor/3p4kj92y535rz257q1x8" target="_blank" class="btn-detail">자세히 보기 →</a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfD_9UczvFlanzBvd6n0eYbbHTZd8p0CTKkskGZT2F0on6kfw/viewform?pli=1" target="_blank" class="btn-chat-sm">지원하기</a>
+          </div>
+        </div>
+
+        <div class="job-card" data-squad="growth" data-type="internship">
+          <div class="job-card-top">
+            <div>
+              <span class="squad-badge squad-badge--growth">Growth Squad</span>
+              <span class="job-type">인턴십</span>
+              <h3 class="job-title">Growth Operator</h3>
+            </div>
+            <span class="job-exp">무관</span>
+          </div>
+          <div class="job-tags">
+            <span class="tag">커뮤니티</span>
+            <span class="tag">바이럴 마케팅</span>
+            <span class="tag">콘텐츠</span>
+            <span class="tag">Discord</span>
+          </div>
+          <div class="job-locations">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            서울
+          </div>
+          <div class="job-card-cta">
+            <a href="https://slashpage.com/team-dor/36nj8v2wd1d63m5ykq9z" target="_blank" class="btn-detail">자세히 보기 →</a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfD_9UczvFlanzBvd6n0eYbbHTZd8p0CTKkskGZT2F0on6kfw/viewform?pli=1" target="_blank" class="btn-chat-sm">지원하기</a>
+          </div>
+        </div>
+
+        <div class="job-card" data-squad="growth" data-type="operations">
+          <div class="job-card-top">
+            <div>
+              <span class="squad-badge squad-badge--growth">Growth Squad</span>
+              <span class="job-type">계약직</span>
+              <h3 class="job-title">Contents Marketer</h3>
+            </div>
+            <span class="job-exp">무관</span>
+          </div>
+          <div class="job-tags">
+            <span class="tag">콘텐츠 기획</span>
+            <span class="tag">SNS</span>
+            <span class="tag">게이밍</span>
+            <span class="tag">영상</span>
+          </div>
+          <div class="job-locations">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            서울
+          </div>
+          <div class="job-card-cta">
+            <a href="https://slashpage.com/team-dor/7916x82rqjqgnm4kpyg3" target="_blank" class="btn-detail">자세히 보기 →</a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfD_9UczvFlanzBvd6n0eYbbHTZd8p0CTKkskGZT2F0on6kfw/viewform?pli=1" target="_blank" class="btn-chat-sm">지원하기</a>
+          </div>
+        </div>
+
+        <div class="job-card" data-squad="growth" data-type="engineering">
+          <div class="job-card-top">
+            <div>
+              <span class="squad-badge squad-badge--growth">Growth Squad</span>
+              <span class="job-type">Full-time</span>
+              <h3 class="job-title">Data Analyst</h3>
+            </div>
+            <span class="job-exp">2y+</span>
+          </div>
+          <div class="job-tags">
+            <span class="tag">SQL</span>
+            <span class="tag">Python</span>
+            <span class="tag">Growth Analytics</span>
+            <span class="tag">리텐션</span>
+          </div>
+          <div class="job-locations">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            San Francisco · Seoul
+          </div>
+          <div class="job-card-cta">
+            <a href="https://slashpage.com/team-dor/5r398nmng5g362vwje7y" target="_blank" class="btn-detail">자세히 보기 →</a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfD_9UczvFlanzBvd6n0eYbbHTZd8p0CTKkskGZT2F0on6kfw/viewform?pli=1" target="_blank" class="btn-chat-sm">지원하기</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- INTERNSHIP -->
+    <div class="squad-section" id="internshipSection">
+      <div class="squad-section-header">
+        <span class="squad-section-title">인턴십</span>
+        <span class="squad-section-count">대표 직속 · 전략 · 운영</span>
+      </div>
+      <div class="jobs-grid">
+
+        <div class="job-card" data-squad="internship" data-type="internship">
+          <div class="job-card-top">
+            <div>
+              <span class="squad-badge squad-badge--internship">인턴십</span>
+              <span class="job-type">인턴십</span>
+              <h3 class="job-title">CEO Staff</h3>
+            </div>
+            <span class="job-exp">무관</span>
+          </div>
+          <div class="job-tags">
+            <span class="tag">리서치</span>
+            <span class="tag">전략</span>
+            <span class="tag">운영</span>
+            <span class="tag">의전</span>
+          </div>
+          <div class="job-locations">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            서울
+          </div>
+          <div class="job-card-cta">
+            <a href="https://slashpage.com/team-dor/7916x82rqjqgnm4kpyg3" target="_blank" class="btn-detail">자세히 보기 →</a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfD_9UczvFlanzBvd6n0eYbbHTZd8p0CTKkskGZT2F0on6kfw/viewform?pli=1" target="_blank" class="btn-chat-sm">지원하기</a>
           </div>
         </div>
 
@@ -318,7 +578,18 @@
 
   <footer class="footer">
     <img src="logo.svg" alt="DOR" class="footer-logo-img" />
-    <span class="footer-copy">© 2024 Team DOR. All rights reserved.</span>
+    <div class="footer-links">
+      <a href="mailto:career@dor.gg" class="footer-icon-btn" title="이메일">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
+      </a>
+      <a href="https://kr.linkedin.com/company/dorcorp" target="_blank" class="footer-icon-btn" title="LinkedIn">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+      </a>
+      <a href="https://dor.gg" target="_blank" class="footer-icon-btn" title="dor.gg">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+      </a>
+    </div>
+    <span class="footer-copy">© 2026 DOR Corporation. All rights reserved.</span>
   </footer>
 
   <script src="main.js"></script>

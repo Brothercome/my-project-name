@@ -1,7 +1,22 @@
 {
   "permissions": {
     "allow": [
-      "WebFetch(domain:slashpage.com)"
+      "WebFetch(domain:slashpage.com)",
+      "WebFetch(domain:discord.com)",
+      "WebFetch(domain:about.instagram.com)",
+      "WebFetch(domain:careers.tiktok.com)",
+      "Bash(for f:*)",
+      "Bash(do)",
+      "Bash(sed -i 's|class=\"\"nav-link\"\">Home</a>|class=\"\"nav-link\"\">홈</a>|g;:*)",
+      "Bash(echo \"Updated: $f\")",
+      "Bash(done)",
+      "Bash(sed -i 's|class=\"\"btn-coffechat\"\">커피챗 신청</a>|class=\"\"btn-coffechat\"\">커피챗 신청</a>\\\\n      <a href=\"\"index-en.html\"\" class=\"\"btn-lang\"\">ENG</a>|g' \"$f\")",
+      "Bash(sed -i 's|class=\"\"mobile-link highlight\"\">커피챗 신청</a>|class=\"\"mobile-link highlight\"\">커피챗 신청</a>\\\\n    <a href=\"\"index-en.html\"\" class=\"\"mobile-link\"\">ENG</a>|g' \"$f\")",
+      "WebFetch(domain:bass.vc)",
+      "Bash(curl -s \"https://upload.cafenono.com/image/logo/20250210/174757_rGu23PMbpPvnf5gCNu\" -o \"/c/Users/User/Desktop/MyProject/logo/basslogo.svg\")",
+      "Bash(sed -i 's/© 2024 Team DOR\\\\. All rights reserved\\\\./© 2026 DOR Corporation. All rights reserved./g' *.html)",
+      "Bash(sed -i 's/© 2024 Team DOR/© 2026 DOR Corporation/g' *.html)",
+      "Bash(ls:*)"
     ]
   }
 }

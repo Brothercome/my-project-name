@@ -13,41 +13,57 @@ if (hamburger && mobileMenu) {
   });
 }
 
-// ----- Positions: dual filter (squad + type) -----
-const squadFilter = document.getElementById('squadFilter');
-const typeFilter  = document.getElementById('typeFilter');
-const jobCards    = document.querySelectorAll('.job-card');
+// ----- Positions: squad (section-level) + type (card-level) filter -----
+const squadFilter     = document.getElementById('squadFilter');
+const typeFilter      = document.getElementById('typeFilter');
+const jobCards        = document.querySelectorAll('.job-card');
 const creatorSection   = document.getElementById('creatorSection');
 const communitySection = document.getElementById('communitySection');
-const crossSection     = document.getElementById('crossSection');
+const growthSection    = document.getElementById('growthSection');
+const internshipSection = document.getElementById('internshipSection');
+
+const allSections = [creatorSection, communitySection, growthSection, internshipSection];
+const sectionSquadMap = {
+  creator: creatorSection,
+  community: communitySection,
+  growth: growthSection,
+  internship: internshipSection,
+};
 
 if (squadFilter && typeFilter) {
   let activeSquad = 'all';
   let activeType  = 'all';
 
   function applyFilters() {
-    jobCards.forEach(card => {
-      const cardSquad = card.dataset.squad; // 'creator' | 'community' | 'both'
-      const cardType  = card.dataset.type;
-
-      const squadMatch =
-        activeSquad === 'all' ||
-        cardSquad   === activeSquad ||
-        cardSquad   === 'both';
-
-      const typeMatch =
-        activeType === 'all' ||
-        cardType   === activeType;
-
-      card.classList.toggle('hidden', !(squadMatch && typeMatch));
+    // Squad filter: section-level visibility
+    allSections.forEach(section => {
+      if (!section) return;
+      if (activeSquad === 'all') {
+        section.style.display = '';
+      } else {
+        section.style.display = (sectionSquadMap[activeSquad] === section) ? '' : 'none';
+      }
     });
 
-    // Section visibility: hide section header if all cards inside are hidden
-    [creatorSection, communitySection, crossSection].forEach(section => {
-      if (!section) return;
+    // Type filter: card-level within visible sections
+    jobCards.forEach(card => {
+      const typeMatch = activeType === 'all' || card.dataset.type === activeType;
+      // Make filtered-in cards immediately visible (no fade-in delay)
+      if (typeMatch) {
+        card.classList.remove('hidden');
+        card.style.opacity = '1';
+        card.style.transform = 'translateY(0)';
+      } else {
+        card.classList.add('hidden');
+      }
+    });
+
+    // Hide sections where all cards are hidden by type filter
+    allSections.forEach(section => {
+      if (!section || section.style.display === 'none') return;
       const cards = section.querySelectorAll('.job-card');
       const anyVisible = [...cards].some(c => !c.classList.contains('hidden'));
-      section.style.display = anyVisible ? '' : 'none';
+      if (!anyVisible) section.style.display = 'none';
     });
   }
 
@@ -85,10 +101,33 @@ const observer = new IntersectionObserver(
 );
 
 document.querySelectorAll(
-  '.job-card, .stat-card, .perk-item, .step, .value-card, .referral-step, .sidebar-card, .advantage-card'
+  '.job-card, .stat-card, .perk-item, .step, .value-card, .referral-step, .sidebar-card, .advantage-card, .value-item'
 ).forEach(el => {
   el.style.opacity = '0';
   el.style.transform = 'translateY(14px)';
   el.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
   observer.observe(el);
 });
+
+// ----- JS Marquee (replaces CSS animation to prevent reset flash) -----
+const marqueeTrack = document.querySelector('.investors-track');
+if (marqueeTrack) {
+  // Remove any CSS animation
+  marqueeTrack.style.animation = 'none';
+  let pos = 0;
+  let halfWidth = 0;
+
+  function updateHalfWidth() {
+    halfWidth = marqueeTrack.scrollWidth / 2;
+  }
+  updateHalfWidth();
+  window.addEventListener('resize', updateHalfWidth);
+
+  function tickMarquee() {
+    pos -= 0.28;
+    if (halfWidth > 0 && Math.abs(pos) >= halfWidth) pos = 0;
+    marqueeTrack.style.transform = `translate3d(${pos}px, 0, 0)`;
+    requestAnimationFrame(tickMarquee);
+  }
+  requestAnimationFrame(tickMarquee);
+}

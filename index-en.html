@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Team DOR — Careers</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ===== Home-only styles ===== */
+
+    .hero-meta {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 24px;
+      margin-bottom: 64px;
+    }
+    .hero-meta-item {
+      font-size: 13px;
+      color: var(--gray-300);
+      font-weight: 500;
+    }
+    .hero-meta-sep {
+      font-size: 13px;
+      color: var(--gray-600);
+    }
+
+    /* Why DOR */
+    .why-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: start;
+    }
+    .why-eyebrow {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gray-400);
+      margin-bottom: 20px;
+    }
+    .why-lead {
+      font-size: clamp(22px, 3vw, 30px);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1.3;
+      margin-bottom: 24px;
+    }
+    .why-body {
+      font-size: 15px;
+      color: var(--gray-300);
+      line-height: 1.85;
+    }
+    .why-callout {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-top: 40px;
+    }
+    .why-callout-card {
+      padding: 22px 26px;
+      background: var(--glass-bg);
+      backdrop-filter: var(--glass-blur);
+      -webkit-backdrop-filter: var(--glass-blur);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-md);
+      box-shadow: var(--glass-shadow);
+    }
+    .why-callout-label {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--gray-300);
+      margin-bottom: 8px;
+    }
+    .why-callout-text {
+      font-size: 14px;
+      color: var(--gray-200);
+      line-height: 1.7;
+    }
+
+    /* What we build */
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    .pillar-card {
+      background: var(--glass-bg);
+      backdrop-filter: var(--glass-blur);
+      -webkit-backdrop-filter: var(--glass-blur);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-md);
+      box-shadow: var(--glass-shadow);
+      padding: 36px 32px;
+      transition: background var(--t), border-color var(--t), box-shadow var(--t);
+    }
+    .pillar-card:hover {
+      background: var(--glass-bg-hover);
+      border-color: var(--glass-border-hover);
+      box-shadow: var(--glass-shadow-hover);
+    }
+    .pillar-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gray-400);
+      margin-bottom: 18px;
+    }
+    .pillar-title {
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      line-height: 1.3;
+      margin-bottom: 14px;
+    }
+    .pillar-desc {
+      font-size: 14px;
+      color: var(--gray-400);
+      line-height: 1.75;
+      margin-bottom: 20px;
+    }
+    .pillar-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+    .pillar-tag {
+      font-size: 12px;
+      color: var(--gray-400);
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      padding: 3px 10px;
+      border-radius: 6px;
+    }
+
+    /* How we work */
+    .how-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: start;
+    }
+    .how-body {
+      font-size: 15px;
+      color: var(--gray-300);
+      line-height: 1.85;
+    }
+    .how-keywords {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .how-keyword {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 15px 20px;
+      background: var(--glass-bg);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-sm);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.06);
+    }
+    .how-keyword-dot {
+      width: 6px; height: 6px;
+      background: var(--gray-400);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .how-keyword-text { font-size: 14px; font-weight: 600; color: var(--gray-200); }
+
+    /* Squad overview */
+    .squad-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    .squad-card {
+      background: var(--glass-bg);
+      backdrop-filter: var(--glass-blur);
+      -webkit-backdrop-filter: var(--glass-blur);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-md);
+      box-shadow: var(--glass-shadow);
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      transition: background var(--t), border-color var(--t), box-shadow var(--t);
+    }
+    .squad-card:hover {
+      background: var(--glass-bg-hover);
+      border-color: var(--glass-border-hover);
+      box-shadow: var(--glass-shadow-hover);
+    }
+    .squad-badge {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 100px;
+      margin-bottom: 20px;
+      align-self: flex-start;
+    }
+    .squad-badge--creator {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.16);
+      color: var(--white);
+    }
+    .squad-badge--community {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.13);
+      color: var(--gray-200);
+    }
+    .squad-badge--growth {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.09);
+      color: var(--gray-300);
+    }
+    .squad-title { font-size: 19px; font-weight: 800; letter-spacing: -0.01em; margin-bottom: 12px; }
+    .squad-mission { font-size: 14px; color: var(--gray-400); line-height: 1.72; margin-bottom: 18px; }
+    .squad-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+    .squad-tag {
+      font-size: 12px;
+      color: var(--gray-500);
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.07);
+      padding: 3px 9px;
+      border-radius: 6px;
+    }
+    .squad-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--gray-400);
+      text-decoration: none;
+      margin-top: auto;
+      padding-top: 20px;
+      transition: color var(--t);
+    }
+    .squad-link:hover { color: var(--white); }
+
+    /* Who fits */
+    .fit-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .fit-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 20px 24px;
+      background: var(--glass-bg);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-sm);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.06);
+    }
+    .fit-num {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--gray-400);
+      flex-shrink: 0;
+      padding-top: 2px;
+      min-width: 20px;
+    }
+    .fit-text { font-size: 14px; color: var(--gray-200); line-height: 1.65; }
+    .fit-text strong { color: var(--white); font-weight: 700; }
+
+    /* Process */
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+    .process-note {
+      margin-top: 28px;
+      font-size: 13px;
+      color: var(--gray-500);
+    }
+
+    /* Founder */
+    .founder-card {
+      background: var(--glass-bg);
+      backdrop-filter: var(--glass-blur);
+      -webkit-backdrop-filter: var(--glass-blur);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--glass-shadow);
+      padding: 56px 64px;
+      position: relative;
+      overflow: hidden;
+    }
+    .founder-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+    }
+    .founder-quote-mark {
+      font-size: 96px;
+      line-height: 1;
+      color: var(--white);
+      opacity: 0.08;
+      font-family: Georgia, serif;
+      position: absolute;
+      top: 28px;
+      left: 52px;
+      pointer-events: none;
+    }
+    .founder-text {
+      font-size: clamp(17px, 2.2vw, 22px);
+      font-weight: 600;
+      line-height: 1.7;
+      letter-spacing: -0.01em;
+      color: var(--gray-100);
+      margin-bottom: 28px;
+      position: relative;
+    }
+    .founder-text em { font-style: normal; color: var(--white); }
+    .founder-sub {
+      font-size: 15px;
+      color: var(--gray-400);
+      line-height: 1.82;
+    }
+    .founder-sig {
+      margin-top: 40px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding-top: 32px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+    .founder-sig-avatar {
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--white);
+      flex-shrink: 0;
+    }
+    .founder-sig-name { font-size: 14px; font-weight: 700; }
+    .founder-sig-role { font-size: 12px; color: var(--gray-400); margin-top: 2px; }
+
+    /* FAQ */
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+    }
+    .faq-item { border-bottom: 1px solid rgba(255,255,255,0.05); }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-q {
+      width: 100%;
+      background: var(--glass-bg);
+      border: none;
+      text-align: left;
+      cursor: pointer;
+      padding: 22px 28px;
+      font-family: var(--font);
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--white);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      transition: background var(--t), color var(--t);
+    }
+    .faq-q:hover { background: var(--glass-bg-hover); }
+    .faq-q.open { color: var(--white); background: var(--glass-bg-hover); }
+    .faq-chevron {
+      flex-shrink: 0;
+      width: 18px; height: 18px;
+      color: var(--gray-500);
+      transition: transform var(--t), color var(--t);
+    }
+    .faq-q.open .faq-chevron { transform: rotate(180deg); color: var(--white); }
+    .faq-a {
+      display: none;
+      padding: 0 28px 22px;
+      font-size: 14px;
+      color: var(--gray-400);
+      line-height: 1.82;
+      background: var(--glass-bg-hover);
+    }
+    .faq-a.open { display: block; }
+
+    /* Final CTA */
+    .final-cta { text-align: center; }
+    .final-cta-title {
+      font-size: clamp(24px, 4vw, 42px);
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+    .final-cta-desc { font-size: 16px; color: var(--gray-400); margin-bottom: 36px; }
+    .final-cta-buttons {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 32px;
+    }
+    .final-cta-links {
+      display: flex;
+      gap: 24px;
+      justify-content: center;
+      flex-wrap: wrap;
+      font-size: 14px;
+    }
+    .final-cta-links a {
+      color: var(--gray-400);
+      text-decoration: none;
+      transition: color var(--t);
+    }
+    .final-cta-links a:hover { color: var(--white); }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .why-grid  { grid-template-columns: 1fr; gap: 40px; }
+      .pillars-grid { grid-template-columns: 1fr; }
+      .how-grid  { grid-template-columns: 1fr; gap: 40px; }
+      .squad-grid { grid-template-columns: 1fr; }
+      .fit-grid  { grid-template-columns: 1fr; }
+      .process-steps { grid-template-columns: repeat(2, 1fr); }
+      .founder-card  { padding: 40px 36px; }
+      .founder-quote-mark { font-size: 72px; top: 20px; left: 28px; }
+    }
+    @media (max-width: 600px) {
+      .process-steps { grid-template-columns: 1fr; }
+      .process-steps .step { border-top: none; border-left: 2px solid rgba(255,255,255,0.08); padding: 0 0 24px 20px; }
+      .final-cta-links { gap: 16px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <a href="index-en.html" class="nav-logo"><img src="logo.svg" alt="DOR" class="nav-logo-img" /></a>
+    <div class="nav-links">
+      <a href="index-en.html" class="nav-link active">Home</a>
+      <a href="positions-en.html" class="nav-link">Positions</a>
+      <a href="values.html" class="nav-link">Core Values</a>
+      <a href="referral.html" class="nav-link">Referral</a>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLScKZ21MPBl-ivpCAmXY3Bc3D_D5NXNafn5xNkx-ww_hJQ7gUA/viewform" target="_blank" class="btn-coffechat">Coffee Chat</a>
+      <a href="index.html" class="btn-lang">한국어</a>
+    </div>
+    <button class="nav-hamburger" id="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index-en.html" class="mobile-link active">Home</a>
+    <a href="positions-en.html" class="mobile-link">Positions</a>
+    <a href="values.html" class="mobile-link">Core Values</a>
+    <a href="referral.html" class="mobile-link">Referral</a>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLScKZ21MPBl-ivpCAmXY3Bc3D_D5NXNafn5xNkx-ww_hJQ7gUA/viewform" target="_blank" class="mobile-link highlight">Coffee Chat</a>
+    <a href="index.html" class="mobile-link">한국어</a>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-badge">Now Hiring</div>
+    <h1 class="hero-title">
+      Helping 3 billion gamers<br />
+      <span class="hero-accent">record, create,</span><br />
+      and share moments
+    </h1>
+    <p class="hero-desc">
+      DOR builds products connecting auto game recording, video creation, and community.<br />
+      We're looking for early team members who directly shape product and growth.
+    </p>
+    <div class="hero-cta">
+      <a href="positions-en.html" class="btn-primary">View Positions</a>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLScKZ21MPBl-ivpCAmXY3Bc3D_D5NXNafn5xNkx-ww_hJQ7gUA/viewform" target="_blank" class="btn-secondary">Coffee Chat</a>
+    </div>
+    <div class="hero-meta">
+      <span class="hero-meta-item">San Francisco · Seoul</span>
+      <span class="hero-meta-sep">·</span>
+      <span class="hero-meta-item">Competitive salary + stock options</span>
+      <span class="hero-meta-sep">·</span>
+      <span class="hero-meta-item">Founder-led hiring</span>
+      <span class="hero-meta-sep">·</span>
+      <span class="hero-meta-item">Fast process</span>
+    </div>
+    <div class="stats-grid">
+      <div class="stat-card">
+        <span class="stat-number">2M</span>
+        <span class="stat-label">Monthly Active Users</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number">200M+</span>
+        <span class="stat-label">Monthly Clips</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number">$0</span>
+        <span class="stat-label">Paid Marketing</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- INVESTORS -->
+  <div class="investors">
+    <div class="investors-label">Backed by</div>
+    <div class="investors-list">
+      <span>Base Ventures</span><span class="dot">·</span>
+      <span>Primer</span><span class="dot">·</span>
+      <span>The Ventures</span><span class="dot">·</span>
+      <span>Goodwater Capital</span><span class="dot">·</span>
+      <span>NVIDIA Inception</span><span class="dot">·</span>
+      <span>D.CAMP</span>
+    </div>
+  </div>
+
+  <!-- WHY DOR -->
+  <div class="section-bg">
+    <div class="section">
+      <div class="why-grid">
+        <div>
+          <div class="why-eyebrow">Why DOR · Why Now</div>
+          <div class="why-lead">This isn't joining<br />an already-built org</div>
+          <p class="why-body">
+            Joining DOR now means helping shape what the product and team become.
+            What we build, how we grow, what culture we have —
+            we're looking for people who want to design that structure together.
+          </p>
+          <p class="why-body" style="margin-top:16px;">
+            DOR is still a small team.
+            One great person changes the product direction, the team's velocity, the company's density.
+          </p>
+        </div>
+        <div>
+          <div class="why-callout">
+            <div class="why-callout-card">
+              <div class="why-callout-label">If you join now</div>
+              <div class="why-callout-text">You'll be directly involved from problem definition through launch, measurement, and iteration.</div>
+            </div>
+            <div class="why-callout-card">
+              <div class="why-callout-label">Because the team is small</div>
+              <div class="why-callout-text">One person has outsized impact, and your work shows up in the product immediately.</div>
+            </div>
+            <div class="why-callout-card">
+              <div class="why-callout-label">Build the structure</div>
+              <div class="why-callout-text">Not a role following a playbook — a role where you write it.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WHAT WE BUILD -->
+  <div class="section">
+    <div class="section-header">
+      <h2 class="section-title">What We Build</h2>
+      <p class="section-sub">DOR connects Record, Create, and Community into one experience</p>
+    </div>
+    <div class="pillars-grid">
+
+      <div class="pillar-card">
+        <div class="pillar-label">01 · Record</div>
+        <div class="pillar-title">Auto-capture<br />important moments</div>
+        <div class="pillar-desc">AI finds the highlights you missed. No need to hit record — meaningful moments are saved automatically as you play.</div>
+        <div class="pillar-tags">
+          <span class="pillar-tag">Auto Recording</span>
+          <span class="pillar-tag">AI Highlights</span>
+          <span class="pillar-tag">Moment Capture</span>
+        </div>
+      </div>
+
+      <div class="pillar-card">
+        <div class="pillar-label">02 · Create</div>
+        <div class="pillar-title">Anyone can make<br />great gaming content</div>
+        <div class="pillar-desc">Create polished game videos without editing experience. AI cuts production time by 90%+.</div>
+        <div class="pillar-tags">
+          <span class="pillar-tag">Video Generation</span>
+          <span class="pillar-tag">AI Editing</span>
+          <span class="pillar-tag">Templates</span>
+        </div>
+      </div>
+
+      <div class="pillar-card">
+        <div class="pillar-label">03 · Community</div>
+        <div class="pillar-title">Turn clips into<br />connections</div>
+        <div class="pillar-desc">Videos get shared, earn reactions, and grow into real relationships. DOR is where gamers' social graphs form.</div>
+        <div class="pillar-tags">
+          <span class="pillar-tag">Feed</span>
+          <span class="pillar-tag">Reactions</span>
+          <span class="pillar-tag">Social Graph</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- HOW WE WORK -->
+  <div class="section-bg">
+    <div class="section">
+      <div class="section-header">
+        <h2 class="section-title">How We Work</h2>
+        <p class="section-sub">The way we work is the same as the way we build</p>
+      </div>
+      <div class="how-grid">
+        <div>
+          <p class="how-body">We build what <strong>customers want</strong>, not what the CEO wants.</p>
+          <p class="how-body" style="margin-top:16px;">DOR runs 1–2 week cycles: form a hypothesis, build, measure, learn, repeat.</p>
+          <p class="how-body" style="margin-top:16px;">Role matters less than problem-solving. Shipping and validating real results beats good ideas on paper.</p>
+        </div>
+        <div class="how-keywords">
+          <div class="how-keyword">
+            <div class="how-keyword-dot"></div>
+            <div class="how-keyword-text">Customer first</div>
+          </div>
+          <div class="how-keyword">
+            <div class="how-keyword-dot"></div>
+            <div class="how-keyword-text">Fast iteration — 1–2 week cycles</div>
+          </div>
+          <div class="how-keyword">
+            <div class="how-keyword-dot"></div>
+            <div class="how-keyword-text">Data + VOC — numbers and user context</div>
+          </div>
+          <div class="how-keyword">
+            <div class="how-keyword-dot"></div>
+            <div class="how-keyword-text">High ownership — define and execute</div>
+          </div>
+          <div class="how-keyword">
+            <div class="how-keyword-dot"></div>
+            <div class="how-keyword-text">Small team, big impact</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SQUAD OVERVIEW -->
+  <div class="section">
+    <div class="section-header">
+      <h2 class="section-title">Squad Overview</h2>
+      <p class="section-sub">DOR structures teams around problems, not functions</p>
+    </div>
+    <div class="squad-grid">
+
+      <div class="squad-card">
+        <div class="squad-badge squad-badge--creator">Creator Squad</div>
+        <div class="squad-title">Make it easier to create</div>
+        <div class="squad-mission">Helps gamers create videos more easily. Owns the full experience from auto recording through editing and sharing.</div>
+        <div class="squad-tags">
+          <span class="squad-tag">Auto Recording</span>
+          <span class="squad-tag">Video Generation</span>
+          <span class="squad-tag">Edit UX</span>
+          <span class="squad-tag">Share</span>
+        </div>
+        <a href="positions-en.html" class="squad-link">View positions →</a>
+      </div>
+
+      <div class="squad-card">
+        <div class="squad-badge squad-badge--community">Community Squad</div>
+        <div class="squad-title">Make them come back</div>
+        <div class="squad-mission">Gets users watching more, reacting, and returning. Owns feed through social graph formation.</div>
+        <div class="squad-tags">
+          <span class="squad-tag">Feed</span>
+          <span class="squad-tag">Profile</span>
+          <span class="squad-tag">Notifications</span>
+          <span class="squad-tag">Social</span>
+        </div>
+        <a href="positions-en.html" class="squad-link">View positions →</a>
+      </div>
+
+      <div class="squad-card">
+        <div class="squad-badge squad-badge--growth">Growth Squad</div>
+        <div class="squad-title">Bring them in, keep them</div>
+        <div class="squad-mission">Gets more users discovering DOR, signing up, and staying. Owns acquisition through onboarding and early retention.</div>
+        <div class="squad-tags">
+          <span class="squad-tag">Acquisition</span>
+          <span class="squad-tag">Onboarding</span>
+          <span class="squad-tag">Retention</span>
+          <span class="squad-tag">Partnerships</span>
+        </div>
+        <a href="positions-en.html" class="squad-link">View positions →</a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- WHO FITS HERE -->
+  <div class="section-bg">
+    <div class="section">
+      <div class="section-header">
+        <h2 class="section-title">Who Fits Here</h2>
+        <p class="section-sub">You'll thrive at DOR if you are</p>
+      </div>
+      <div class="fit-grid">
+        <div class="fit-item">
+          <div class="fit-num">01</div>
+          <div class="fit-text">Someone who <strong>finds problems first</strong> rather than waiting for them to be assigned</div>
+        </div>
+        <div class="fit-item">
+          <div class="fit-num">02</div>
+          <div class="fit-text">Someone who <strong>ships results</strong> rather than writes docs</div>
+        </div>
+        <div class="fit-item">
+          <div class="fit-num">03</div>
+          <div class="fit-text">Someone who <strong>prefers fast execution and learning</strong> over perfect plans</div>
+        </div>
+        <div class="fit-item">
+          <div class="fit-num">04</div>
+          <div class="fit-text">Someone who reads <strong>the emotion and context behind the numbers</strong></div>
+        </div>
+        <div class="fit-item">
+          <div class="fit-num">05</div>
+          <div class="fit-text">Someone who thinks about <strong>product and growth problems</strong>, not just implementation</div>
+        </div>
+        <div class="fit-item">
+          <div class="fit-num">06</div>
+          <div class="fit-text">Someone who wants to work with <strong>high ownership at an early-stage team</strong></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HIRING PROCESS -->
+  <div class="section">
+    <div class="section-header">
+      <h2 class="section-title">Hiring Process</h2>
+      <p class="section-sub">Fast and clear</p>
+    </div>
+    <div class="process-steps">
+      <div class="step">
+        <div class="step-num">01</div>
+        <div class="step-title">Application</div>
+        <div class="step-desc">Apply via career@dor.gg or the coffee chat form</div>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <div class="step-title">Culture &amp; Role Interview</div>
+        <div class="step-desc">Values and ways of working with the team</div>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <div class="step-title">Assignment or Deep Dive</div>
+        <div class="step-desc">If needed · includes reference check</div>
+      </div>
+      <div class="step">
+        <div class="step-num">04</div>
+        <div class="step-title">Offer</div>
+        <div class="step-desc">Salary and stock option negotiation, then welcome aboard</div>
+      </div>
+    </div>
+    <p class="process-note">During our focused hiring period we move as fast as possible.</p>
+  </div>
+
+  <!-- FOUNDER MESSAGE -->
+  <div class="section-bg">
+    <div class="section">
+      <div class="section-header">
+        <h2 class="section-title">A Message from Our Founder</h2>
+      </div>
+      <div class="founder-card">
+        <div class="founder-quote-mark">"</div>
+        <p class="founder-text">
+          DOR's hiring is <em>led directly by the founder.</em><br /><br />
+          We're not filling seats —<br />
+          we're looking for people who will <em>build the product and team alongside us.</em>
+        </p>
+        <p class="founder-sub">
+          More than a strong resume, what matters is what problems you want to solve,
+          how you execute, and the intensity you bring to the work.<br /><br />
+          If you feel like you want to solve the same problems we do, let's start with a coffee chat.
+        </p>
+        <div class="founder-sig">
+          <div class="founder-sig-avatar">D</div>
+          <div>
+            <div class="founder-sig-name">Team DOR CEO</div>
+            <div class="founder-sig-role">Founder &amp; CEO · Team DOR</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <div class="section">
+    <div class="section-header">
+      <h2 class="section-title">FAQ</h2>
+      <p class="section-sub">Common questions</p>
+    </div>
+    <div class="faq-list" id="faqList">
+
+      <div class="faq-item">
+        <button class="faq-q">
+          Where is the office?
+          <svg class="faq-chevron" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-a">We have offices in Gangnam, Seoul and San Francisco. Location depends on the role — check each position page for details.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">
+          Is San Francisco required?
+          <svg class="faq-chevron" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-a">It depends on the role. Some positions are based in San Francisco, others are Seoul-based. We can discuss during the hiring process.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">
+          What's the compensation package?
+          <svg class="faq-chevron" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-a">Experienced hires receive a minimum 20% salary increase from their current comp. All full-time employees receive stock options. 100% salary guaranteed during the 3-month probation period.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">
+          Do I need a portfolio?
+          <svg class="faq-chevron" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-a">Helpful for design and motion roles, but not required. Feel free to share any projects or work you've been directly involved in.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">
+          Can I just do a coffee chat first?
+          <svg class="faq-chevron" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-a">Yes — that's actually our preferred first step. Apply via the coffee chat form and we'll set something up.</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FINAL CTA -->
+  <div class="section-bg">
+    <div class="section">
+      <div class="final-cta">
+        <h2 class="final-cta-title">
+          Want to help the world's gamers<br />
+          record, create, and share?
+        </h2>
+        <p class="final-cta-desc">Now is the time to join DOR as an early team member.</p>
+        <div class="final-cta-buttons">
+          <a href="positions-en.html" class="btn-primary">View Positions</a>
+          <a href="mailto:career@dor.gg" class="btn-secondary">Apply Directly</a>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLScKZ21MPBl-ivpCAmXY3Bc3D_D5NXNafn5xNkx-ww_hJQ7gUA/viewform" target="_blank" class="btn-secondary">Coffee Chat</a>
+        </div>
+        <div class="final-cta-links">
+          <a href="mailto:career@dor.gg">career@dor.gg</a>
+          <a href="https://kr.linkedin.com/company/dorcorp" target="_blank">LinkedIn</a>
+          <a href="https://dor.gg" target="_blank">dor.gg</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <img src="logo.svg" alt="DOR" class="footer-logo-img" />
+    <span class="footer-copy">© 2026 DOR Corporation. All rights reserved.</span>
+  </footer>
+
+  <script src="main.js"></script>
+  <script>
+    // FAQ accordion
+    document.querySelectorAll('.faq-q').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const answer = btn.nextElementSibling;
+        const isOpen = btn.classList.contains('open');
+        document.querySelectorAll('.faq-q').forEach(b => {
+          b.classList.remove('open');
+          b.nextElementSibling.classList.remove('open');
+        });
+        if (!isOpen) {
+          btn.classList.add('open');
+          answer.classList.add('open');
+        }
+      });
+    });
+  </script>
+</body>
+</html>

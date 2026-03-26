@@ -13,24 +13,22 @@
 
     .hero-meta {
       display: flex;
-      gap: 8px;
+      align-items: center;
+      gap: 10px;
       justify-content: center;
       flex-wrap: wrap;
-      margin-top: 20px;
+      margin-top: 24px;
       margin-bottom: 64px;
     }
     .hero-meta-item {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
       font-size: 13px;
-      color: var(--gray-400);
-      background: var(--glass-bg);
-      border: 1px solid rgba(255,255,255,0.07);
-      padding: 6px 14px;
-      border-radius: 100px;
+      color: var(--gray-300);
+      font-weight: 500;
     }
-    .hero-meta-item svg { opacity: 0.45; flex-shrink: 0; }
+    .hero-meta-sep {
+      font-size: 13px;
+      color: var(--gray-600);
+    }
 
     /* Why DOR */
     .why-grid {
@@ -435,6 +433,54 @@
     }
     .final-cta-links a:hover { color: var(--white); }
 
+    /* Growth Card — stats 상단, chart 하단 */
+    .growth-card {
+      margin-top: 52px;
+      display: flex;
+      flex-direction: column;
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-md);
+      box-shadow: var(--glass-shadow);
+      overflow: hidden;
+      text-align: left;
+    }
+    .growth-stats {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      gap: 0;
+      padding: 36px 40px 28px;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .growth-stat {
+      text-align: center;
+    }
+    .growth-stat-num {
+      display: block;
+      font-size: clamp(36px, 5vw, 56px);
+      font-weight: 900;
+      color: var(--white);
+      letter-spacing: -0.03em;
+      line-height: 1;
+    }
+    .growth-stat-lbl {
+      display: block;
+      font-size: 13px;
+      color: var(--gray-500);
+      margin-top: 8px;
+    }
+    .growth-chart-area {
+      padding: 20px 28px 20px;
+    }
+    #jcurveChart { width: 100%; }
+
+    @media (max-width: 600px) {
+      .growth-stats { gap: 24px; padding: 20px; }
+      .growth-stat-num { font-size: 24px; }
+      .growth-chart-area { padding: 16px 20px; }
+    }
+
     /* Responsive */
     @media (max-width: 900px) {
       .why-grid  { grid-template-columns: 1fr; gap: 40px; }
@@ -458,11 +504,12 @@
   <nav class="nav">
     <a href="index.html" class="nav-logo"><img src="logo.svg" alt="DOR" class="nav-logo-img" /></a>
     <div class="nav-links">
-      <a href="index.html" class="nav-link active">Home</a>
-      <a href="positions.html" class="nav-link">Positions</a>
-      <a href="values.html" class="nav-link">Core Values</a>
+      <a href="index.html" class="nav-link active">홈</a>
+      <a href="positions.html" class="nav-link">채용 포지션</a>
+      <a href="values.html" class="nav-link">핵심 가치</a>
       <a href="referral.html" class="nav-link">채용보상금</a>
       <a href="https://docs.google.com/forms/d/e/1FAIpQLScKZ21MPBl-ivpCAmXY3Bc3D_D5NXNafn5xNkx-ww_hJQ7gUA/viewform" target="_blank" class="btn-coffechat">커피챗 신청</a>
+      <a href="index-en.html" class="btn-lang">ENG</a>
     </div>
     <button class="nav-hamburger" id="hamburger" aria-label="메뉴 열기">
       <span></span><span></span><span></span>
@@ -470,60 +517,44 @@
   </nav>
 
   <div class="mobile-menu" id="mobileMenu">
-    <a href="index.html" class="mobile-link active">Home</a>
-    <a href="positions.html" class="mobile-link">Positions</a>
-    <a href="values.html" class="mobile-link">Core Values</a>
+    <a href="index.html" class="mobile-link active">홈</a>
+    <a href="positions.html" class="mobile-link">채용 포지션</a>
+    <a href="values.html" class="mobile-link">핵심 가치</a>
     <a href="referral.html" class="mobile-link">채용보상금</a>
     <a href="https://docs.google.com/forms/d/e/1FAIpQLScKZ21MPBl-ivpCAmXY3Bc3D_D5NXNafn5xNkx-ww_hJQ7gUA/viewform" target="_blank" class="mobile-link highlight">커피챗 신청</a>
+    <a href="index-en.html" class="mobile-link">ENG</a>
   </div>
 
   <!-- ① HERO -->
   <section class="hero">
     <div class="hero-badge">집중 채용 중</div>
-    <h1 class="hero-title">
-      전 세계 게이머가<br />
-      더 쉽게 <span class="hero-accent">기록하고, 만들고,</span><br />
-      공유하게 만듭니다
-    </h1>
+    <h1 class="hero-title">우리는 임팩트를 추구합니다</h1>
     <p class="hero-desc">
-      도르는 게임 플레이 자동 녹화부터 영상 생성, 커뮤니티까지 연결하는 제품을 만들고 있습니다.
-      지금 우리는 작은 팀으로 큰 문제를 풀고 있고,
-      각 역할이 제품과 성장에 직접 영향을 주는 초기 멤버를 찾고 있습니다.
+      도르(DOR)는 게임 플레이를 자동으로 기록하고 AI로 편집해 전세계 게이머와 공유하는 게임 소셜 미디어입니다.<br /><br />
+      6명이서 2년만에 400만 유저.<br />
+      도르팀과 함께 전세계 게이머를 위한 소셜 미디어를 만들 팀원을 찾습니다.
     </p>
     <div class="hero-cta">
-      <a href="positions.html" class="btn-primary">오픈 포지션 보기</a>
+      <a href="positions.html" class="btn-primary">포지션 보기</a>
       <a href="https://docs.google.com/forms/d/e/1FAIpQLScKZ21MPBl-ivpCAmXY3Bc3D_D5NXNafn5xNkx-ww_hJQ7gUA/viewform" target="_blank" class="btn-secondary">커피챗 신청하기</a>
     </div>
-    <div class="hero-meta">
-      <span class="hero-meta-item">
-        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-        집중 채용기간 · 빠른 프로세스
-      </span>
-      <span class="hero-meta-item">
-        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-        San Francisco · 서울
-      </span>
-      <span class="hero-meta-item">
-        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
-        연봉 협의 · 스톡옵션
-      </span>
-      <span class="hero-meta-item">
-        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-        대표 직접 채용
-      </span>
-    </div>
-    <div class="stats-grid">
-      <div class="stat-card">
-        <span class="stat-number">2M</span>
-        <span class="stat-label">Monthly Active Users</span>
+    <div class="growth-card">
+      <div class="growth-stats">
+        <div class="growth-stat">
+          <span class="growth-stat-num">2M</span>
+          <span class="growth-stat-lbl">Monthly Active Users</span>
+        </div>
+        <div class="growth-stat">
+          <span class="growth-stat-num">200M+</span>
+          <span class="growth-stat-lbl">Monthly Clips</span>
+        </div>
+        <div class="growth-stat">
+          <span class="growth-stat-num">$0</span>
+          <span class="growth-stat-lbl">Paid Marketing</span>
+        </div>
       </div>
-      <div class="stat-card">
-        <span class="stat-number">200M+</span>
-        <span class="stat-label">Monthly Clips</span>
-      </div>
-      <div class="stat-card">
-        <span class="stat-number">$0</span>
-        <span class="stat-label">Paid Marketing</span>
+      <div class="growth-chart-area">
+        <div id="jcurveChart"></div>
       </div>
     </div>
   </section>
@@ -531,13 +562,22 @@
   <!-- INVESTORS -->
   <div class="investors">
     <div class="investors-label">Backed by</div>
-    <div class="investors-list">
-      <span>Base Ventures</span><span class="dot">·</span>
-      <span>Primer</span><span class="dot">·</span>
-      <span>The Ventures</span><span class="dot">·</span>
-      <span>Goodwater Capital</span><span class="dot">·</span>
-      <span>NVIDIA Inception</span><span class="dot">·</span>
-      <span>D.CAMP</span>
+    <div class="investors-track-wrap">
+      <div class="investors-track">
+        <img src="logo/basslogo.svg"        alt="Base Ventures"    class="investor-logo" />
+        <img src="logo/primerlogo.svg"      alt="Primer"           class="investor-logo" />
+        <img src="logo/theventureslogo.svg" alt="The Ventures"     class="investor-logo" />
+        <img src="logo/goodwaterlogo.svg"   alt="Goodwater Capital" class="investor-logo" />
+        <img src="logo/nvidialogo.svg"      alt="NVIDIA Inception"  class="investor-logo" />
+        <img src="logo/samgsunglogo.svg"    alt="D.CAMP"           class="investor-logo" />
+        <!-- duplicate for seamless loop -->
+        <img src="logo/basslogo.svg"        alt="" class="investor-logo" aria-hidden="true" />
+        <img src="logo/primerlogo.svg"      alt="" class="investor-logo" aria-hidden="true" />
+        <img src="logo/theventureslogo.svg" alt="" class="investor-logo" aria-hidden="true" />
+        <img src="logo/goodwaterlogo.svg"   alt="" class="investor-logo" aria-hidden="true" />
+        <img src="logo/nvidialogo.svg"      alt="" class="investor-logo" aria-hidden="true" />
+        <img src="logo/samgsunglogo.svg"    alt="" class="investor-logo" aria-hidden="true" />
+      </div>
     </div>
   </div>
 
@@ -775,36 +815,7 @@
         <div class="step-desc">연봉 및 스톡옵션 조건 협의 후 최종 합류</div>
       </div>
     </div>
-    <p class="process-note">집중 채용기간에는 가능한 빠르게 결과를 안내드립니다.</p>
-  </div>
-
-  <!-- ⑧ FOUNDER MESSAGE -->
-  <div class="section-bg">
-    <div class="section">
-      <div class="section-header">
-        <h2 class="section-title">A Message from Our Founder</h2>
-      </div>
-      <div class="founder-card">
-        <div class="founder-quote-mark">"</div>
-        <p class="founder-text">
-          지금 도르의 채용은 <em>대표가 직접 리드합니다.</em><br /><br />
-          우리는 단순히 빈 자리를 채우는 것이 아니라,<br />
-          <em>앞으로의 제품과 팀을 함께 만들 사람</em>을 찾고 있습니다.
-        </p>
-        <p class="founder-sub">
-          좋은 이력보다 더 중요하게 보는 것은 어떤 문제를 풀고 싶은지,
-          어떻게 실행하는지, 어떤 밀도로 일하는지입니다.<br /><br />
-          우리가 같은 문제를 풀고 싶다는 생각이 든다면, 먼저 커피챗으로 만나보세요.
-        </p>
-        <div class="founder-sig">
-          <div class="founder-sig-avatar">D</div>
-          <div>
-            <div class="founder-sig-name">Team DOR CEO</div>
-            <div class="founder-sig-role">Founder &amp; CEO · Team DOR</div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <p class="process-note">모든 채용 과정은 <strong>7일 이내</strong>에 완료될 수 있습니다. 집중 채용기간 중에는 단계마다 빠르게 연락드립니다.</p>
   </div>
 
   <!-- ⑨ FAQ -->
@@ -890,7 +901,7 @@
         </div>
         <div class="final-cta-links">
           <a href="mailto:career@dor.gg">career@dor.gg</a>
-          <a href="https://www.linkedin.com/company/team-dor" target="_blank">LinkedIn</a>
+          <a href="https://kr.linkedin.com/company/dorcorp" target="_blank">LinkedIn</a>
           <a href="https://dor.gg" target="_blank">dor.gg</a>
         </div>
       </div>
@@ -899,10 +910,109 @@
 
   <footer class="footer">
     <img src="logo.svg" alt="DOR" class="footer-logo-img" />
-    <span class="footer-copy">© 2024 Team DOR. All rights reserved.</span>
+    <div class="footer-links">
+      <a href="mailto:career@dor.gg" class="footer-icon-btn" title="이메일">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
+      </a>
+      <a href="https://kr.linkedin.com/company/dorcorp" target="_blank" class="footer-icon-btn" title="LinkedIn">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+      </a>
+      <a href="https://dor.gg" target="_blank" class="footer-icon-btn" title="dor.gg">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+      </a>
+    </div>
+    <span class="footer-copy">© 2026 DOR Corporation. All rights reserved.</span>
   </footer>
 
   <script src="main.js"></script>
+  <script>
+    // J-Curve Chart — always proportional
+    (function() {
+      const container = document.getElementById('jcurveChart');
+      if (!container) return;
+
+      // J-curve shape: flat start, gentle dip, then hockey stick
+      // Normalized: 0 = bottom, 1 = 2M top
+      const data = [
+        0.16, 0.19, 0.155, 0.165, 0.155, 0.16, 0.155, 0.165,
+        0.16, 0.17, 0.19, 0.22, 0.30, 0.46, 0.70, 1.0
+      ];
+      // The steep rise is the last 4 points (25% of x-axis)
+      // H/W ratio chosen so that last 25% of x ≈ last 84% of y → steep angle
+
+      const RISE_FRAC = 4 / (data.length - 1); // fraction of x-axis that rises
+      const RISE_Y    = 1.0 - data[data.length - 5]; // vertical rise in those pts
+
+      function render() {
+        const W = container.offsetWidth;
+        if (!W) return;
+
+        const P = { top: 18, right: 42, bottom: 30, left: 6 };
+        const cW = W - P.left - P.right;
+
+        // Height: make the steep section look ~60° or steeper
+        // rise_pixels_x = RISE_FRAC * cW
+        // rise_pixels_y = RISE_Y * cH
+        // For 50° angle: tan(50°) ≈ 1.19 → cH = rise_pixels_x * 1.19 / RISE_Y
+        const cH = Math.round((RISE_FRAC * cW * 1.4) / RISE_Y);
+        const H  = cH + P.top + P.bottom;
+
+        const n  = data.length;
+        const xi = i => P.left + (i / (n - 1)) * cW;
+        const yi = v => P.top + cH - v * cH;
+        const pts = data.map((v, i) => [xi(i), yi(v)]);
+
+        // Smooth monotone-ish bezier
+        let path = `M ${pts[0][0].toFixed(1)} ${pts[0][1].toFixed(1)}`;
+        for (let i = 0; i < pts.length - 1; i++) {
+          const mx = (pts[i][0] + pts[i + 1][0]) / 2;
+          path += ` C ${mx.toFixed(1)} ${pts[i][1].toFixed(1)} ${mx.toFixed(1)} ${pts[i + 1][1].toFixed(1)} ${pts[i + 1][0].toFixed(1)} ${pts[i + 1][1].toFixed(1)}`;
+        }
+
+        const axisY  = P.top + cH;
+        const bottom = axisY.toFixed(1);
+        const fill   = path + ` L ${pts[n-1][0].toFixed(1)} ${bottom} L ${pts[0][0].toFixed(1)} ${bottom} Z`;
+        const yTop   = P.top.toFixed(1);
+
+        // Monthly tick marks at each data point
+        const ticks = pts.map(([x]) =>
+          `<line x1="${x.toFixed(1)}" y1="${bottom}" x2="${x.toFixed(1)}" y2="${(axisY + 5).toFixed(1)}"
+            stroke="rgba(255,255,255,0.28)" stroke-width="1"/>`
+        ).join('');
+
+        container.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" style="display:block">
+          <defs>
+            <linearGradient id="jcG" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="rgba(255,255,255,0.12)"/>
+              <stop offset="100%" stop-color="rgba(255,255,255,0.00)"/>
+            </linearGradient>
+          </defs>
+          <path d="${fill}" fill="url(#jcG)"/>
+          <!-- Curve -->
+          <path d="${path}" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="1.8"
+            stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="${pts[n-1][0].toFixed(1)}" cy="${pts[n-1][1].toFixed(1)}" r="3" fill="white"/>
+          <!-- Monthly ticks -->
+          ${ticks}
+          <!-- X-axis labels -->
+          <text x="${pts[0][0].toFixed(1)}" y="${(axisY + 18).toFixed(1)}"
+            font-size="11" fill="rgba(255,255,255,0.45)" font-family="Inter,sans-serif" font-weight="500" text-anchor="start">'24</text>
+          <text x="${xi(Math.round((n-1) * 0.5)).toFixed(1)}" y="${(axisY + 18).toFixed(1)}"
+            font-size="11" fill="rgba(255,255,255,0.45)" font-family="Inter,sans-serif" font-weight="500" text-anchor="middle">'25</text>
+          <text x="${pts[n-1][0].toFixed(1)}" y="${(axisY + 18).toFixed(1)}"
+            font-size="11" fill="rgba(255,255,255,0.55)" font-family="Inter,sans-serif" font-weight="500" text-anchor="end">Feb '26</text>
+        </svg>`;
+      }
+
+      render();
+      // Re-render on resize with debounce
+      let rafId;
+      window.addEventListener('resize', () => {
+        cancelAnimationFrame(rafId);
+        rafId = requestAnimationFrame(render);
+      });
+    })();
+  </script>
   <script>
     // FAQ accordion
     document.querySelectorAll('.faq-q').forEach(btn => {
