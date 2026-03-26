@@ -35,72 +35,192 @@
     <a href="positions.html" class="job-detail-back">← 모든 포지션</a>
     <div class="job-detail-meta">
       <span class="meta-tag">Creator Squad</span>
-      <span class="meta-tag">Engineering</span>
       <span class="meta-tag">Full-time</span>
-      <span class="meta-tag">3y+</span>
+      <span class="meta-tag">2y+</span>
       <span class="meta-tag">San Francisco · 서울</span>
     </div>
     <h1 class="job-detail-title">AI/ML Engineer</h1>
-    <p class="job-detail-summary">게임 영상에서 자동으로 하이라이트를 찾고, 장면을 인식하고, 클립을 생성하는 온디바이스 AI/ML 파이프라인을 설계하고 최적화하는 역할입니다.</p>
+    <p class="job-detail-summary">도르팀의 AI/ML Engineer는 게이머의 플레이에서 의미 있는 순간을 자동으로 찾아내기 위해 여러 게임에 범용적으로 적용 가능한 이벤트 감지 AI 모델을 만들고 고도화하는 역할을 합니다. 실제 유저의 PC에서 on-device로 안정적으로 동작하는 제품용 모델을 만듭니다.</p>
     <div class="job-detail-actions">
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLSfD_9UczvFlanzBvd6n0eYbbHTZd8p0CTKkskGZT2F0on6kfw/viewform?pli=1" target="_blank" class="btn-primary">지원하기</a>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSfD_9UczvFlanzBvd6n0eYbbHTZd8p0CTKkskGZT2F0on6kfw/viewform" target="_blank" class="btn-primary">지원하기</a>
       <a href="https://docs.google.com/forms/d/e/1FAIpQLScKZ21MPBl-ivpCAmXY3Bc3D_D5NXNafn5xNkx-ww_hJQ7gUA/viewform" target="_blank" class="btn-secondary">커피챗 신청</a>
     </div>
   </div>
 
   <div class="job-detail-body">
     <div class="job-detail-content">
+
       <div>
         <div class="detail-section-title">주요 업무</div>
         <ul class="detail-list">
-          <li>게임 영상 하이라이트 자동 감지 및 클립 생성 AI 모델 개발</li>
-          <li>Computer Vision 기반 게임 화면 이벤트 감지 모델 설계 및 학습</li>
-          <li>온디바이스 AI 모델 최적화 (레이턴시, 메모리, CPU/GPU 사용률)</li>
-          <li>LLM 기반 자동 캡션, 태그 생성 파이프라인 구축</li>
-          <li>다양한 게임 환경 및 유저 PC 사양에서의 안정적 동작 보장</li>
-          <li>데이터와 유저 피드백으로 모델 성능을 반복 개선</li>
+          <li>다양한 게임에서 공통적으로 적용 가능한 이벤트 감지 모델을 설계하고 개발합니다.</li>
+          <li>기존 공개 모델을 활용하거나, 필요시 자체 모델을 설계하고 학습합니다.</li>
+          <li>게임 플레이 영상에서 중요한 순간을 식별하기 위한 비전 기반 모델을 개발합니다.</li>
+          <li>on-device 환경에서 동작할 수 있도록 모델을 경량화하고 최적화합니다.</li>
+          <li>정확도뿐 아니라 latency, memory, CPU/GPU usage, 안정성까지 고려해 모델을 개선합니다.</li>
+          <li>실제 제품 환경에서 다양한 게임, 해상도, UI, PC 사양에 대응할 수 있도록 robustness를 높입니다.</li>
+          <li>엔지니어와 협업하여 모델을 제품에 통합하고 실제 유저 환경에서 검증합니다.</li>
+          <li>매월 생산되는 2억개의 영상데이터로부터 데이터 수집, 라벨링 전략, 학습 파이프라인, 평가 기준까지 포함해 end-to-end로 문제를 해결합니다.</li>
+        </ul>
+        <div class="detail-sub-section">
+          <div class="detail-sub-title">이 포지션에서 특히 중요한 문제</div>
+          <p class="detail-intro">좋은 논문용 모델보다 실제 유저 환경에서 지속적으로 잘 작동하는 제품용 모델을 만드는 사람을 찾고 있습니다.</p>
+          <ul class="detail-list">
+            <li>특정 게임 하나가 아니라 여러 게임에 적용 가능한 범용 감지 로직을 만드는 문제</li>
+            <li>화면 구성, 해상도, 언어, UI 차이가 달라도 잘 동작하는 문제</li>
+            <li>높은 정확도를 유지하면서도 실제 유저 PC에서 부담 없이 돌아가야 하는 문제</li>
+            <li>연구용 성능이 아니라 실제 제품 환경에서 안정적으로 동작해야 하는 문제</li>
+            <li>데이터가 완벽하지 않은 상황에서도 빠르게 학습하고 반복 개선해야 하는 문제</li>
+          </ul>
+        </div>
+      </div>
+
+      <div>
+        <div class="detail-section-title">팀에서 만들어갈 서비스</div>
+        <div class="detail-sub-section">
+          <div class="detail-sub-title">게임 플레이 자동 녹화 (Record)</div>
+          <ul class="detail-list">
+            <li>유저가 놓치고 싶지 않은 순간을 자동으로 기록할 수 있도록 합니다.</li>
+            <li>특정 이벤트 기반 자동 녹화 경험을 더 정확하고 자연스럽게 개선합니다.</li>
+            <li>유저가 "설정하지 않아도 알아서 잘 찍히는 경험"을 만드는 것이 목표입니다.</li>
+          </ul>
+        </div>
+        <div class="detail-sub-section">
+          <div class="detail-sub-title">게임 영상 생성 (Create)</div>
+          <ul class="detail-list">
+            <li>자동으로 생성된 클립을 바탕으로 짧고 볼만한 영상이 만들어지도록 합니다.</li>
+            <li>유저가 직접 편집하지 않아도 결과물이 만족스럽도록 제품을 설계합니다.</li>
+            <li>"귀찮고 어려운 편집" 없이도 콘텐츠가 완성되는 경험을 만듭니다.</li>
+          </ul>
+        </div>
+        <div class="detail-sub-section">
+          <div class="detail-sub-title">게임 영상 편집기 (Edit)</div>
+          <ul class="detail-list">
+            <li>게임 영상 편집에 특화된 효과와 UX를 설계합니다.</li>
+            <li>전문 툴처럼 복잡하지 않지만, 결과물의 만족도는 높게 유지하는 제품을 만듭니다.</li>
+            <li>누구나 빠르게 영상 콘텐츠를 만들 수 있는 제작 경험을 목표로 합니다.</li>
+          </ul>
+        </div>
+        <div class="detail-sub-section">
+          <div class="detail-sub-title">공유 경험 (Share)</div>
+          <ul class="detail-list">
+            <li>만들어진 영상을 친구나 커뮤니티에 쉽게 공유할 수 있도록 합니다.</li>
+            <li>영상 생성에서 끝나는 것이 아니라, 실제 공유와 시청까지 이어지도록 설계합니다.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div>
+        <div class="detail-section-title">우리 팀이 일하는 방식</div>
+        <ul class="detail-list">
+          <li>도르팀은 대표가 원하는 제품이 아니라 고객이 원하는 제품을 만듭니다.</li>
+          <li>1~2주의 짧은 이터레이션 안에서 문제 정의, 가설 수립, 실행, 측정, 학습을 반복합니다.</li>
+          <li>AI/ML Engineer도 연구만 하는 역할이 아니라 실제 프로덕트 문제를 푸는 역할입니다.</li>
+          <li>빠르게 만들고, 빠르게 검증하고, 빠르게 방향을 조정합니다.</li>
+          <li>데이터와 유저의 목소리를 바탕으로 실제 임팩트를 만드는 데 집중합니다.</li>
+          <li>성능 수치뿐 아니라 사용자 경험까지 연결되는 결과를 중요하게 봅니다.</li>
         </ul>
       </div>
+
+      <div>
+        <div class="detail-section-title">기술 스택</div>
+        <p class="detail-note">모든 스택에 대한 경험을 기대하지 않습니다. 다만 빨리 배우고 습득이 가능하기를 기대합니다.</p>
+        <div class="detail-tech-group">
+          <div class="detail-tech-group-title">AI / ML</div>
+          <ul class="detail-list">
+            <li>Python</li>
+            <li>PyTorch</li>
+            <li>TensorFlow</li>
+            <li>ONNX</li>
+            <li>Computer Vision</li>
+            <li>Model Optimization / Quantization / Inference Runtime</li>
+          </ul>
+        </div>
+        <div class="detail-tech-group">
+          <div class="detail-tech-group-title">Product / Engineering</div>
+          <ul class="detail-list">
+            <li>TypeScript</li>
+            <li>Electron</li>
+            <li>Windows Desktop App</li>
+          </ul>
+        </div>
+      </div>
+
       <div>
         <div class="detail-section-title">자격 요건</div>
         <ul class="detail-list">
-          <li>Python, PyTorch / TensorFlow 실무 경험 3년 이상</li>
-          <li>Computer Vision 모델 (YOLO, ResNet 등) 학습 및 배포 경험</li>
-          <li>온디바이스 모델 최적화 (ONNX, TensorRT, OpenVINO 등) 경험</li>
-          <li>실제 프로덕션 AI 파이프라인 운영 경험</li>
+          <li>2년 이상의 AI/ML 또는 관련 소프트웨어 개발 경험이 있는 분</li>
+          <li>Computer Vision 또는 딥러닝 모델을 직접 개발하고 학습해본 경험이 있는 분</li>
+          <li>공개 모델을 가져다 쓰는 데 그치지 않고, 문제에 맞게 튜닝하거나 재설계할 수 있는 분</li>
+          <li>on-device 또는 edge 환경에서 동작하는 모델 최적화 경험이 있는 분, 혹은 그 문제에 강한 관심이 있는 분</li>
+          <li>정확도뿐 아니라 latency, resource, robustness를 함께 고려할 수 있는 분</li>
+          <li>실제 사용자가 있는 제품 문제를 기술적으로 해결해보고 싶은 분</li>
+          <li>어려운 문제를 끝까지 파고들어 해결하려는 집요함이 있는 분</li>
         </ul>
       </div>
+
       <div>
-        <div class="detail-section-title">우대사항</div>
+        <div class="detail-section-title">우대 사항</div>
         <ul class="detail-list">
-          <li>게임 영상 또는 스포츠 하이라이트 감지 경험</li>
-          <li>Windows 환경 GPU 활용 최적화 경험</li>
-          <li>LLM 파인튜닝 또는 RAG 파이프라인 경험</li>
-          <li>영상 편집 자동화 관련 연구/개발 경험</li>
+          <li>San Francisco, CA / 미국 근무가 가능한 분</li>
+          <li>게임 영상, 방송 영상, 사용자 인터랙션 영상 등을 다뤄본 경험이 있는 분</li>
+          <li>이미지 분류, detection, temporal modeling, event detection 관련 경험이 있는 분</li>
+          <li>ONNX, TensorRT, OpenVINO 등 추론 최적화 경험이 있는 분</li>
+          <li>모델 경량화, quantization, pruning, distillation 경험이 있는 분</li>
+          <li>실제 디바이스 환경에서 모델 성능을 측정하고 개선한 경험이 있는 분</li>
+          <li>데이터셋 설계, 라벨링 전략, 학습 파이프라인 구축 경험이 있는 분</li>
+          <li>Windows 환경 또는 데스크톱 애플리케이션과의 통합 경험이 있는 분</li>
+          <li>영상 처리, 소셜 미디어, UGC 제품 관련 경험이 있는 분</li>
+          <li>게이머이거나 게임 플레이 맥락에 대한 이해가 높은 분</li>
         </ul>
       </div>
+
       <div>
-        <div class="detail-section-title">혜택</div>
+        <div class="detail-section-title">이런 분과 잘 맞아요</div>
         <ul class="detail-list">
-          <li>경력직 기존 연봉 최소 20% 인상 제안</li>
-          <li>스톡옵션 부여 (정규직 전환 후)</li>
-          <li>3개월 수습기간 중 급여 100% 보장</li>
-          <li>자율 출퇴근 (오후 2시 데일리 스크럼 고정)</li>
-          <li>학력 무관, 능력과 성과로만 판단</li>
+          <li>실제 제품 임팩트를 만드는 것에 관심이 많은 사람</li>
+          <li>논문 구현에 그치지 않고 실제 환경에서 끝까지 동작하게 만드는 사람</li>
+          <li>정확도와 시스템 성능 사이의 trade-off를 즐겁게 푸는 사람</li>
+          <li>불완전한 데이터와 복잡한 현실 환경에서도 빠르게 개선해나가는 사람</li>
+          <li>전 세계 게이머가 매일 쓰는 AI 기능을 직접 만들고 싶은 사람</li>
         </ul>
       </div>
+
+      <div>
+        <div class="detail-section-title">이력서에서 이런 점을 알려주세요</div>
+        <ul class="detail-list">
+          <li>지금까지 어떤 AI/ML 문제를 풀었고, 어떤 임팩트를 만들었는지 알려주세요.</li>
+          <li>공개 모델을 활용하거나 직접 설계하여 문제를 해결한 경험이 있다면 적어주세요.</li>
+          <li>모델 정확도, latency, memory usage, inference speed 등 개선 경험이 있다면 구체적으로 적어주세요.</li>
+          <li>실제 제품 환경 또는 디바이스 환경에서 모델을 통합하고 운영한 경험이 있다면 알려주세요.</li>
+          <li>데이터 수집, 라벨링, 학습, 평가, 배포까지 end-to-end로 관여한 경험이 있다면 적어주세요.</li>
+          <li>업무와 경력의 나열보다 지원자님의 문제 정의, 고민, 액션, 학습, 성과가 드러나면 좋습니다.</li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="detail-section-title">채용 절차</div>
+        <ol class="detail-list detail-list--ordered">
+          <li>지원서 접수</li>
+          <li>직무/컬쳐 핏 면접</li>
+          <li>레퍼런스 체크</li>
+          <li>처우 및 보상 협의</li>
+        </ol>
+      </div>
+
     </div>
+
     <div class="job-detail-sidebar">
       <div class="sidebar-card">
         <div class="sidebar-card-title">포지션 정보</div>
         <div class="sidebar-row"><div class="sidebar-row-label">고용형태</div><div class="sidebar-row-value">정규직</div></div>
-        <div class="sidebar-row"><div class="sidebar-row-label">경력</div><div class="sidebar-row-value">3년 이상</div></div>
+        <div class="sidebar-row"><div class="sidebar-row-label">경력</div><div class="sidebar-row-value">2년 이상</div></div>
         <div class="sidebar-row"><div class="sidebar-row-label">근무지</div><div class="sidebar-row-value">San Francisco · 서울 강남</div></div>
         <div class="sidebar-row"><div class="sidebar-row-label">근무방식</div><div class="sidebar-row-value">대면 (자율 출퇴근)</div></div>
         <div class="sidebar-row"><div class="sidebar-row-label">연봉</div><div class="sidebar-row-value">협의 (현재 +20%~)</div></div>
       </div>
       <div class="sidebar-card">
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfD_9UczvFlanzBvd6n0eYbbHTZd8p0CTKkskGZT2F0on6kfw/viewform?pli=1" target="_blank" class="sidebar-apply">지원하기</a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfD_9UczvFlanzBvd6n0eYbbHTZd8p0CTKkskGZT2F0on6kfw/viewform" target="_blank" class="sidebar-apply">지원하기</a>
         <a href="https://docs.google.com/forms/d/e/1FAIpQLScKZ21MPBl-ivpCAmXY3Bc3D_D5NXNafn5xNkx-ww_hJQ7gUA/viewform" target="_blank" class="sidebar-chat">커피챗 신청</a>
       </div>
     </div>

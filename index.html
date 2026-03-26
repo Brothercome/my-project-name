@@ -135,6 +135,53 @@
       padding: 3px 10px;
       border-radius: 6px;
     }
+    .squad-cards-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    /* Proof Points */
+    .proof-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+    .proof-card {
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-md);
+      padding: 36px 32px;
+      transition: background var(--t), border-color var(--t);
+    }
+    .proof-card:hover {
+      background: var(--glass-bg-hover);
+      border-color: var(--glass-border-hover);
+    }
+    .proof-eyebrow {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gray-500);
+      margin-bottom: 10px;
+    }
+    .proof-headline {
+      font-size: clamp(22px, 2.5vw, 28px);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--white);
+      margin-bottom: 14px;
+      line-height: 1.2;
+    }
+    .proof-body {
+      font-size: 14px;
+      color: var(--gray-400);
+      line-height: 1.78;
+    }
+    @media (max-width: 700px) {
+      .proof-grid { grid-template-columns: 1fr; }
+    }
 
     /* Core Values Preview */
     .values-preview {
@@ -211,11 +258,7 @@
     .how-keyword-text { font-size: 14px; font-weight: 600; color: var(--gray-200); }
 
     /* Squad overview */
-    .squad-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-    }
+    .squad-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
     .squad-card {
       background: var(--glass-bg);
       backdrop-filter: var(--glass-blur);
@@ -504,6 +547,103 @@
       color: var(--gray-400);
       line-height: 1.8;
     }
+    .platform-compare {
+      display: flex;
+      gap: 16px;
+      margin-top: 48px;
+    }
+    .platform-card {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 28px 24px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.09);
+      border-radius: 16px;
+      flex: 1;
+    }
+    .platform-card--highlight {
+      background: rgba(255,255,255,0.06);
+      border-color: rgba(255,255,255,0.22);
+      box-shadow: 0 0 28px rgba(255,255,255,0.07), inset 0 0 20px rgba(255,255,255,0.03);
+    }
+    .platform-icon-wrap {
+      width: 44px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255,255,255,0.07);
+      border-radius: 12px;
+      color: rgba(255,255,255,0.6);
+    }
+    .platform-card--highlight .platform-icon-wrap {
+      background: rgba(255,255,255,0.12);
+      color: rgba(255,255,255,0.95);
+      filter: drop-shadow(0 0 8px rgba(255,255,255,0.5));
+    }
+    .platform-card-name {
+      font-size: 14px;
+      font-weight: 700;
+      color: rgba(255,255,255,0.75);
+      letter-spacing: -0.01em;
+    }
+    .platform-card--highlight .platform-card-name {
+      color: #ffffff;
+      text-shadow: 0 0 16px rgba(255,255,255,0.55);
+    }
+    .platform-card-desc {
+      font-size: 13px;
+      color: rgba(255,255,255,0.45);
+      line-height: 1.6;
+    }
+    .platform-card--highlight .platform-card-desc {
+      color: rgba(255,255,255,0.5);
+    }
+    .platform-card-result {
+      font-size: 13px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.6;
+      margin-top: -4px;
+    }
+    .platform-card--highlight .platform-card-result {
+      color: #ffffff;
+      text-shadow: 0 0 12px rgba(255,255,255,0.45);
+    }
+    @media (max-width: 700px) {
+      .platform-compare { flex-direction: column; gap: 10px; }
+      .platform-card { padding: 20px 18px; }
+    }
+    /* BUILD → SQUAD BRIDGE */
+    .build-squad-divider {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin: 48px 0 28px;
+      color: rgba(255,255,255,0.28);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    .build-squad-divider::before,
+    .build-squad-divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: rgba(255,255,255,0.07);
+    }
+    .squad-from {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.28);
+      margin-bottom: 14px;
+    }
+    .squad-section-header { margin-bottom: 32px; }
     /* WHY KOREA */
     /* SOLUTION FLYWHEEL */
     .solution-flywheel {
@@ -548,9 +688,10 @@
       padding: 5px 12px;
     }
     .solution-tag--highlight {
-      color: #a78bfa;
-      background: rgba(167,139,250,0.1);
-      border-color: rgba(167,139,250,0.35);
+      color: rgba(255,255,255,0.95);
+      background: rgba(255,255,255,0.1);
+      border-color: rgba(255,255,255,0.3);
+      text-shadow: 0 0 10px rgba(255,255,255,0.4);
     }
     .solution-flywheel-diagram {
       display: flex;
@@ -618,17 +759,16 @@
       margin-bottom: 4px;
     }
     .why-korea-card-label {
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--gray-500);
+      font-size: clamp(18px, 2vw, 22px);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--white);
     }
     .why-korea-card-title {
-      font-size: 17px;
-      font-weight: 700;
-      color: var(--white);
-      line-height: 1.4;
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--gray-400);
+      line-height: 1.5;
     }
     .why-korea-card-desc {
       font-size: 13px;
@@ -915,6 +1055,7 @@
       .values-preview { grid-template-columns: 1fr; gap: 36px; }
       .why-grid  { grid-template-columns: 1fr; gap: 40px; }
       .pillars-grid { grid-template-columns: 1fr; }
+      .squad-cards-row { grid-template-columns: 1fr; }
       .how-grid  { grid-template-columns: 1fr; gap: 40px; }
       .squad-grid { grid-template-columns: 1fr; }
       .fit-grid  { grid-template-columns: 1fr; }
@@ -959,7 +1100,7 @@
     <div class="hero-badge">집중 채용 중</div>
     <h1 class="hero-title">우리는 임팩트를 추구합니다</h1>
     <p class="hero-desc">
-      6명이서 2년만에 400만 유저.<br />
+      <span class="hero-desc-highlight">6명이서 2년만에 400만 유저.</span><br />
       도르팀과 함께 전세계 게이머를 위한 소셜 미디어를 만들 팀원을 찾습니다.
     </p>
     <div class="hero-cta">
@@ -1043,13 +1184,73 @@
     </div>
   </div>
 
+  <!-- ① PROOF POINTS -->
+  <div class="section">
+    <div class="proof-grid">
+      <div class="proof-card">
+        <div class="proof-eyebrow">속도</div>
+        <div class="proof-headline">가설 검증까지 4시간</div>
+        <div class="proof-body">문제를 발견하고, 가설을 세우고, 검증하는 데까지 단 4시간. 단순한 랜딩 페이지로 타겟 유저의 높은 전환율을 확인한 후, 다음날 하루 만에 MVP를 출시했습니다.</div>
+      </div>
+      <div class="proof-card">
+        <div class="proof-eyebrow">고객 집착</div>
+        <div class="proof-headline">고객이 사랑하는 제품</div>
+        <div class="proof-body">MVP 출시 이후 매주 고객을 직접 만나며 주 3–4회 업데이트를 진행했습니다. 1개월 리텐션 84%, Daily 리텐션 50% 플래토. 게이머들이 사랑하는 서비스를 만들어가고 있습니다.</div>
+      </div>
+      <div class="proof-card">
+        <div class="proof-eyebrow">성장</div>
+        <div class="proof-headline">광고 없이 200만 유저</div>
+        <div class="proof-body">한 명 한 명 타겟 유저를 찾아가 세일즈하며 시작했습니다. 유저들이 영상을 친구에게 공유하고, 인플루언서와 PC방에서 도르를 쓰기 시작하며 오가닉하게 성장했습니다.</div>
+      </div>
+      <div class="proof-card">
+        <div class="proof-eyebrow">임팩트</div>
+        <div class="proof-headline">앱스토어 1위</div>
+        <div class="proof-body">영상 다시보기와 커뮤니티 기능만으로 한국 앱스토어 차트 1위를 달성했습니다. 매월 4만 개 이상의 게시글이 올라오는 커뮤니티로, 소셜미디어로서의 잠재력을 증명하고 있습니다.</div>
+      </div>
+    </div>
+  </div>
+
   <!-- ① STRATEGY -->
   <div class="section-bg">
     <div class="section">
       <div class="strategy-block">
         <div class="vision-eyebrow">Our Strategy</div>
-        <h2 class="strategy-statement">YouTube가 크리에이터를 연결했고,<br />Instagram이 일상을 연결했습니다</h2>
+        <h2 class="strategy-statement">TikTok이 영상으로 연결했고,<br />Instagram이 사진으로 연결했습니다</h2>
         <p class="strategy-body">소셜 미디어에서 가장 중요한 크리에이터는 AI로 얻고,<br />게이머의 네트워크 이펙트를 공략합니다.</p>
+      </div>
+
+      <div class="platform-compare">
+        <!-- TikTok -->
+        <div class="platform-card">
+          <div class="platform-icon-wrap">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.34 6.34 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.15 8.15 0 004.77 1.52V6.76a4.85 4.85 0 01-1-.07z"/>
+            </svg>
+          </div>
+          <div class="platform-card-name">TikTok</div>
+          <div class="platform-card-desc">누구나 쉽게 영상을 편집할 수 있게 도와</div>
+          <div class="platform-card-result">전세계에서 가장 많이 사용하는 영상 플랫폼이 됐습니다</div>
+        </div>
+        <!-- Instagram -->
+        <div class="platform-card">
+          <div class="platform-icon-wrap">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+            </svg>
+          </div>
+          <div class="platform-card-name">Instagram</div>
+          <div class="platform-card-desc">누구나 필터로 멋진 사진을 공유할 수 있게 도와</div>
+          <div class="platform-card-result">전세계에서 가장 많이 일상을 공유하는 플랫폼이 됐습니다</div>
+        </div>
+        <!-- 도르 -->
+        <div class="platform-card platform-card--highlight">
+          <div class="platform-icon-wrap">
+            <img src="logo/dorsimplelogo.svg" width="22" height="22" alt="도르" style="opacity:0.9;" />
+          </div>
+          <div class="platform-card-name">도르</div>
+          <div class="platform-card-desc">누구나 게임 경험을 영상으로 공유할 수 있게 도와</div>
+          <div class="platform-card-result">전세계 모든 게이머가 사용하는 소셜미디어를 목표합니다</div>
+        </div>
       </div>
 
       <!-- SOLUTION FLYWHEEL -->
@@ -1057,7 +1258,7 @@
         <div class="solution-flywheel-text">
           <div class="vision-eyebrow">Solution</div>
           <h3 class="solution-flywheel-title">소셜 미디어의 핵심은<br/>크리에이터입니다</h3>
-          <p class="solution-flywheel-desc">YouTube도, TikTok도 크리에이터 없이는 시작할 수 없었습니다. 도르는 AI를 통해 누구나 크리에이터가 될 수 있도록 돕고, 이 선순환을 만들어갑니다.</p>
+          <p class="solution-flywheel-desc">TikTok은 쉬운 영상 편집으로, Instagram은 사진 필터로 크리에이터를 폭발적으로 늘렸습니다. 도르는 AI로 게임 경험 자체를 콘텐츠로 만들어, 이 선순환을 게임 시장에서 만들어갑니다.</p>
           <div class="solution-flywheel-tags">
             <span class="solution-tag solution-tag--highlight">크리에이터 확보</span>
             <span class="solution-tag">콘텐츠 증가</span>
@@ -1072,10 +1273,10 @@
                 <polygon points="0 0, 7 3.5, 0 7" fill="rgba(255,255,255,0.45)"/>
               </marker>
               <marker id="arr-ai" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto">
-                <polygon points="0 0, 7 3.5, 0 7" fill="#a78bfa"/>
+                <polygon points="0 0, 7 3.5, 0 7" fill="rgba(255,255,255,0.9)"/>
               </marker>
               <filter id="glow-ai" x="-50%" y="-50%" width="200%" height="200%">
-                <feGaussianBlur stdDeviation="3" result="blur"/>
+                <feGaussianBlur stdDeviation="4" result="blur"/>
                 <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
               </filter>
             </defs>
@@ -1091,19 +1292,15 @@
             <path d="M 308.7 250.7 A 120 120 0 0 1 250.7 308.7" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="2" marker-end="url(#arr)"/>
             <!-- Arc 3: 트래픽 → 크리에이터 -->
             <path d="M 149.3 308.7 A 120 120 0 0 1 91.3 250.7" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="2" marker-end="url(#arr)"/>
-            <!-- Arc 4: 크리에이터 → 콘텐츠 (AI, highlighted) -->
-            <path d="M 91.3 149.3 A 120 120 0 0 1 149.3 91.3" fill="none" stroke="#a78bfa" stroke-width="2.5" marker-end="url(#arr-ai)" filter="url(#glow-ai)"/>
+            <!-- Arc 4: 크리에이터 → 콘텐츠 (highlighted) -->
+            <path d="M 91.3 149.3 A 120 120 0 0 1 149.3 91.3" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="2.5" marker-end="url(#arr-ai)" filter="url(#glow-ai)"/>
 
             <!-- Labels -->
             <text x="200" y="46" text-anchor="middle" fill="rgba(255,255,255,0.85)" font-size="13" font-weight="600" font-family="Inter,sans-serif">콘텐츠</text>
             <text x="350" y="205" text-anchor="start" fill="rgba(255,255,255,0.55)" font-size="13" font-weight="600" font-family="Inter,sans-serif">시청자</text>
             <text x="200" y="358" text-anchor="middle" fill="rgba(255,255,255,0.55)" font-size="13" font-weight="600" font-family="Inter,sans-serif">트래픽</text>
             <!-- 크리에이터 label highlighted -->
-            <text x="50" y="205" text-anchor="end" fill="#a78bfa" font-size="13" font-weight="700" font-family="Inter,sans-serif">크리에이터</text>
-
-            <!-- AI badge near arc 4 midpoint (~225°: x=115, y=115) -->
-            <rect x="96" y="99" width="34" height="18" rx="9" fill="rgba(167,139,250,0.15)" stroke="rgba(167,139,250,0.5)" stroke-width="1"/>
-            <text x="113" y="112" text-anchor="middle" fill="#a78bfa" font-size="10" font-weight="800" font-family="Inter,sans-serif">AI</text>
+            <text x="50" y="205" text-anchor="end" fill="rgba(255,255,255,0.95)" font-size="13" font-weight="700" font-family="Inter,sans-serif" filter="url(#glow-ai)">크리에이터</text>
           </svg>
         </div>
       </div>
@@ -1121,15 +1318,7 @@
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
             </div>
             <div class="why-korea-card-label">접근 가능한 큰 시장</div>
-            <div class="why-korea-card-title">세계 최대 게임사들이<br/>모인 나라</div>
-            <div class="why-korea-card-desc">NEXON, Netmarble, Kakao Games, NC, KRAFTON. 글로벌 탑 게임사가 모두 한국에 있어 파트너십과 유통 모두 유리한 위치입니다.</div>
-            <div class="why-korea-companies">
-              <span class="why-korea-co">NEXON</span>
-              <span class="why-korea-co">Netmarble</span>
-              <span class="why-korea-co">KRAFTON</span>
-              <span class="why-korea-co">NC</span>
-              <span class="why-korea-co">Kakao Games</span>
-            </div>
+            <div class="why-korea-card-desc">NEXON, KRAFTON, NC, Netmarble. 글로벌 탑 게임사가 모두 한국에 있어 파트너십과 유통 모두 유리합니다.</div>
           </div>
 
           <div class="why-korea-card">
@@ -1137,12 +1326,7 @@
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
             </div>
             <div class="why-korea-card-label">강한 네트워크 이펙트</div>
-            <div class="why-korea-card-title">모든 10대가 같은 게임을<br/>함께 하는 나라</div>
-            <div class="why-korea-card-desc">한국 10대 대부분이 같은 게임을 합니다. 같은 게임, 같은 커뮤니티가 모여 네트워크 이펙트가 자연스럽게 만들어지는 구조입니다. 전국 1만 개의 PC방은 신규 유저를 빠르게 확보할 수 있는 오프라인 채널이기도 합니다.</div>
-            <div class="why-korea-stat-row">
-              <div class="why-korea-stat"><span class="why-korea-stat-num">90%+</span><span class="why-korea-stat-label">10대 게임 이용률</span></div>
-              <div class="why-korea-stat"><span class="why-korea-stat-num">10,000+</span><span class="why-korea-stat-label">PC방 유통망</span></div>
-            </div>
+            <div class="why-korea-card-desc">전국 10대가 같은 게임을 합니다. 네트워크 이펙트가 이미 만들어져 있습니다.</div>
           </div>
 
           <div class="why-korea-card">
@@ -1150,14 +1334,7 @@
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
             </div>
             <div class="why-korea-card-label">세계적 인플루언서</div>
-            <div class="why-korea-card-title">K-이스포츠가 증명한<br/>글로벌 영향력</div>
-            <div class="why-korea-card-desc">Faker, T1, Gen.G. 한국 프로게이머들은 전 세계 수억 명이 따르는 크리에이터입니다. 이들과 가장 가까운 곳에서 크리에이터를 확보할 수 있습니다.</div>
-            <div class="why-korea-esports">
-              <span class="why-korea-co">T1</span>
-              <span class="why-korea-co">Gen.G</span>
-              <span class="why-korea-co">KT Rolster</span>
-              <span class="why-korea-co">DRX</span>
-            </div>
+            <div class="why-korea-card-desc">세계 최고의 프로게이머가 한국인인 데는 이유가 있습니다.</div>
           </div>
 
         </div>
@@ -1165,42 +1342,6 @@
     </div>
   </div>
 
-  <!-- ② WHY DOR / WHY NOW -->
-  <div class="section-bg">
-    <div class="section">
-      <div class="why-grid">
-        <div>
-          <div class="why-eyebrow">Why DOR · Why Now</div>
-          <div class="why-lead">이미 만들어진 조직에<br />들어가는 일이 아닙니다</div>
-          <p class="why-body">
-            지금 도르에 합류하는 건, 앞으로의 제품과 팀을 함께 만드는 일에 가깝습니다.
-            어떤 제품을 만들고, 어떤 방식으로 성장하고, 어떤 문화를 가질지 —
-            그 구조를 함께 설계하는 사람을 찾고 있습니다.
-          </p>
-          <p class="why-body" style="margin-top:16px;">
-            도르는 아직 작은 팀입니다.
-            그래서 한 명의 좋은 동료가 제품의 방향, 팀의 속도, 회사의 밀도를 바꿉니다.
-          </p>
-        </div>
-        <div>
-          <div class="why-callout">
-            <div class="why-callout-card">
-              <div class="why-callout-label">지금 합류한다면</div>
-              <div class="why-callout-text">문제 정의부터 출시, 측정, 개선까지 직접 관여하는 사람이 됩니다.</div>
-            </div>
-            <div class="why-callout-card">
-              <div class="why-callout-label">아직 팀이 작기 때문에</div>
-              <div class="why-callout-text">한 명이 미치는 영향이 크고, 그 결과가 제품에 즉시 반영됩니다.</div>
-            </div>
-            <div class="why-callout-card">
-              <div class="why-callout-label">구조를 만드는 사람</div>
-              <div class="why-callout-text">이미 정해진 방식을 따르는 자리가 아니라, 함께 만들어가는 자리입니다.</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
 
   <!-- ③ WHAT WE BUILD -->
   <div class="section">
@@ -1241,6 +1382,55 @@
           <span class="pillar-tag">반응</span>
           <span class="pillar-tag">소셜 그래프</span>
         </div>
+      </div>
+
+    </div>
+
+    <!-- BUILD → SQUAD BRIDGE -->
+    <div class="build-squad-divider">각 영역을 담당하는 스쿼드</div>
+
+    <div class="squad-cards-row">
+
+      <div class="squad-card">
+        <div class="squad-from">Record · Create</div>
+        <div class="squad-badge squad-badge--creator">Creator Squad</div>
+        <div class="squad-title">더 쉽게 만들게 하는 팀</div>
+        <div class="squad-mission">게이머가 더 쉽게 영상을 만들도록 돕습니다. 자동 녹화부터 편집, 공유까지 경험 전체를 책임집니다.</div>
+        <div class="squad-tags">
+          <span class="squad-tag">자동 녹화</span>
+          <span class="squad-tag">영상 생성</span>
+          <span class="squad-tag">편집 경험</span>
+          <span class="squad-tag">공유</span>
+        </div>
+        <a href="positions.html" class="squad-link">포지션 보기 →</a>
+      </div>
+
+      <div class="squad-card">
+        <div class="squad-from">Community</div>
+        <div class="squad-badge squad-badge--community">Community Squad</div>
+        <div class="squad-title">더 자주 돌아오게 하는 팀</div>
+        <div class="squad-mission">유저가 더 많이 보고, 반응하고, 다시 돌아오게 만듭니다. 피드부터 소셜 그래프 형성까지를 담당합니다.</div>
+        <div class="squad-tags">
+          <span class="squad-tag">피드</span>
+          <span class="squad-tag">프로필</span>
+          <span class="squad-tag">알림</span>
+          <span class="squad-tag">관계 형성</span>
+        </div>
+        <a href="positions.html" class="squad-link">포지션 보기 →</a>
+      </div>
+
+      <div class="squad-card">
+        <div class="squad-from">유저 확보 · 성장</div>
+        <div class="squad-badge squad-badge--growth">Growth Squad</div>
+        <div class="squad-title">더 많이 들어오고 남게 하는 팀</div>
+        <div class="squad-mission">더 많은 유저가 도르를 처음 알게 되고, 실제로 들어오고, 남게 만듭니다. 신규 유입부터 온보딩, 초기 리텐션까지 담당합니다.</div>
+        <div class="squad-tags">
+          <span class="squad-tag">신규 유입</span>
+          <span class="squad-tag">온보딩</span>
+          <span class="squad-tag">리텐션</span>
+          <span class="squad-tag">파트너십</span>
+        </div>
+        <a href="positions.html" class="squad-link">포지션 보기 →</a>
       </div>
 
     </div>
@@ -1298,65 +1488,15 @@
           <div class="values-preview-item"><span class="values-preview-num">01</span>고객 집착</div>
           <div class="values-preview-item"><span class="values-preview-num">02</span>원 팀</div>
           <div class="values-preview-item"><span class="values-preview-num">03</span>임팩트 추구</div>
-          <div class="values-preview-item"><span class="values-preview-num">04</span>속도</div>
-          <div class="values-preview-item"><span class="values-preview-num">05</span>데이터 기반</div>
-          <div class="values-preview-item"><span class="values-preview-num">06</span>오너십</div>
-          <div class="values-preview-item"><span class="values-preview-num">07</span>솔직함</div>
-          <div class="values-preview-item"><span class="values-preview-num">08</span>단순함</div>
-          <div class="values-preview-item"><span class="values-preview-num">09</span>끊임없는 성장</div>
-          <div class="values-preview-item"><span class="values-preview-num">10</span>실행</div>
+          <div class="values-preview-item"><span class="values-preview-num">04</span>실행, 실행, 실행</div>
+          <div class="values-preview-item"><span class="values-preview-num">05</span>끝없는 향상심</div>
+          <div class="values-preview-item"><span class="values-preview-num">06</span>빠르게.</div>
+          <div class="values-preview-item"><span class="values-preview-num">07</span>임무 완수를 위한 무한한 노력</div>
+          <div class="values-preview-item"><span class="values-preview-num">08</span>데이터 기반 사고</div>
+          <div class="values-preview-item"><span class="values-preview-num">09</span>책임 의식</div>
+          <div class="values-preview-item"><span class="values-preview-num">10</span>극단적 투명함과 솔직한 피드백</div>
         </div>
       </div>
-    </div>
-  </div>
-
-  <!-- ⑤ SQUAD OVERVIEW -->
-  <div class="section">
-    <div class="section-header">
-      <h2 class="section-title">Squad Overview</h2>
-      <p class="section-sub">도르는 기능이 아니라 문제 중심으로 팀을 나눕니다</p>
-    </div>
-    <div class="squad-grid">
-
-      <div class="squad-card">
-        <div class="squad-badge squad-badge--creator">Creator Squad</div>
-        <div class="squad-title">더 쉽게 만들게 하는 팀</div>
-        <div class="squad-mission">게이머가 더 쉽게 영상을 만들도록 돕습니다. 자동 녹화부터 편집, 공유까지 경험 전체를 책임집니다.</div>
-        <div class="squad-tags">
-          <span class="squad-tag">자동 녹화</span>
-          <span class="squad-tag">영상 생성</span>
-          <span class="squad-tag">편집 경험</span>
-          <span class="squad-tag">공유</span>
-        </div>
-        <a href="positions.html" class="squad-link">포지션 보기 →</a>
-      </div>
-
-      <div class="squad-card">
-        <div class="squad-badge squad-badge--community">Community Squad</div>
-        <div class="squad-title">더 자주 돌아오게 하는 팀</div>
-        <div class="squad-mission">유저가 더 많이 보고, 반응하고, 다시 돌아오게 만듭니다. 피드부터 소셜 그래프 형성까지를 담당합니다.</div>
-        <div class="squad-tags">
-          <span class="squad-tag">피드</span>
-          <span class="squad-tag">프로필</span>
-          <span class="squad-tag">알림</span>
-          <span class="squad-tag">관계 형성</span>
-        </div>
-        <a href="positions.html" class="squad-link">포지션 보기 →</a>
-      </div>
-
-      <div class="squad-card">
-        <div class="squad-badge squad-badge--growth">Growth Squad</div>
-        <div class="squad-title">더 많이 들어오고 남게 하는 팀</div>
-        <div class="squad-mission">더 많은 유저가 도르를 처음 알게 되고, 실제로 들어오고, 남게 만듭니다. 신규 유입부터 온보딩, 초기 리텐션까지 담당합니다.</div>
-        <div class="squad-tags">
-          <span class="squad-tag">신규 유입</span>
-          <span class="squad-tag">온보딩</span>
-          <span class="squad-tag">리텐션</span>
-          <span class="squad-tag">파트너십</span>
-        </div>
-        <a href="positions.html" class="squad-link">포지션 보기 →</a>
-      </div>
-
     </div>
   </div>
 

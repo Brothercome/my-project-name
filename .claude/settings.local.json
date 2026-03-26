@@ -20,7 +20,10 @@
       "WebFetch(domain:dor.gg)",
       "WebFetch(domain:clip.dor.gg)",
       "Bash(python3:*)",
-      "Bash(grep -E \"\\\\.\\(png|jpg|jpeg|gif|svg|webp\\)$\")"
+      "Bash(grep -E \"\\\\.\\(png|jpg|jpeg|gif|svg|webp\\)$\")",
+      "Bash(grep:*)",
+      "Bash(do echo:*)",
+      "Read(//Users/jhr/my-project-name/**)"
     ]
   }
 }
