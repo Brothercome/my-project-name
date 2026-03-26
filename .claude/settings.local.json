@@ -16,7 +16,11 @@
       "Bash(curl -s \"https://upload.cafenono.com/image/logo/20250210/174757_rGu23PMbpPvnf5gCNu\" -o \"/c/Users/User/Desktop/MyProject/logo/basslogo.svg\")",
       "Bash(sed -i 's/© 2024 Team DOR\\\\. All rights reserved\\\\./© 2026 DOR Corporation. All rights reserved./g' *.html)",
       "Bash(sed -i 's/© 2024 Team DOR/© 2026 DOR Corporation/g' *.html)",
-      "Bash(ls:*)"
+      "Bash(ls:*)",
+      "WebFetch(domain:dor.gg)",
+      "WebFetch(domain:clip.dor.gg)",
+      "Bash(python3:*)",
+      "Bash(grep -E \"\\\\.\\(png|jpg|jpeg|gif|svg|webp\\)$\")"
     ]
   }
 }

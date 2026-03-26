@@ -529,21 +529,89 @@ body {
    HOME — PROCESS
    ========================================== */
 
-.process-steps { display: grid; grid-template-columns: repeat(4, 1fr); }
+.process-steps {
+  display: grid;
+  grid-template-columns: 1fr 44px 1fr 44px 1fr 44px 1fr;
+  align-items: stretch;
+  gap: 0;
+}
+
+.step-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gray-600);
+  flex-shrink: 0;
+  align-self: center;
+}
 
 .step {
-  padding: 28px 20px 28px 0;
-  border-top: 1px solid rgba(255,255,255,0.07);
+  padding: 28px 24px;
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md);
+  background: var(--glass-bg);
+  transition: background var(--t), border-color var(--t), transform var(--t);
 }
+
+.step:hover {
+  background: var(--glass-bg-hover);
+  border-color: var(--glass-border-hover);
+  transform: translateY(-2px);
+}
+
+.step-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  color: var(--white);
+}
+
+.step-icon--accent {
+  border-color: rgba(255,255,255,0.2);
+  background: rgba(255,255,255,0.1);
+}
+
 .step-num {
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 700;
-  color: var(--gray-400);
-  letter-spacing: 0.08em;
-  margin-bottom: 18px;
+  color: var(--gray-500);
+  letter-spacing: 0.1em;
+  margin-bottom: 8px;
+  text-transform: uppercase;
 }
-.step-title { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+.step-title { font-size: 15px; font-weight: 700; margin-bottom: 8px; }
 .step-desc { font-size: 13px; color: var(--gray-400); line-height: 1.65; }
+
+.step-link {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--white);
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.18);
+  border-radius: 6px;
+  padding: 2px 8px;
+  text-decoration: none;
+  transition: background var(--t), border-color var(--t);
+  vertical-align: middle;
+}
+.step-link:hover {
+  background: rgba(255,255,255,0.18);
+  border-color: rgba(255,255,255,0.3);
+}
+
+.process-note {
+  margin-top: 20px;
+  font-size: 13px;
+  color: var(--gray-400);
+  text-align: center;
+}
 
 /* ==========================================
    HOME — CTA
@@ -933,24 +1001,12 @@ body {
   border-radius: 4px;
   margin-bottom: 8px;
 }
-.squad-badge--creator {
-  background: rgba(255,255,255,0.07);
-  border: 1px solid rgba(255,255,255,0.16);
-  color: var(--white);
-}
-.squad-badge--community {
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.1);
-  color: var(--gray-300);
-}
-.squad-badge--growth {
-  background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(255,255,255,0.09);
-  color: var(--gray-400);
-}
+.squad-badge--creator,
+.squad-badge--community,
+.squad-badge--growth,
 .squad-badge--internship {
-  background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(255,255,255,0.09);
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.12);
   color: var(--gray-400);
 }
 
@@ -997,10 +1053,11 @@ body {
 }
 
 .referral-title {
-  font-size: clamp(40px, 7vw, 80px);
+  font-size: clamp(28px, 5vw, 56px);
   font-weight: 900;
   letter-spacing: -0.03em;
-  line-height: 1;
+  line-height: 1.1;
+  white-space: nowrap;
 }
 .referral-title-sub {
   font-size: clamp(18px, 2.5vw, 24px);
@@ -1113,8 +1170,9 @@ body {
   .section-bg .section { padding: 72px 24px; }
 
   .perks-grid { grid-template-columns: 1fr; gap: 48px; }
-  .process-steps { grid-template-columns: repeat(2, 1fr); }
-  .step:nth-child(1), .step:nth-child(2) { border-bottom: 1px solid rgba(255,255,255,0.07); }
+  .process-steps { grid-template-columns: repeat(4, 1fr); gap: 10px; }
+  .step-arrow { display: none; }
+  .step { padding: 22px 18px; }
 
   .value-item { gap: 28px; padding: 40px 0; }
   .referral-steps { grid-template-columns: 1fr; }
@@ -1146,15 +1204,7 @@ body {
   .value-item { gap: 20px; padding: 32px 0; }
   .value-item-title { font-size: 20px; }
 
-  .process-steps { grid-template-columns: 1fr; }
-  .step {
-    border-top: none;
-    border-left: 1px solid rgba(255,255,255,0.1);
-    padding: 0 0 28px 20px;
-  }
-  .step:first-child { padding-top: 0; }
-  .step:last-child { padding-bottom: 0; }
-  .step:nth-child(1), .step:nth-child(2) { border-bottom: none; }
+  .process-steps { grid-template-columns: repeat(2, 1fr); gap: 10px; }
 
   .hide-mobile { display: none; }
   .dot { display: none; }
