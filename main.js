@@ -109,25 +109,4 @@ document.querySelectorAll(
   observer.observe(el);
 });
 
-// ----- JS Marquee (replaces CSS animation to prevent reset flash) -----
-const marqueeTrack = document.querySelector('.investors-track');
-if (marqueeTrack) {
-  // Remove any CSS animation
-  marqueeTrack.style.animation = 'none';
-  let pos = 0;
-  let halfWidth = 0;
-
-  function updateHalfWidth() {
-    halfWidth = marqueeTrack.scrollWidth / 2;
-  }
-  updateHalfWidth();
-  window.addEventListener('resize', updateHalfWidth);
-
-  function tickMarquee() {
-    pos -= 0.28;
-    if (halfWidth > 0 && Math.abs(pos) >= halfWidth) pos = 0;
-    marqueeTrack.style.transform = `translate3d(${pos}px, 0, 0)`;
-    requestAnimationFrame(tickMarquee);
-  }
-  requestAnimationFrame(tickMarquee);
-}
+// Marquee is handled purely by CSS (see style.css .investors-track)
