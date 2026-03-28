@@ -723,7 +723,7 @@ body {
 .page-hero-sub { font-size: 17px; color: var(--gray-400); }
 
 /* Filter */
-.filter-bar { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 40px; }
+.filter-bar { display: flex; gap: 6px; flex-wrap: wrap; }
 
 .filter-btn {
   background: var(--glass-bg);
