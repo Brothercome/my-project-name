@@ -1,0 +1,14 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "rewrites": [
+    { "source": "/home", "destination": "/index.html" },
+    { "source": "/home-en", "destination": "/index-en.html" }
+  ],
+  "redirects": [
+    { "source": "/index", "destination": "/home", "statusCode": 301 },
+    { "source": "/index.html", "destination": "/home", "statusCode": 301 },
+    { "source": "/index-en", "destination": "/home-en", "statusCode": 301 },
+    { "source": "/index-en.html", "destination": "/home-en", "statusCode": 301 }
+  ]
+}
