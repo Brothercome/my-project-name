@@ -4,16 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" type="image/png" href="logo/faviconlogodor.png" />
-  <meta name="description" content="도르팀의 열린 포지션을 확인하세요. Engineering, Design, Product, Operations." />
-  <meta property="og:title" content="채용 포지션 | 도르팀 채용" />
-  <meta property="og:description" content="도르팀의 열린 포지션을 확인하세요. Engineering, Design, Product, Operations." />
+  <meta name="description" content="Explore open positions at DOR Team. Engineering, Design, Product, Operations." />
+  <meta property="og:title" content="Open Positions | DOR Team Careers" />
+  <meta property="og:description" content="Explore open positions at DOR Team. Engineering, Design, Product, Operations." />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="logo/CareerOG.png" />
+  <meta property="og:image" content="https://career.dor.gg/logo/CareerOG.png" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="채용 포지션 | 도르팀 채용" />
-  <meta name="twitter:description" content="도르팀의 열린 포지션을 확인하세요. Engineering, Design, Product, Operations." />
-  <meta name="twitter:image" content="logo/CareerOG.png" />
-  <title>채용 포지션 | 도르팀 채용</title>
+  <meta name="twitter:title" content="Open Positions | DOR Team Careers" />
+  <meta name="twitter:description" content="Explore open positions at DOR Team. Engineering, Design, Product, Operations." />
+  <meta name="twitter:image" content="https://career.dor.gg/logo/CareerOG.png" />
+  <title>Open Positions | DOR Team Careers</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
@@ -26,10 +26,10 @@
     <div class="nav-links">
       <a href="index-en.html" class="nav-link">Home</a>
       <a href="positions-en.html" class="nav-link active">Positions</a>
-      <a href="values.html" class="nav-link">Core Values</a>
-      <a href="referral.html" class="nav-link">Referral</a>
+      <a href="values-en.html" class="nav-link">Core Values</a>
+      <a href="referral-en.html" class="nav-link">Referral Bonus</a>
       <a href="https://docs.google.com/forms/d/e/1FAIpQLScKZ21MPBl-ivpCAmXY3Bc3D_D5NXNafn5xNkx-ww_hJQ7gUA/viewform" target="_blank" class="btn-coffechat">Coffee Chat</a>
-      <a href="positions.html" class="btn-lang">한국어</a>
+      <a href="positions.html" class="btn-lang">KOR</a>
     </div>
     <button class="nav-hamburger" id="hamburger" aria-label="Open menu">
       <span></span><span></span><span></span>
@@ -39,29 +39,30 @@
   <div class="mobile-menu" id="mobileMenu">
     <a href="index-en.html" class="mobile-link">Home</a>
     <a href="positions-en.html" class="mobile-link active">Positions</a>
-    <a href="values.html" class="mobile-link">Core Values</a>
-    <a href="referral.html" class="mobile-link">Referral</a>
+    <a href="values-en.html" class="mobile-link">Core Values</a>
+    <a href="referral-en.html" class="mobile-link">Referral Bonus</a>
     <a href="https://docs.google.com/forms/d/e/1FAIpQLScKZ21MPBl-ivpCAmXY3Bc3D_D5NXNafn5xNkx-ww_hJQ7gUA/viewform" target="_blank" class="mobile-link highlight">Coffee Chat</a>
-    <a href="positions.html" class="mobile-link">한국어</a>
+    <a href="positions.html" class="mobile-link">KOR</a>
   </div>
 
   <div class="page-hero">
     <h1 class="page-hero-title">Open Positions</h1>
-    <p class="page-hero-sub">San Francisco · Seoul</p>
+    <p class="page-hero-sub">Seoul · San Francisco</p>
   </div>
 
   <div class="section" style="padding-top: 0;">
 
-    <!-- DUAL FILTER -->
+    <!-- SQUAD FILTER -->
     <div style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 48px;">
       <div class="filter-bar" id="squadFilter">
         <button class="filter-btn active" data-squad="all">All Squads</button>
         <button class="filter-btn" data-squad="creator">Creator Squad</button>
         <button class="filter-btn" data-squad="community">Community Squad</button>
         <button class="filter-btn" data-squad="growth">Growth Squad</button>
+        <button class="filter-btn" data-squad="internship">Internship</button>
       </div>
       <div class="filter-bar" id="typeFilter">
-        <button class="filter-btn active" data-type="all">All Roles</button>
+        <button class="filter-btn active" data-type="all">All Categories</button>
         <button class="filter-btn" data-type="engineering">Engineering</button>
         <button class="filter-btn" data-type="design">Design</button>
         <button class="filter-btn" data-type="product">Product</button>
@@ -74,33 +75,9 @@
     <div class="squad-section" id="creatorSection">
       <div class="squad-section-header">
         <span class="squad-section-title">Creator Squad</span>
-        <span class="squad-section-count">Recording · Clip creation · Editing · Sharing</span>
+        <span class="squad-section-count">Game Recording · Clip Creation · Editing · Sharing Experience</span>
       </div>
       <div class="jobs-grid">
-
-        <div class="job-card" data-squad="creator" data-type="design">
-          <div class="job-card-top">
-            <div>
-              <span class="squad-badge squad-badge--creator">Creator Squad</span>
-              <span class="job-type">Full-time</span>
-              <h3 class="job-title">Product Designer</h3>
-            </div>
-            <span class="job-exp">2y+</span>
-          </div>
-          <div class="job-tags">
-            <span class="tag">Figma</span>
-            <span class="tag">Product/UX</span>
-            <span class="tag">Design System</span>
-          </div>
-          <div class="job-locations">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            San Francisco · Seoul
-          </div>
-          <div class="job-card-cta">
-            <a href="job-designer.html" class="btn-detail">View details →</a>
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLScKZ21MPBl-ivpCAmXY3Bc3D_D5NXNafn5xNkx-ww_hJQ7gUA/viewform" target="_blank" class="btn-chat-sm">Coffee Chat</a>
-          </div>
-        </div>
 
         <div class="job-card" data-squad="creator" data-type="product">
           <div class="job-card-top">
@@ -109,20 +86,20 @@
               <span class="job-type">Full-time</span>
               <h3 class="job-title">Product Owner</h3>
             </div>
-            <span class="job-exp">2y+</span>
+            <span class="job-exp">3+ yrs exp.</span>
           </div>
           <div class="job-tags">
-            <span class="tag">Product Planning</span>
-            <span class="tag">Growth Hacking</span>
-            <span class="tag">Analytics</span>
+            <span class="tag">Data Analysis</span>
+            <span class="tag">Experiment Design</span>
+            <span class="tag">VOC Analysis</span>
           </div>
           <div class="job-locations">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
             San Francisco · Seoul
           </div>
           <div class="job-card-cta">
-            <a href="job-po.html" class="btn-detail">View details →</a>
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLScKZ21MPBl-ivpCAmXY3Bc3D_D5NXNafn5xNkx-ww_hJQ7gUA/viewform" target="_blank" class="btn-chat-sm">Coffee Chat</a>
+            <a href="job-po-creator-en.html" class="btn-detail">Learn More →</a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfD_9UczvFlanzBvd6n0eYbbHTZd8p0CTKkskGZT2F0on6kfw/viewform?pli=1" target="_blank" class="btn-chat-sm">Apply</a>
           </div>
         </div>
 
@@ -130,168 +107,34 @@
           <div class="job-card-top">
             <div>
               <span class="squad-badge squad-badge--creator">Creator Squad</span>
-              <span class="job-type">Contract</span>
-              <h3 class="job-title">Motion Designer</h3>
-            </div>
-            <span class="job-exp">All levels</span>
-          </div>
-          <div class="job-tags">
-            <span class="tag">After Effects</span>
-            <span class="tag">Premiere Pro</span>
-            <span class="tag">VFX</span>
-          </div>
-          <div class="job-locations">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            Seoul
-          </div>
-          <div class="job-card-cta">
-            <a href="job-motion.html" class="btn-detail">View details →</a>
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLScKZ21MPBl-ivpCAmXY3Bc3D_D5NXNafn5xNkx-ww_hJQ7gUA/viewform" target="_blank" class="btn-chat-sm">Coffee Chat</a>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-    <!-- COMMUNITY SQUAD -->
-    <div class="squad-section" id="communitySection">
-      <div class="squad-section-header">
-        <span class="squad-section-title">Community Squad</span>
-        <span class="squad-section-count">Feed · Profile · Reactions · Community</span>
-      </div>
-      <div class="jobs-grid">
-
-        <div class="job-card" data-squad="community" data-type="design">
-          <div class="job-card-top">
-            <div>
-              <span class="squad-badge squad-badge--community">Community Squad</span>
               <span class="job-type">Full-time</span>
               <h3 class="job-title">Product Designer</h3>
             </div>
-            <span class="job-exp">2y+</span>
+            <span class="job-exp">2+ yrs exp.</span>
           </div>
           <div class="job-tags">
             <span class="tag">Figma</span>
-            <span class="tag">Product/UX</span>
-            <span class="tag">Social UX</span>
+            <span class="tag">Adobe CC</span>
+            <span class="tag">UI/UX Design</span>
           </div>
           <div class="job-locations">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
             San Francisco · Seoul
           </div>
           <div class="job-card-cta">
-            <a href="job-designer-community.html" class="btn-detail">View details →</a>
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLScKZ21MPBl-ivpCAmXY3Bc3D_D5NXNafn5xNkx-ww_hJQ7gUA/viewform" target="_blank" class="btn-chat-sm">Coffee Chat</a>
+            <a href="job-designer-en.html" class="btn-detail">Learn More →</a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfD_9UczvFlanzBvd6n0eYbbHTZd8p0CTKkskGZT2F0on6kfw/viewform?pli=1" target="_blank" class="btn-chat-sm">Apply</a>
           </div>
         </div>
 
-        <div class="job-card" data-squad="community" data-type="product">
+        <div class="job-card" data-squad="creator" data-type="engineering">
           <div class="job-card-top">
             <div>
-              <span class="squad-badge squad-badge--community">Community Squad</span>
+              <span class="squad-badge squad-badge--creator">Creator Squad</span>
               <span class="job-type">Full-time</span>
-              <h3 class="job-title">Product Owner</h3>
+              <h3 class="job-title">Frontend Engineer</h3>
             </div>
-            <span class="job-exp">2y+</span>
-          </div>
-          <div class="job-tags">
-            <span class="tag">Product Planning</span>
-            <span class="tag">Community Growth</span>
-            <span class="tag">Analytics</span>
-          </div>
-          <div class="job-locations">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            San Francisco · Seoul
-          </div>
-          <div class="job-card-cta">
-            <a href="job-po-community.html" class="btn-detail">View details →</a>
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLScKZ21MPBl-ivpCAmXY3Bc3D_D5NXNafn5xNkx-ww_hJQ7gUA/viewform" target="_blank" class="btn-chat-sm">Coffee Chat</a>
-          </div>
-        </div>
-
-        <div class="job-card" data-squad="community" data-type="engineering">
-          <div class="job-card-top">
-            <div>
-              <span class="squad-badge squad-badge--community">Community Squad</span>
-              <span class="job-type">Full-time</span>
-              <h3 class="job-title">Data Analyst</h3>
-            </div>
-            <span class="job-exp">3y+</span>
-          </div>
-          <div class="job-tags">
-            <span class="tag">SQL</span>
-            <span class="tag">Python</span>
-            <span class="tag">R</span>
-            <span class="tag">Data Visualization</span>
-          </div>
-          <div class="job-locations">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            San Francisco · Seoul
-          </div>
-          <div class="job-card-cta">
-            <a href="job-data.html" class="btn-detail">View details →</a>
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLScKZ21MPBl-ivpCAmXY3Bc3D_D5NXNafn5xNkx-ww_hJQ7gUA/viewform" target="_blank" class="btn-chat-sm">Coffee Chat</a>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-    <!-- GROWTH SQUAD -->
-    <div class="squad-section" id="growthSection">
-      <div class="squad-section-header">
-        <span class="squad-section-title">Growth Squad</span>
-        <span class="squad-section-count">Acquisition · Onboarding · Retention · Partnerships</span>
-      </div>
-      <div class="jobs-grid">
-
-        <div class="job-card" data-squad="growth" data-type="internship">
-          <div class="job-card-top">
-            <div>
-              <span class="squad-badge squad-badge--growth">Growth Squad</span>
-              <span class="job-type">Internship</span>
-              <h3 class="job-title">Growth Operator</h3>
-            </div>
-            <span class="job-exp">All levels</span>
-          </div>
-          <div class="job-tags">
-            <span class="tag">Community</span>
-            <span class="tag">Viral Marketing</span>
-            <span class="tag">Content</span>
-            <span class="tag">Discord</span>
-          </div>
-          <div class="job-locations">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            Seoul
-          </div>
-          <div class="job-card-cta">
-            <a href="job-operator.html" class="btn-detail">View details →</a>
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLScKZ21MPBl-ivpCAmXY3Bc3D_D5NXNafn5xNkx-ww_hJQ7gUA/viewform" target="_blank" class="btn-chat-sm">Coffee Chat</a>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-    <!-- CROSS-SQUAD -->
-    <div class="squad-section" id="crossSection">
-      <div class="squad-section-header">
-        <span class="squad-section-title">Creator & Community</span>
-        <span class="squad-section-count">Cross-squad hire — squad assigned after joining</span>
-      </div>
-      <div class="jobs-grid">
-
-        <div class="job-card" data-squad="both" data-type="engineering">
-          <div class="job-card-top">
-            <div>
-              <div style="display: flex; gap: 6px; margin-bottom: 8px;">
-                <span class="squad-badge squad-badge--creator">Creator</span>
-                <span class="squad-badge squad-badge--community">Community</span>
-              </div>
-              <span class="job-type">Full-time</span>
-              <h3 class="job-title">Frontend Developer</h3>
-            </div>
-            <span class="job-exp">3y+</span>
+            <span class="job-exp">3+ yrs exp.</span>
           </div>
           <div class="job-tags">
             <span class="tag">React</span>
@@ -304,22 +147,19 @@
             San Francisco · Seoul
           </div>
           <div class="job-card-cta">
-            <a href="job-frontend.html" class="btn-detail">View details →</a>
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLScKZ21MPBl-ivpCAmXY3Bc3D_D5NXNafn5xNkx-ww_hJQ7gUA/viewform" target="_blank" class="btn-chat-sm">Coffee Chat</a>
+            <a href="job-frontend-en.html" class="btn-detail">Learn More →</a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfD_9UczvFlanzBvd6n0eYbbHTZd8p0CTKkskGZT2F0on6kfw/viewform?pli=1" target="_blank" class="btn-chat-sm">Apply</a>
           </div>
         </div>
 
-        <div class="job-card" data-squad="both" data-type="engineering">
+        <div class="job-card" data-squad="creator" data-type="engineering">
           <div class="job-card-top">
             <div>
-              <div style="display: flex; gap: 6px; margin-bottom: 8px;">
-                <span class="squad-badge squad-badge--creator">Creator</span>
-                <span class="squad-badge squad-badge--community">Community</span>
-              </div>
+              <span class="squad-badge squad-badge--creator">Creator Squad</span>
               <span class="job-type">Full-time</span>
               <h3 class="job-title">Software Engineer</h3>
             </div>
-            <span class="job-exp">2y+</span>
+            <span class="job-exp">2+ yrs exp.</span>
           </div>
           <div class="job-tags">
             <span class="tag">Python</span>
@@ -332,8 +172,408 @@
             San Francisco · Seoul
           </div>
           <div class="job-card-cta">
-            <a href="job-engineer.html" class="btn-detail">View details →</a>
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLScKZ21MPBl-ivpCAmXY3Bc3D_D5NXNafn5xNkx-ww_hJQ7gUA/viewform" target="_blank" class="btn-chat-sm">Coffee Chat</a>
+            <a href="job-engineer-en.html" class="btn-detail">Learn More →</a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfD_9UczvFlanzBvd6n0eYbbHTZd8p0CTKkskGZT2F0on6kfw/viewform?pli=1" target="_blank" class="btn-chat-sm">Apply</a>
+          </div>
+        </div>
+
+        <div class="job-card" data-squad="creator" data-type="engineering">
+          <div class="job-card-top">
+            <div>
+              <span class="squad-badge squad-badge--creator">Creator Squad</span>
+              <span class="job-type">Full-time</span>
+              <h3 class="job-title">AI/ML Engineer</h3>
+            </div>
+            <span class="job-exp">3+ yrs exp.</span>
+          </div>
+          <div class="job-tags">
+            <span class="tag">Python</span>
+            <span class="tag">PyTorch</span>
+            <span class="tag">Computer Vision</span>
+            <span class="tag">LLM</span>
+          </div>
+          <div class="job-locations">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            San Francisco · Seoul
+          </div>
+          <div class="job-card-cta">
+            <a href="job-aiml-en.html" class="btn-detail">Learn More →</a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfD_9UczvFlanzBvd6n0eYbbHTZd8p0CTKkskGZT2F0on6kfw/viewform?pli=1" target="_blank" class="btn-chat-sm">Apply</a>
+          </div>
+        </div>
+
+        <div class="job-card" data-squad="creator" data-type="design">
+          <div class="job-card-top">
+            <div>
+              <span class="squad-badge squad-badge--creator">Creator Squad</span>
+              <span class="job-type">Contract</span>
+              <h3 class="job-title">Motion Designer</h3>
+            </div>
+            <span class="job-exp">Any level</span>
+          </div>
+          <div class="job-tags">
+            <span class="tag">After Effects</span>
+            <span class="tag">Premiere Pro</span>
+            <span class="tag">VFX</span>
+          </div>
+          <div class="job-locations">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Seoul
+          </div>
+          <div class="job-card-cta">
+            <a href="job-motion-en.html" class="btn-detail">Learn More →</a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfD_9UczvFlanzBvd6n0eYbbHTZd8p0CTKkskGZT2F0on6kfw/viewform?pli=1" target="_blank" class="btn-chat-sm">Apply</a>
+          </div>
+        </div>
+
+        <div class="job-card" data-squad="creator" data-type="engineering">
+          <div class="job-card-top">
+            <div>
+              <span class="squad-badge squad-badge--creator">Creator Squad</span>
+              <span class="job-type">Full-time</span>
+              <h3 class="job-title">Data Analyst</h3>
+            </div>
+            <span class="job-exp">3+ yrs exp.</span>
+          </div>
+          <div class="job-tags">
+            <span class="tag">SQL</span>
+            <span class="tag">Python</span>
+            <span class="tag">Data Visualization</span>
+            <span class="tag">A/B Testing</span>
+          </div>
+          <div class="job-locations">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            San Francisco · Seoul
+          </div>
+          <div class="job-card-cta">
+            <a href="job-data-en.html" class="btn-detail">Learn More →</a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfD_9UczvFlanzBvd6n0eYbbHTZd8p0CTKkskGZT2F0on6kfw/viewform?pli=1" target="_blank" class="btn-chat-sm">Apply</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- COMMUNITY SQUAD -->
+    <div class="squad-section" id="communitySection">
+      <div class="squad-section-header">
+        <span class="squad-section-title">Community Squad</span>
+        <span class="squad-section-count">Feed · Profile · Reactions · Community Experience</span>
+      </div>
+      <div class="jobs-grid">
+
+        <div class="job-card" data-squad="community" data-type="product">
+          <div class="job-card-top">
+            <div>
+              <span class="squad-badge squad-badge--community">Community Squad</span>
+              <span class="job-type">Full-time</span>
+              <h3 class="job-title">Product Owner</h3>
+            </div>
+            <span class="job-exp">3+ yrs exp.</span>
+          </div>
+          <div class="job-tags">
+            <span class="tag">Data Analysis</span>
+            <span class="tag">Retention Analysis</span>
+            <span class="tag">Experiment Design</span>
+          </div>
+          <div class="job-locations">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            San Francisco · Seoul
+          </div>
+          <div class="job-card-cta">
+            <a href="job-po-community-en.html" class="btn-detail">Learn More →</a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfD_9UczvFlanzBvd6n0eYbbHTZd8p0CTKkskGZT2F0on6kfw/viewform?pli=1" target="_blank" class="btn-chat-sm">Apply</a>
+          </div>
+        </div>
+
+        <div class="job-card" data-squad="community" data-type="design">
+          <div class="job-card-top">
+            <div>
+              <span class="squad-badge squad-badge--community">Community Squad</span>
+              <span class="job-type">Full-time</span>
+              <h3 class="job-title">Product Designer</h3>
+            </div>
+            <span class="job-exp">2+ yrs exp.</span>
+          </div>
+          <div class="job-tags">
+            <span class="tag">Figma</span>
+            <span class="tag">Adobe CC</span>
+            <span class="tag">UI/UX Design</span>
+          </div>
+          <div class="job-locations">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            San Francisco · Seoul
+          </div>
+          <div class="job-card-cta">
+            <a href="job-designer-community-en.html" class="btn-detail">Learn More →</a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfD_9UczvFlanzBvd6n0eYbbHTZd8p0CTKkskGZT2F0on6kfw/viewform?pli=1" target="_blank" class="btn-chat-sm">Apply</a>
+          </div>
+        </div>
+
+        <div class="job-card" data-squad="community" data-type="engineering">
+          <div class="job-card-top">
+            <div>
+              <span class="squad-badge squad-badge--community">Community Squad</span>
+              <span class="job-type">Full-time</span>
+              <h3 class="job-title">Frontend Engineer</h3>
+            </div>
+            <span class="job-exp">3+ yrs exp.</span>
+          </div>
+          <div class="job-tags">
+            <span class="tag">React Native</span>
+            <span class="tag">TypeScript</span>
+            <span class="tag">iOS</span>
+            <span class="tag">Android</span>
+          </div>
+          <div class="job-locations">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            San Francisco · Seoul
+          </div>
+          <div class="job-card-cta">
+            <a href="job-frontend-community-en.html" class="btn-detail">Learn More →</a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfD_9UczvFlanzBvd6n0eYbbHTZd8p0CTKkskGZT2F0on6kfw/viewform?pli=1" target="_blank" class="btn-chat-sm">Apply</a>
+          </div>
+        </div>
+
+        <div class="job-card" data-squad="community" data-type="engineering">
+          <div class="job-card-top">
+            <div>
+              <span class="squad-badge squad-badge--community">Community Squad</span>
+              <span class="job-type">Full-time</span>
+              <h3 class="job-title">Backend Engineer</h3>
+            </div>
+            <span class="job-exp">3+ yrs exp.</span>
+          </div>
+          <div class="job-tags">
+            <span class="tag">Node.js</span>
+            <span class="tag">Go</span>
+            <span class="tag">AWS</span>
+            <span class="tag">GraphQL</span>
+          </div>
+          <div class="job-locations">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            San Francisco · Seoul
+          </div>
+          <div class="job-card-cta">
+            <a href="job-backend-en.html" class="btn-detail">Learn More →</a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfD_9UczvFlanzBvd6n0eYbbHTZd8p0CTKkskGZT2F0on6kfw/viewform?pli=1" target="_blank" class="btn-chat-sm">Apply</a>
+          </div>
+        </div>
+
+        <div class="job-card" data-squad="community" data-type="operations">
+          <div class="job-card-top">
+            <div>
+              <span class="squad-badge squad-badge--community">Community Squad</span>
+              <span class="job-type">Full-time</span>
+              <h3 class="job-title">Community Manager</h3>
+            </div>
+            <span class="job-exp">1+ yrs exp.</span>
+          </div>
+          <div class="job-tags">
+            <span class="tag">Discord Management</span>
+            <span class="tag">Social Media Management</span>
+            <span class="tag">User Interviews</span>
+          </div>
+          <div class="job-locations">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Seoul
+          </div>
+          <div class="job-card-cta">
+            <a href="job-community-manager-en.html" class="btn-detail">Learn More →</a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfD_9UczvFlanzBvd6n0eYbbHTZd8p0CTKkskGZT2F0on6kfw/viewform?pli=1" target="_blank" class="btn-chat-sm">Apply</a>
+          </div>
+        </div>
+
+        <div class="job-card" data-squad="community" data-type="engineering">
+          <div class="job-card-top">
+            <div>
+              <span class="squad-badge squad-badge--community">Community Squad</span>
+              <span class="job-type">Full-time</span>
+              <h3 class="job-title">Data Analyst</h3>
+            </div>
+            <span class="job-exp">2+ yrs exp.</span>
+          </div>
+          <div class="job-tags">
+            <span class="tag">SQL</span>
+            <span class="tag">Python</span>
+            <span class="tag">R</span>
+            <span class="tag">Data Visualization</span>
+          </div>
+          <div class="job-locations">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            San Francisco · Seoul
+          </div>
+          <div class="job-card-cta">
+            <a href="job-data-en.html" class="btn-detail">Learn More →</a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfD_9UczvFlanzBvd6n0eYbbHTZd8p0CTKkskGZT2F0on6kfw/viewform?pli=1" target="_blank" class="btn-chat-sm">Apply</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- GROWTH SQUAD -->
+    <div class="squad-section" id="growthSection">
+      <div class="squad-section-header">
+        <span class="squad-section-title">Growth Squad</span>
+        <span class="squad-section-count">User Acquisition · Onboarding · Retention · Partnerships</span>
+      </div>
+      <div class="jobs-grid">
+
+        <div class="job-card" data-squad="growth" data-type="product">
+          <div class="job-card-top">
+            <div>
+              <span class="squad-badge squad-badge--growth">Growth Squad</span>
+              <span class="job-type">Full-time</span>
+              <h3 class="job-title">Product Owner</h3>
+            </div>
+            <span class="job-exp">3+ yrs exp.</span>
+          </div>
+          <div class="job-tags">
+            <span class="tag">Funnel Optimization</span>
+            <span class="tag">Experiment Design</span>
+            <span class="tag">Growth Hacking</span>
+          </div>
+          <div class="job-locations">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            San Francisco · Seoul
+          </div>
+          <div class="job-card-cta">
+            <a href="job-po-growth-en.html" class="btn-detail">Learn More →</a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfD_9UczvFlanzBvd6n0eYbbHTZd8p0CTKkskGZT2F0on6kfw/viewform?pli=1" target="_blank" class="btn-chat-sm">Apply</a>
+          </div>
+        </div>
+
+        <div class="job-card" data-squad="growth" data-type="engineering">
+          <div class="job-card-top">
+            <div>
+              <span class="squad-badge squad-badge--growth">Growth Squad</span>
+              <span class="job-type">Full-time</span>
+              <h3 class="job-title">Software Engineer</h3>
+            </div>
+            <span class="job-exp">2+ yrs exp.</span>
+          </div>
+          <div class="job-tags">
+            <span class="tag">Python</span>
+            <span class="tag">TypeScript</span>
+            <span class="tag">Automation</span>
+            <span class="tag">Data Pipeline</span>
+          </div>
+          <div class="job-locations">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            San Francisco · Seoul
+          </div>
+          <div class="job-card-cta">
+            <a href="job-engineer-en.html" class="btn-detail">Learn More →</a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfD_9UczvFlanzBvd6n0eYbbHTZd8p0CTKkskGZT2F0on6kfw/viewform?pli=1" target="_blank" class="btn-chat-sm">Apply</a>
+          </div>
+        </div>
+
+        <div class="job-card" data-squad="growth" data-type="internship">
+          <div class="job-card-top">
+            <div>
+              <span class="squad-badge squad-badge--growth">Growth Squad</span>
+              <span class="job-type">Internship</span>
+              <h3 class="job-title">Growth Operator</h3>
+            </div>
+            <span class="job-exp">Any level</span>
+          </div>
+          <div class="job-tags">
+            <span class="tag">Discord Management</span>
+            <span class="tag">Viral Campaigns</span>
+            <span class="tag">Content Creation</span>
+          </div>
+          <div class="job-locations">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Seoul
+          </div>
+          <div class="job-card-cta">
+            <a href="job-operator-en.html" class="btn-detail">Learn More →</a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfD_9UczvFlanzBvd6n0eYbbHTZd8p0CTKkskGZT2F0on6kfw/viewform?pli=1" target="_blank" class="btn-chat-sm">Apply</a>
+          </div>
+        </div>
+
+        <div class="job-card" data-squad="growth" data-type="operations">
+          <div class="job-card-top">
+            <div>
+              <span class="squad-badge squad-badge--growth">Growth Squad</span>
+              <span class="job-type">Contract</span>
+              <h3 class="job-title">Contents Marketer</h3>
+            </div>
+            <span class="job-exp">Any level</span>
+          </div>
+          <div class="job-tags">
+            <span class="tag">Short-form Video Production</span>
+            <span class="tag">Social Media Management</span>
+            <span class="tag">Premiere Pro</span>
+          </div>
+          <div class="job-locations">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Seoul
+          </div>
+          <div class="job-card-cta">
+            <a href="job-contents-marketer-en.html" class="btn-detail">Learn More →</a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfD_9UczvFlanzBvd6n0eYbbHTZd8p0CTKkskGZT2F0on6kfw/viewform?pli=1" target="_blank" class="btn-chat-sm">Apply</a>
+          </div>
+        </div>
+
+        <div class="job-card" data-squad="growth" data-type="engineering">
+          <div class="job-card-top">
+            <div>
+              <span class="squad-badge squad-badge--growth">Growth Squad</span>
+              <span class="job-type">Full-time</span>
+              <h3 class="job-title">Data Analyst</h3>
+            </div>
+            <span class="job-exp">2+ yrs exp.</span>
+          </div>
+          <div class="job-tags">
+            <span class="tag">SQL</span>
+            <span class="tag">Python</span>
+            <span class="tag">Cohort Analysis</span>
+            <span class="tag">A/B Testing</span>
+          </div>
+          <div class="job-locations">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            San Francisco · Seoul
+          </div>
+          <div class="job-card-cta">
+            <a href="job-data-en.html" class="btn-detail">Learn More →</a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfD_9UczvFlanzBvd6n0eYbbHTZd8p0CTKkskGZT2F0on6kfw/viewform?pli=1" target="_blank" class="btn-chat-sm">Apply</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- INTERNSHIP -->
+    <div class="squad-section" id="internshipSection">
+      <div class="squad-section-header">
+        <span class="squad-section-title">Internship</span>
+        <span class="squad-section-count">CEO Direct · Strategy · Operations</span>
+      </div>
+      <div class="jobs-grid">
+
+        <div class="job-card" data-squad="internship" data-type="internship">
+          <div class="job-card-top">
+            <div>
+              <span class="squad-badge squad-badge--internship">Internship</span>
+              <span class="job-type">Internship</span>
+              <h3 class="job-title">CEO Staff</h3>
+            </div>
+            <span class="job-exp">Any level</span>
+          </div>
+          <div class="job-tags">
+            <span class="tag">Research</span>
+            <span class="tag">Report Writing</span>
+            <span class="tag">Excel / SQL</span>
+          </div>
+          <div class="job-locations">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Seoul
+          </div>
+          <div class="job-card-cta">
+            <a href="job-ceo-staff-en.html" class="btn-detail">Learn More →</a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfD_9UczvFlanzBvd6n0eYbbHTZd8p0CTKkskGZT2F0on6kfw/viewform?pli=1" target="_blank" class="btn-chat-sm">Apply</a>
           </div>
         </div>
 
@@ -344,7 +584,18 @@
 
   <footer class="footer">
     <img src="logo.svg" alt="DOR" class="footer-logo-img" />
-    <span class="footer-copy">© 2026 DOR Corporation. All rights reserved.</span>
+    <div class="footer-links">
+      <a href="mailto:career@dor.gg" class="footer-icon-btn" title="Email">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
+      </a>
+      <a href="https://kr.linkedin.com/company/dorcorp" target="_blank" class="footer-icon-btn" title="LinkedIn">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+      </a>
+      <a href="https://dor.gg" target="_blank" class="footer-icon-btn" title="dor.gg">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+      </a>
+    </div>
+    <span class="footer-copy">&copy; 2026 DOR Corporation. All rights reserved.</span>
   </footer>
 
   <script src="main.js"></script>
