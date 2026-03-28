@@ -33,6 +33,35 @@ const sectionSquadMap = {
 if (squadFilter && typeFilter) {
   let activeSquad = 'all';
   let activeType  = 'all';
+  const typeBtns = typeFilter.querySelectorAll('.filter-btn');
+
+  function updateTypeButtons() {
+    // Collect types available in the active squad
+    var available = new Set();
+    allSections.forEach(function(section) {
+      if (!section) return;
+      if (activeSquad !== 'all' && sectionSquadMap[activeSquad] !== section) return;
+      section.querySelectorAll('.job-card').forEach(function(card) {
+        available.add(card.dataset.type);
+      });
+    });
+
+    typeBtns.forEach(function(btn) {
+      var t = btn.dataset.type;
+      if (t === 'all') {
+        btn.style.display = '';
+      } else {
+        btn.style.display = available.has(t) ? '' : 'none';
+      }
+    });
+
+    // Reset type filter if current selection is hidden
+    if (activeType !== 'all' && !available.has(activeType)) {
+      activeType = 'all';
+      typeBtns.forEach(function(b) { b.classList.remove('active'); });
+      typeBtns[0].classList.add('active');
+    }
+  }
 
   function applyFilters() {
     // Squad filter: section-level visibility
@@ -45,10 +74,12 @@ if (squadFilter && typeFilter) {
       }
     });
 
+    // Update type buttons based on active squad
+    updateTypeButtons();
+
     // Type filter: card-level within visible sections
     jobCards.forEach(card => {
       const typeMatch = activeType === 'all' || card.dataset.type === activeType;
-      // Make filtered-in cards immediately visible (no fade-in delay)
       if (typeMatch) {
         card.classList.remove('hidden');
         card.style.opacity = '1';
@@ -76,9 +107,9 @@ if (squadFilter && typeFilter) {
     });
   });
 
-  typeFilter.querySelectorAll('.filter-btn').forEach(btn => {
+  typeBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-      typeFilter.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      typeBtns.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
       activeType = btn.dataset.type;
       applyFilters();
