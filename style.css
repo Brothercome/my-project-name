@@ -1372,7 +1372,9 @@ body {
   .referral-steps { grid-template-columns: 1fr; }
 
   .job-detail-body { grid-template-columns: 1fr; padding: 48px 24px; }
-  .job-detail-sidebar { position: static; }
+  .job-detail-sidebar { position: static; display: contents; }
+  .job-detail-sidebar > .sidebar-card:first-child { order: -1; }
+  .job-detail-sidebar > .sidebar-card:last-child { order: 99; }
 
   .footer { padding: 24px; }
 }
@@ -1406,9 +1408,28 @@ body {
   .investor-logo { width: 90px; height: 28px; margin-right: 36px; }
   .investors { padding: 32px 0; }
 
+  .job-card { padding: 18px; gap: 10px; }
+  .job-title { font-size: 16px; }
+  .job-card-top { gap: 8px; }
+  .squad-badge { font-size: 10px; padding: 2px 7px; }
+  .job-type { font-size: 10px; }
+  .job-exp { font-size: 10px; padding: 2px 8px; }
+  .tag { font-size: 11px; padding: 3px 8px; }
+  .job-tags { gap: 4px; }
+  .job-locations { font-size: 12px; }
+  .btn-detail { font-size: 12px; padding: 8px 0; }
+  .btn-chat-sm { font-size: 12px; padding: 8px 14px; }
+  .job-card-cta { gap: 6px; }
+
+  .filter-btn { font-size: 12px; padding: 6px 14px; white-space: nowrap; flex-shrink: 0; }
+  .filter-bar { gap: 6px; flex-wrap: nowrap; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; padding-bottom: 4px; -webkit-mask-image: linear-gradient(to right, black 85%, transparent 100%); mask-image: linear-gradient(to right, black 85%, transparent 100%); }
+  .filter-bar::-webkit-scrollbar { display: none; }
+
   .footer { flex-direction: column; align-items: flex-start; gap: 8px; }
 
-  .job-detail-body { padding: 40px 20px; gap: 40px; }
+  .job-detail-body { padding: 24px 20px; gap: 24px; }
+  .squad-section-header { flex-direction: column; align-items: flex-start; gap: 4px; }
+  .squad-section-count { font-size: 11px; }
   .job-detail-actions { flex-direction: column; }
   .job-detail-actions .btn-primary,
   .job-detail-actions .btn-secondary { text-align: center; }
