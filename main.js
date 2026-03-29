@@ -64,13 +64,18 @@ if (squadFilter && typeFilter) {
   }
 
   function applyFilters() {
-    // Squad filter: section-level visibility
+    // Squad filter: section-level visibility + auto open accordion
     allSections.forEach(section => {
       if (!section) return;
       if (activeSquad === 'all') {
         section.style.display = '';
+        section.classList.add('open');
+      } else if (sectionSquadMap[activeSquad] === section) {
+        section.style.display = '';
+        section.classList.add('open');
       } else {
-        section.style.display = (sectionSquadMap[activeSquad] === section) ? '' : 'none';
+        section.style.display = 'none';
+        section.classList.remove('open');
       }
     });
 
